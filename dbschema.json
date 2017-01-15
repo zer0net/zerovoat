@@ -1,14 +1,19 @@
 {
-	"db_name": "ZeroTalk",
-	"db_file": "data/users/zerotalk.db",
+	"db_name": "zerovoat",
+	"db_file": "data/users/zerovoat.db",
 	"version": 2,
 	"maps": {
 		".+/data.json": {
 			"to_table": [
+				{"node": "channel", "table": "channel"},
 				{"node": "topic", "table": "topic"},
-				{"node": "topic_vote", "table": "topic_vote", "key_col": "topic_uri", "val_col": "vote"},
-				{"node": "comment", "table": "comment", "key_col": "topic_uri"},
-				{"node": "comment_vote", "table": "comment_vote", "key_col": "comment_uri", "val_col": "vote"}
+				{"node": "topic_vote", "table": "topic_vote"},
+				{"node": "comment", "table": "comment"},
+				{"node": "comment_vote", "table": "comment_vote"},
+				{"node": "user", "table": "user"},
+				{"node": "moderator", "table": "moderator"},
+				{"node": "moderation", "table": "moderation"},
+				{"node": "file", "table": "file"}
 			],
 			"to_keyvalue": ["next_comment_id", "next_topic_id"]
 		},
@@ -17,9 +22,26 @@
 		}
 	},
 	"tables": {
+		"channel": {
+			"cols": [
+				["channel_id", "TEXT"],
+				["user_id","TEXT"],
+				["name","TEXT"],
+				["description","TEXT"],
+				["title", "TEXT"],
+				["body", "TEXT"],
+				["added", "DATETIME"],
+				["edited", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX channel_key ON channel(channel_id, json_id)"],
+			"schema_changed": 1
+		},
 		"topic": {
 			"cols": [
-				["topic_id", "INTEGER"],
+				["topic_id", "TEXT"],
+				["channel_id","TEXT"],
+				["user_id","TEXT"],
 				["title", "TEXT"],
 				["body", "TEXT"],
 				["type", "TEXT"],
@@ -32,9 +54,13 @@
 		},
 		"comment": {
 			"cols": [
-				["comment_id", "INTEGER"],
+				["comment_id", "TEXT"],
+				["topic_id","TEXT"],
+				["user_id","TEXT"],
+				["comment_parent_id","TEXT"],
 				["body", "TEXT"],
 				["topic_uri", "TEXT"],
+				["parent_comment_uri", "TEXT"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
@@ -43,8 +69,12 @@
 		},
 		"comment_vote": {
 			"cols": [
+				["comment_vote_id","TEXT"],
+				["comment_id","TEXT"],
+				["user_id","TEXT"],
 				["comment_uri", "TEXT"],
 				["vote", "INTEGER"],
+				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX comment_vote_key ON comment_vote(comment_uri, json_id)", "CREATE INDEX comment_vote_uri ON comment_vote(comment_uri)"],
@@ -52,13 +82,67 @@
 		},
 		"topic_vote": {
 			"cols": [
+				["topic_vote_id","TEXT"],
+				["topic_id","TEXT"],
+				["user_id","TEXT"],
 				["topic_uri", "TEXT"],
 				["vote", "INTEGER"],
+				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX topic_vote_topic_key ON topic_vote(topic_uri, json_id)", "CREATE INDEX topic_vote_uri ON topic_vote(topic_uri)"],
 			"schema_changed": 1
-		}
+		},
+		"user": {
+			"cols": [
+				["user_id","TEXT"],
+				["user_name","TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX user_key ON user(user_id, json_id)"],
+			"schema_changed": 1
+		},
+		"moderator": {
+			"cols": [
+				["moderator_id","TEXT"],
+				["user_id","TEXT"],
+				["user_name","TEXT"],
+				["channel_id","TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX moderator_key ON moderator(moderator_id, json_id)"],
+			"schema_changed": 1
+		},
+		"moderation": {
+			"cols": [
+				["moderation_id","TEXT"],
+				["moderator_name","TEXT"],
+				["channel_id","TEXT"],
+				["item_type","TEXT"],
+				["item_id","TEXT"],
+				["visible","BOOLEAN"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX moderation_key ON moderation(moderation_id, json_id)"],
+			"schema_changed": 1
+		},
+		"file": {
+			"cols": [
+				["file_id","TEXT"],
+				["file_type","TEXT"],
+				["item_id","TEXT"],
+				["item_type","TEXT"],
+				["file_name","TEXT"],
+				["user_id","TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX file_key ON file(file_id, json_id)"],
+			"schema_changed": 1
+		}					
 	},
 	"feeds": {
 		"Topics": "SELECT title AS title, body AS body, added AS date_added, 'topic' AS type, '?Topic:' || topic.topic_id || '_' || topic_creator_json.directory AS url FROM topic LEFT JOIN json AS topic_creator_json ON (topic_creator_json.json_id = topic.json_id)",

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="zerovoat" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <!-- CSS -->
+    <!-- lib -->
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- app -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+  <!-- /CSS -->
+
+  <!-- HTML5 Shim -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--<base href="/">-->
+
+</head>
+
+<body class="ng-cloak" ng-controller="MainCtrl" ng-init="init()">
+
+  <!-- header -->
+  <site-header></site-header>
+  <!-- /header -->
+
+  <!-- main -->
+  <main id="main-content" class="container" ng-if="page">
+    <!-- channel -->
+    <section ng-controller="ChannelsCtrl" ng-if="section === 'channel'" ng-init="getChannel()">
+      <uib-tabset ng-if="channel" active="active">
+        <uib-tab index="0" heading="Channel">
+          <channel-form></channel-form>
+        </uib-tab>
+        <uib-tab index="1" heading="Moderators">
+          <section user-list ng-init="getChannelModerators(channel)">
+            <!-- moderator form --> 
+            <div id="moderator-form" class="form">
+              <div class="form-field row">
+                <label class="col-xs-2">select moderator</label>
+                <div class="col-xs-10" ng-init="getUsers(channel)">
+                  <select ng-model="moderator" class="form-control">
+                    <option ng-repeat="user in users" ng-bind="user.user_name" value="{{user.user_name}}"></option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-field row">
+                <div class="col-xs-offset-2 col-xs-10">
+                  <button class="btn primary-btn" ng-click="addChannelModerator(moderator)">add moderator</button>
+                </div>
+              </div>
+            </div>
+            <!-- /moderator form -->
+            <!-- moderator list -->
+            <section id="moderators-list" ng-if="moderators">
+              <hr/>
+              <div class="row moderator-list-item" ng-repeat="moderator in moderators">
+                <div class="col-xs-12">
+                  <ul>
+                    <li>user name: {{moderator.user_name}}</li>
+                    <li>channel mod since: <span am-time-ago="moderator.added"></span></li>
+                    <li moderations ng-init="getModerations(moderator)" ng-show="moderator.moderations.length > 0">moderations:
+                      <ul>
+                        <li ng-repeat="moderation in moderator.moderations | orderBy:'-added'">
+                          moderated 
+                          <b>{{moderation.item_type}}:{{moderation.item_id}}</b> 
+                          <i>visibile:{{moderation.visible}}</i>  - 
+                          <span am-time-ago="moderation.added"></span>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <hr/>
+                </div>
+              </div>
+            </section>
+            <!-- /moderator list -->
+            </section>
+        </uib-tab>
+      </uib-tabset>
+    </section>
+    <!-- /channel -->
+    <!-- topic -->
+    <section ng-controller="TopicsCtrl" ng-if="section === 'topic'" ng-init="getTopic()">
+      <topic-form ng-if="topic"></topic-form>      
+    </section>
+    <!-- /topic -->
+  </main>
+  <!-- /main -->
+
+  <!-- JS -->
+
+  <!-- zeronet -->
+  <script type="text/javascript" src="assets/lib/zeronet/class.js"></script>
+  <script type="text/javascript" src="assets/lib/zeronet/zeroframe.js"></script>
+  <script type="text/javascript" src="assets/lib/zeronet/zerochat.js"></script>
+
+  <!-- jquery -->
+  <script type="text/javascript" src="assets/lib/jquery/jquery.min.js"></script>
+
+  <!-- angular -->
+  <script type="text/javascript" src="assets/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular/angular-route.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular/angular-animate.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular/angular-aria.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>  
+  <script type="text/javascript" src="assets/lib/angular-bootstrap/angular-bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>
+  <script type="text/javascript" src="assets/lib/moment/moment.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
+
+  <!-- videogular -->
+  <script type="text/javascript" src="assets/lib/videos/videogular/videogular.js"></script>
+  <script type="text/javascript" src="assets/lib/videos/videogular-controls/vg-controls.js"></script>
+  <script type="text/javascript" src="assets/lib/videos/videogular-buffering/vg-buffering.js"></script>
+  <script type="text/javascript" src="assets/lib/videos/videogular-overlay-play/vg-overlay-play.js"></script>
+  <script type="text/javascript" src="assets/lib/videos/videogular-poster/vg-poster.js"></script>
+
+  <!-- app -->
+  <script type="text/javascript" src="app/application.js"></script>
+  <script type="text/javascript" src="app/controllers/main.ctrl.js"></script>
+  <script type="text/javascript" src="app/controllers/channels.ctrl.js"></script>
+  <script type="text/javascript" src="app/directives/channel-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/user-list.directive.js"></script>
+  <script type="text/javascript" src="app/directives/moderations.directive.js"></script>
+  <script type="text/javascript" src="app/controllers/topics.ctrl.js"></script>
+  <script type="text/javascript" src="app/directives/topic-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/site-header.directive.js"></script>
+
+</body>
+
+</html>

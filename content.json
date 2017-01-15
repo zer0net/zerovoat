@@ -1,11 +1,671 @@
 {
- "address": "16JdWTFUUSQyqH6Ks72ASzG8CCpd4ZMzZb",
- "address_index": 90315599,
+ "address": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb",
+ "address_index": 38675494,
  "background-color": "#F5F5F5",
  "cloneable": true,
- "cloned_from": "1TaLkFrMwvbNsooF4ioKAY9EuxTBTjipT",
+ "cloned_from": "16JdWTFUUSQyqH6Ks72ASzG8CCpd4ZMzZb",
  "description": "Decentralized forum with ZeroID",
  "files": {
+  "app/application.js": {
+   "sha512": "59619eb2682c9c08ddcee7a60bc1ce104a82a7732376d564c5c1686e6157fe77",
+   "size": 330
+  },
+  "app/controllers/channels.ctrl.js": {
+   "sha512": "1667a9d10e7945b0914634c2186b232c04a43e9ce353964d958843b82292cd88",
+   "size": 5339
+  },
+  "app/controllers/main.ctrl.js": {
+   "sha512": "48dc823d9243f5bb229aa65b963a501d8ff4da37b9933a307f6b76396d6cdcc4",
+   "size": 2040
+  },
+  "app/controllers/topics.ctrl.js": {
+   "sha512": "1bc296935f07eb0cdb967344997ef817b7009638baa7f9f86e8ec8b1d1f6e4af",
+   "size": 3174
+  },
+  "app/controllers/user-admin.ctrl.js": {
+   "sha512": "9f719a0acdeddbd9ad5035badb7e927abb985e3da1dd1643e55a31314b1bd0d3",
+   "size": 734
+  },
+  "app/directives/admin-channel-list.directive.js": {
+   "sha512": "6cd4de620673be905068263d5f2887e7919ade6cdb9d14b37a84b5517bb72564",
+   "size": 2515
+  },
+  "app/directives/channel-form.directive.js": {
+   "sha512": "79c705991f4cd789a77fd9ca98ee86477a5cdb2375f7da093863b5755de8fd01",
+   "size": 2042
+  },
+  "app/directives/channel-list.directive.js": {
+   "sha512": "88f2ccdec2d80bfea620391b27a1f3283b463d95b69296fb69b4489130f18224",
+   "size": 3039
+  },
+  "app/directives/channels.directive.js": {
+   "sha512": "59e04e721d79c5301cbc4079f2ac20cb2afb777539deba7eb16b49db79caeb45",
+   "size": 1247
+  },
+  "app/directives/comments.directive.js": {
+   "sha512": "139a402ff6ae1f7c49adc49a298f8368a5cf36eca4a888126b45bbce2e10c17e",
+   "size": 5861
+  },
+  "app/directives/dropzone.directive.js": {
+   "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
+   "size": 428
+  },
+  "app/directives/files.directive.js": {
+   "sha512": "a2b0f82c2c14207e2ce149c1baf60155d351cfc82375d29796950aed0445b949",
+   "size": 7471
+  },
+  "app/directives/moderations.directive.js": {
+   "sha512": "24ed2d5c84832800366c01f9f828b7300ebcc3e807ef475c569efe80ef414ef1",
+   "size": 4516
+  },
+  "app/directives/sidebar.directive.js": {
+   "sha512": "c3a056762646b923be2d3af13a803983342f7ab8a734abdc0113d61080045331",
+   "size": 1237
+  },
+  "app/directives/site-header.directive.js": {
+   "sha512": "8dc8791d425e4437c1bd90ff081b2ed8ba13fb9d3f8611677c941179f4ed6971",
+   "size": 5385
+  },
+  "app/directives/topic-form.directive.js": {
+   "sha512": "73895a6525660a96bc8c022713325a68f111a3af1da763ea0aebf42d9d163616",
+   "size": 3538
+  },
+  "app/directives/topic-list.directive.js": {
+   "sha512": "b9b2624adf2a0e5720c1ca64cdae750cbb400c25bda0e31412b2a99eb0596912",
+   "size": 5294
+  },
+  "app/directives/user-list.directive.js": {
+   "sha512": "d13ba757824400ed539d0c303b87c4e540e8ad545a659372174672590a2f3dc6",
+   "size": 779
+  },
+  "app/directives/video-player.directive.js": {
+   "sha512": "a0495167a08f01bdc3de17d7533202fcdf14c3f42db30ae97277f4a73003880c",
+   "size": 1887
+  },
+  "app/directives/votes.directive.js": {
+   "sha512": "3fcf53d8ccf85fdd5c7bf105e147374df8496f6518d3f5121e67307df441fbcd",
+   "size": 17027
+  },
+  "assets/css/elements.css": {
+   "sha512": "a4cdf78a6b7696149581e6d07d0164d81e919f4becab37e49980a7c22ed3b918",
+   "size": 314
+  },
+  "assets/css/style.css": {
+   "sha512": "10ae235044e44041899230e096f3dc5ea29afb32d8d8bcd4edb34c9dc49ab76d",
+   "size": 164631
+  },
+  "assets/img/ajax-loader.gif": {
+   "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
+   "size": 723
+  },
+  "assets/img/banner-default.jpg": {
+   "sha512": "818428d803ad24657ede8b262535369827158702754a9f1d747c4dfc130db00b",
+   "size": 206755
+  },
+  "assets/img/sprite-sheet.png": {
+   "sha512": "cd703192160409995e145a12aae246e7680ac09d2ee74974df2e3c5927cc3339",
+   "size": 5493
+  },
+  "assets/less/elements.less": {
+   "sha512": "1955f4df6b8bcea73e97a062037d91a1bfa5168c5061e26aa54d3fd5ad835318",
+   "size": 6313
+  },
+  "assets/less/style.less": {
+   "sha512": "b92faa5228f9ab5cb780ca7ed04b5cc212827793c6f0402b11f5d2793ec70d4a",
+   "size": 161802
+  },
+  "assets/lib/angular-bootstrap/angular-bootstrap.min.js": {
+   "sha512": "904457577ca18a45eb90077a90a59a283768fc520244d59afeb3dff0ca610653",
+   "size": 124078
+  },
+  "assets/lib/angular-moment/CHANGELOG.md": {
+   "sha512": "7aa316f864809a63de947157a37f079176bba24067a3fdabff250d5c2f28fc57",
+   "size": 9588
+  },
+  "assets/lib/angular-moment/CONTRIBUTING.md": {
+   "sha512": "b859da0d7c8be3000bd70fcd68a59b9b3c935ffa5b7632bd41d5b709bcedbc91",
+   "size": 2072
+  },
+  "assets/lib/angular-moment/Gruntfile.js": {
+   "sha512": "a788250230e693d3976d62bfdac730cb096b835f3bef0d6eab2fac827d95a31d",
+   "size": 937
+  },
+  "assets/lib/angular-moment/LICENSE": {
+   "sha512": "8257a4d3654ff2d893b00b7e635537c1b1447b0fc89b3bc23d5fda2dc94cd4c7",
+   "size": 1099
+  },
+  "assets/lib/angular-moment/README.md": {
+   "sha512": "aab363fdc54090a4d60cff10594a101d51ae5b7d282956f332e1072e1e2513dc",
+   "size": 5872
+  },
+  "assets/lib/angular-moment/angular-moment.js": {
+   "sha512": "4376cb1359c2fe51d9cfa3fb1a125a425a3a8a78fbb2d32e0ffe41cc96b6953b",
+   "size": 19478
+  },
+  "assets/lib/angular-moment/angular-moment.min.js": {
+   "sha512": "780b24f2c31451bd3cbb47f725cbee27ff3452aaaf0d54930d19679270046b56",
+   "size": 4934
+  },
+  "assets/lib/angular-moment/angular-moment.min.js.map": {
+   "sha512": "423b34586545cf595f12dd6e1d40965dc77b0e4f04ba7c9a7cf1437c74ab443c",
+   "size": 6722
+  },
+  "assets/lib/angular-moment/angular-moment.nuspec": {
+   "sha512": "a9b35dbbb89611f52625c8e94019ff605aa31ed5441d4800b282ac82e169b544",
+   "size": 1109
+  },
+  "assets/lib/angular-moment/bower.json": {
+   "sha512": "e65dc6458c431065a8d4df631fbd81b6ceb9c9ab42d5549fb84093bdd5f210d7",
+   "size": 522
+  },
+  "assets/lib/angular-moment/karma.conf.js": {
+   "sha512": "5a530f186995601ed7f95cde0111f4587edcb88e503207ae0a89891f9714acb1",
+   "size": 877
+  },
+  "assets/lib/angular-moment/package.json": {
+   "sha512": "af29c2495b6765b04c0c1318cc8e9abbd2528f02844535d568a59f2948828405",
+   "size": 897
+  },
+  "assets/lib/angular-moment/tests.js": {
+   "sha512": "3da5f70734eda36b9726ebd41f285706a49d31f81ee42a3d0fc7000de137c0d6",
+   "size": 33887
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect-templates.js": {
+   "sha512": "962dead5e46191674e800373e5218a1cc59f325d6416cc9547184467b069c388",
+   "size": 3228
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.js": {
+   "sha512": "49c56a64b4a94f688a86f447f79b3d6e3bf01eb50a9c225ca7cda3d0df06efeb",
+   "size": 13067
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js": {
+   "sha512": "08bf6357575894d49972ded8ef0f99109a8a4c8051b7ec3ee273c207a635cf57",
+   "size": 6113
+  },
+  "assets/lib/angular-sanitize/LICENSE.md": {
+   "sha512": "88795f3408d70f5a78e04c399351731ff161a49f0727f0cf3d048964a8aa14cb",
+   "size": 1074
+  },
+  "assets/lib/angular-sanitize/README.md": {
+   "sha512": "fcb21f8dfd4818893f89f1cc6b97c35472809e7f86c8a1c1c65dc0d158b2b156",
+   "size": 2051
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.js": {
+   "sha512": "877ed70e08e6fa8e5e3be35492cc3f71628e54f46f8e49d1209e320b6921313f",
+   "size": 26833
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.min.js": {
+   "sha512": "24f4da1b52cb36fd0ff96c65d38be6b30d7728620b19f6b39307d983fdd35509",
+   "size": 5861
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.min.js.map": {
+   "sha512": "49bd2b153c58635160bad1bba67f085d8d650636401c93d862c0d082a7024b2c",
+   "size": 10301
+  },
+  "assets/lib/angular-sanitize/bower.json": {
+   "sha512": "1dab18606047e845c1f9a79faefb877d2c545eecf73ea5a2bd7c9790b4046ee2",
+   "size": 174
+  },
+  "assets/lib/angular-sanitize/index.js": {
+   "sha512": "7ce6e41231b923681e3ea023eddc0eb98b0a66ad87673cd2018b3b06bc73f138",
+   "size": 62
+  },
+  "assets/lib/angular-sanitize/package.json": {
+   "sha512": "1d914dfa8ee2f07fd0d5973d95d710fc9fe95d2fc6166991f4923a7d632005dc",
+   "size": 704
+  },
+  "assets/lib/angular/angular-animate.min.js": {
+   "sha512": "dff68236699f7bc995143e4f54d9122c13ee7b654086b32d70fd316b57306656",
+   "size": 25599
+  },
+  "assets/lib/angular/angular-aria.min.js": {
+   "sha512": "e2c51e87bfb2c64459dcc3194ad65ae9aa62102fda2c2b5d5c83c9d05157caa3",
+   "size": 3773
+  },
+  "assets/lib/angular/angular-route.min.js": {
+   "sha512": "aa68f619dcde2d2f356fb0ac4eef3853bc004afef41c9042d525ce151704ee3a",
+   "size": 4389
+  },
+  "assets/lib/angular/angular.min.js": {
+   "sha512": "7c60d0ded2382947ccdf961b8427717d4f30d2593f88c9fdd0a3211595bd9f42",
+   "size": 148199
+  },
+  "assets/lib/bootstrap/bootstrap.min.css": {
+   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
+   "size": 121200
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.css": {
+   "sha512": "72d6d433d5564a6108482d39216bcf68ee1b08f8fbcf3af30ca7d787400c1e52",
+   "size": 26132
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.css.map": {
+   "sha512": "29fb34a587af9a4acb185ff3614c0d05afb29c4a759df232bc500553d76a80be",
+   "size": 47706
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.min.css": {
+   "sha512": "b6aba9e6de57c895e5bd7f1bfc4f69234b30180e00ba0b3316abdd58049adbfe",
+   "size": 23409
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.min.css.map": {
+   "sha512": "35c4094dd35a6d01fecb850fc58f6815e9bd188e70bc5f2aa52d90030d3daea8",
+   "size": 25648
+  },
+  "assets/lib/bootstrap/css/bootstrap.css": {
+   "sha512": "a658bd68aabbe7c3cc76caa3340f80bb8089ed96ad2c20978a79e549fbf4db7c",
+   "size": 146010
+  },
+  "assets/lib/bootstrap/css/bootstrap.css.map": {
+   "sha512": "54232cbdef261553779d60d4c83cd84124147588fbebd3bef6ee0d1cb82473c2",
+   "size": 389287
+  },
+  "assets/lib/bootstrap/css/bootstrap.min.css": {
+   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
+   "size": 121200
+  },
+  "assets/lib/bootstrap/css/bootstrap.min.css.map": {
+   "sha512": "abb1a70ad42986762144fb8700d0adea6130e7a611cf9e978e51248a4e00b775",
+   "size": 542194
+  },
+  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.eot": {
+   "sha512": "efc910c96b9f5c58ea11a84577cf60ae995503b1ee670bb7e7d4a413b7403769",
+   "size": 20127
+  },
+  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.svg": {
+   "sha512": "c2e77eab327af1469097c31bc0daf820c066b0222059d8ff0ecebca974b62b75",
+   "size": 108738
+  },
+  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf": {
+   "sha512": "2b066e06506ef20d69698d37cdec552176ef3f64a1151a99a1d02d72d39ce12c",
+   "size": 45404
+  },
+  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.woff": {
+   "sha512": "f5366ab255afefe3fe06150e8509e776b5618ff50fe3e0fa8e4d715d645b1e44",
+   "size": 23424
+  },
+  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2": {
+   "sha512": "3811804f56ec3c82f0bef35de0a9250e546a1e357fb59e2784f610d638fec355",
+   "size": 18028
+  },
+  "assets/lib/bootstrap/js/bootstrap.js": {
+   "sha512": "850780aed292053275b1e8118f24680e1e34f6d77bd0ba32eb6bac041dfe3b1e",
+   "size": 69707
+  },
+  "assets/lib/bootstrap/js/bootstrap.min.js": {
+   "sha512": "8b3b64a1bb2f9e329f02d4cd7479065630184ebaed942ee61a9ff9e1ce34c28c",
+   "size": 37045
+  },
+  "assets/lib/bootstrap/js/npm.js": {
+   "sha512": "81bc329ad688d411fcf3decb28454238ec478c192b6ac19a3ee07e9939556cf1",
+   "size": 484
+  },
+  "assets/lib/dropzone/dropzone.js": {
+   "sha512": "5e16c509713762cd14365e2affe6c9d376ea0e6f1268553631dc41dca5fd6111",
+   "size": 64399
+  },
+  "assets/lib/jquery/jquery.min.js": {
+   "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
+   "size": 86351
+  },
+  "assets/lib/moment/moment.js": {
+   "sha512": "651e54d33e16ab0ca2fafcfb9c06ef8de815921286358f588e4652c92258e6a7",
+   "size": 104409
+  },
+  "assets/lib/videos/videogular-angulartics/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-angulartics/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-angulartics/README.md": {
+   "sha512": "5f2098206da960d81d6e6052085fbbeaf1f806cfd3f268b44ed50b965243d8c3",
+   "size": 1903
+  },
+  "assets/lib/videos/videogular-angulartics/bower.json": {
+   "sha512": "a056beefbc80d8e0468c33248821718c83cdc6618e401c4a8f12042363a5ad98",
+   "size": 174
+  },
+  "assets/lib/videos/videogular-angulartics/index.js": {
+   "sha512": "63a16d54227d014ae4c854054bad350634a8fe16df3172c8a69d25bc3024370a",
+   "size": 135
+  },
+  "assets/lib/videos/videogular-angulartics/package.json": {
+   "sha512": "7c1cc8d20e47ba610c3f4d6e1c53b951ee18b73d8476de70e6de9866fca36519",
+   "size": 282
+  },
+  "assets/lib/videos/videogular-angulartics/vg-analytics.js": {
+   "sha512": "af50581baa2273f689242eb01ca4ecb3cbd66d8fbf11647f0a8bb0446ac40e9b",
+   "size": 10306
+  },
+  "assets/lib/videos/videogular-angulartics/vg-analytics.min.js": {
+   "sha512": "b10f8773b79e82bb5fa024261a092ab7dc03a3e8f74706a5e196566019b8dcea",
+   "size": 2268
+  },
+  "assets/lib/videos/videogular-buffering/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-buffering/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-buffering/README.md": {
+   "sha512": "678739d9d3ae7b144f1cfb29fd1d00c993d1c032fdfd09ea2e614f75a24d68b9",
+   "size": 1901
+  },
+  "assets/lib/videos/videogular-buffering/bower.json": {
+   "sha512": "7d2546ae0ab228afb9ed046e576b2bf3d3a5b19facb2009233c420e8ebc4acf2",
+   "size": 142
+  },
+  "assets/lib/videos/videogular-buffering/index.js": {
+   "sha512": "8e717234d6f9076e5f225f8b8a1393167b00028c209b40cc2638506d8777b50c",
+   "size": 111
+  },
+  "assets/lib/videos/videogular-buffering/package.json": {
+   "sha512": "c4899b4a39773133b3de0453914260fe651f28bc45d3618d8061171622002920",
+   "size": 239
+  },
+  "assets/lib/videos/videogular-buffering/vg-buffering.js": {
+   "sha512": "d887384ddd9225b3a19896751e487d8f5b1e4fd1e1718cbe47b06080ed434b25",
+   "size": 3800
+  },
+  "assets/lib/videos/videogular-buffering/vg-buffering.min.js": {
+   "sha512": "5b2b6cba164ec58df42dbdc59167699efe859ef23b4e24776b2a72747f145152",
+   "size": 1122
+  },
+  "assets/lib/videos/videogular-controls/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-controls/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-controls/README.md": {
+   "sha512": "2c020e197b867bde1446d170b8843e05340e259b45e8d6eff6b4137a6a3025b1",
+   "size": 1897
+  },
+  "assets/lib/videos/videogular-controls/bower.json": {
+   "sha512": "c25390dd917eb1aa18cfc99b1abe93de483cfee42308b6dd614a9fa61903083c",
+   "size": 140
+  },
+  "assets/lib/videos/videogular-controls/index.js": {
+   "sha512": "3a622f82c57c374a402d8bdd2d5c498dd9c67be64ef330fa5d1cc699aeca1f54",
+   "size": 109
+  },
+  "assets/lib/videos/videogular-controls/package.json": {
+   "sha512": "75efb697976e488cf8ed04ea9ee71d97a6389f0381314e83f430b73f650d142c",
+   "size": 238
+  },
+  "assets/lib/videos/videogular-controls/vg-controls.js": {
+   "sha512": "9ecbca93a0ceab8130fa79878d4e6e1d90bc9167fa46cb97e0f9cc83021ae835",
+   "size": 53147
+  },
+  "assets/lib/videos/videogular-controls/vg-controls.min.js": {
+   "sha512": "b894b8d8cf8a0741ede20319ef30d964bad362377dae8371d3ca1de399dcc988",
+   "size": 16496
+  },
+  "assets/lib/videos/videogular-ima-ads/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-ima-ads/LICENSE": {
+   "sha512": "f05cbcc531d57a5aab5553a3960edeb27b6eed10ded42bb0c544525615b3461e",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-ima-ads/README.md": {
+   "sha512": "3a876a98d5244d000295e486f69e2827b4f9e6abeabfccedbf94a804f7b29f54",
+   "size": 2482
+  },
+  "assets/lib/videos/videogular-ima-ads/bower.json": {
+   "sha512": "9d92d226b287e972b04ce5bc24ab1ede21966909def86d1db74f423aee200090",
+   "size": 138
+  },
+  "assets/lib/videos/videogular-ima-ads/index.js": {
+   "sha512": "b5d76b3449acd8980c431701ea08ca00d9563ad34911e2275db5ae35bbb1baa9",
+   "size": 106
+  },
+  "assets/lib/videos/videogular-ima-ads/package.json": {
+   "sha512": "87bbafb6d001022e9eb66a28bdd9c143cb293f6f2fb92587211561e67993c7f8",
+   "size": 237
+  },
+  "assets/lib/videos/videogular-ima-ads/vg-ima-ads.js": {
+   "sha512": "ee4c68978233fc9db94129160644a0ceae7b8e57cf6d0f2056cdda719bf73022",
+   "size": 10948
+  },
+  "assets/lib/videos/videogular-ima-ads/vg-ima-ads.min.js": {
+   "sha512": "17c64df3c4d9f858b46d12dc3dabe85538cad216e00b1e81b48d2dc8724d29b9",
+   "size": 4002
+  },
+  "assets/lib/videos/videogular-overlay-play/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-overlay-play/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-overlay-play/README.md": {
+   "sha512": "855b75571eba286166de018714a22a18843f6c9100e15aeb00c9c48eb7a73036",
+   "size": 1913
+  },
+  "assets/lib/videos/videogular-overlay-play/bower.json": {
+   "sha512": "ddd5da22fc579f637094b315c790f4c0de63a1544875219a6006f6f77a40463d",
+   "size": 148
+  },
+  "assets/lib/videos/videogular-overlay-play/index.js": {
+   "sha512": "4874f94d80dde215c1ea27cdb1eace5d6084a25cc0f75be5e6bd2d3cfbb85211",
+   "size": 116
+  },
+  "assets/lib/videos/videogular-overlay-play/package.json": {
+   "sha512": "1b2f2105984ffa894e67fe7a4d541686c04322e90bc07abe399a7b5b4944c8fe",
+   "size": 242
+  },
+  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.js": {
+   "sha512": "9367947d62a853dac2e88a328a6f7e48764913194147520eb38bf9c1176d7675",
+   "size": 2568
+  },
+  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.min.js": {
+   "sha512": "9a1c98346395e7d0611f8cfe721ad83d00741b2585d02e9c3cb2bb287c8802b8",
+   "size": 846
+  },
+  "assets/lib/videos/videogular-poster/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-poster/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-poster/README.md": {
+   "sha512": "ea16ea4791176699db1f0ee8e8d6733c780cbe42d04bde14e3e6e705ef58a887",
+   "size": 1889
+  },
+  "assets/lib/videos/videogular-poster/bower.json": {
+   "sha512": "ecdcc18fde77d0345e9fac992c0a4a94bb6495170d7d37acbc9fe7ec0a346909",
+   "size": 136
+  },
+  "assets/lib/videos/videogular-poster/index.js": {
+   "sha512": "7bff4fbf11dfb1b2a4e1617dc5563ab81123a8bafda78a5b82c81d8e3524dd26",
+   "size": 105
+  },
+  "assets/lib/videos/videogular-poster/package.json": {
+   "sha512": "02440018c0ab7cae9c0553259782f1558861325f0b88e942b61eacfbe387e0b1",
+   "size": 236
+  },
+  "assets/lib/videos/videogular-poster/vg-poster.js": {
+   "sha512": "cba2a9155bfae750bfbf4887fb1e2827c573c708be5b35e6ab16b29add145495",
+   "size": 1798
+  },
+  "assets/lib/videos/videogular-poster/vg-poster.min.js": {
+   "sha512": "a2875381aa96d16c66332fce7c501dffdd80cf4e5571fd40166a5fe3914f7c21",
+   "size": 528
+  },
+  "assets/lib/videos/videogular-themes-default/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-themes-default/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-themes-default/README.md": {
+   "sha512": "97b398dea1bde39c80c4c9f12630c072ab19fb613672e0623ddf2c41d025acd5",
+   "size": 1801
+  },
+  "assets/lib/videos/videogular-themes-default/bower.json": {
+   "sha512": "d54c0f170974843e8985a54c5e711b3a51a9e4313be1f763315203f76ba8aed5",
+   "size": 311
+  },
+  "assets/lib/videos/videogular-themes-default/fonts/videogular.dev.svg": {
+   "sha512": "fdd6592253a996beee0cde7ec796ffbd21740448fc08d16b11426ab9f1498ec6",
+   "size": 5639
+  },
+  "assets/lib/videos/videogular-themes-default/fonts/videogular.eot": {
+   "sha512": "c75112b0d88a2b14c6e30cc99865d1394d4e4f608513e474329c39f5c2df97cd",
+   "size": 2544
+  },
+  "assets/lib/videos/videogular-themes-default/fonts/videogular.svg": {
+   "sha512": "7e98167c67730bde8f041e9e4ffea3797732fec50bc46561806838952ef6044d",
+   "size": 5127
+  },
+  "assets/lib/videos/videogular-themes-default/fonts/videogular.ttf": {
+   "sha512": "f7b136395bae1cd8069dc65cda033e756a7fc30158d41a30e859167edc835893",
+   "size": 2380
+  },
+  "assets/lib/videos/videogular-themes-default/fonts/videogular.woff": {
+   "sha512": "73ef31a2844e8df48ef52416073f60c295f3d0698f121ce10fdc30ba03f73849",
+   "size": 1948
+  },
+  "assets/lib/videos/videogular-themes-default/package.json": {
+   "sha512": "624b062d6a62b16962e2e84a33601abe422ff5154f2f4910f3f034ae04cc6dab",
+   "size": 250
+  },
+  "assets/lib/videos/videogular-themes-default/videogular.css": {
+   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
+   "size": 14913
+  },
+  "assets/lib/videos/videogular-themes-default/videogular.css.map": {
+   "sha512": "92815a730865699a4556a2be12c52c2844781259d548d81b2bcad6424a34b7f2",
+   "size": 8021
+  },
+  "assets/lib/videos/videogular-themes-default/videogular.min.css": {
+   "sha512": "57afacf328adbb85743073e86dae0ae0db895d471fe5d42fe5e1680db92cf1e1",
+   "size": 11264
+  },
+  "assets/lib/videos/videogular-themes/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular-themes/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular-themes/README.md": {
+   "sha512": "97b398dea1bde39c80c4c9f12630c072ab19fb613672e0623ddf2c41d025acd5",
+   "size": 1801
+  },
+  "assets/lib/videos/videogular-themes/bower.json": {
+   "sha512": "d54c0f170974843e8985a54c5e711b3a51a9e4313be1f763315203f76ba8aed5",
+   "size": 311
+  },
+  "assets/lib/videos/videogular-themes/fonts/videogular.dev.svg": {
+   "sha512": "fdd6592253a996beee0cde7ec796ffbd21740448fc08d16b11426ab9f1498ec6",
+   "size": 5639
+  },
+  "assets/lib/videos/videogular-themes/fonts/videogular.eot": {
+   "sha512": "c75112b0d88a2b14c6e30cc99865d1394d4e4f608513e474329c39f5c2df97cd",
+   "size": 2544
+  },
+  "assets/lib/videos/videogular-themes/fonts/videogular.svg": {
+   "sha512": "7e98167c67730bde8f041e9e4ffea3797732fec50bc46561806838952ef6044d",
+   "size": 5127
+  },
+  "assets/lib/videos/videogular-themes/fonts/videogular.ttf": {
+   "sha512": "f7b136395bae1cd8069dc65cda033e756a7fc30158d41a30e859167edc835893",
+   "size": 2380
+  },
+  "assets/lib/videos/videogular-themes/fonts/videogular.woff": {
+   "sha512": "73ef31a2844e8df48ef52416073f60c295f3d0698f121ce10fdc30ba03f73849",
+   "size": 1948
+  },
+  "assets/lib/videos/videogular-themes/package.json": {
+   "sha512": "624b062d6a62b16962e2e84a33601abe422ff5154f2f4910f3f034ae04cc6dab",
+   "size": 250
+  },
+  "assets/lib/videos/videogular-themes/videogular.css": {
+   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
+   "size": 14913
+  },
+  "assets/lib/videos/videogular-themes/videogular.css.map": {
+   "sha512": "92815a730865699a4556a2be12c52c2844781259d548d81b2bcad6424a34b7f2",
+   "size": 8021
+  },
+  "assets/lib/videos/videogular-themes/videogular.min.css": {
+   "sha512": "57afacf328adbb85743073e86dae0ae0db895d471fe5d42fe5e1680db92cf1e1",
+   "size": 11264
+  },
+  "assets/lib/videos/videogular/Gruntfile.js": {
+   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
+   "size": 1177
+  },
+  "assets/lib/videos/videogular/LICENSE": {
+   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
+   "size": 1073
+  },
+  "assets/lib/videos/videogular/README.md": {
+   "sha512": "84631604ebf76bfed1929cee8fdb599682bce999e1badd2f9ab715858ac10550",
+   "size": 1757
+  },
+  "assets/lib/videos/videogular/bower.json": {
+   "sha512": "bb6ed7ce0422eb2292f96b4ebcd0ea0e461e70f7dcd928545af102650061ce5e",
+   "size": 161
+  },
+  "assets/lib/videos/videogular/index.js": {
+   "sha512": "4cedcb5f5f2beebe22fdea6abbe935151617770c558640c700ebe268b2eeb77c",
+   "size": 119
+  },
+  "assets/lib/videos/videogular/package.json": {
+   "sha512": "997cef1e558447fc40dcf35959ea02462752242df0b30a806c48b300418f02cb",
+   "size": 258
+  },
+  "assets/lib/videos/videogular/videogular.js": {
+   "sha512": "bd26f26a02dddec74e9c4ef77add6b0a20aa471fcf100df182cba70213136ee0",
+   "size": 63473
+  },
+  "assets/lib/videos/videogular/videogular.min.js": {
+   "sha512": "aa498c5e99a5da70528db42f037391a831904230fef39dc547ba756f9a27eb9b",
+   "size": 20513
+  },
+  "assets/lib/zeronet/Class.coffee": {
+   "sha512": "ae32c72fe6615132791361a5e8cf412ddb2a2fa59d9d33db4bb8e29d50a8568d",
+   "size": 490
+  },
+  "assets/lib/zeronet/ZeroChat.coffee": {
+   "sha512": "8ecf12c9bea49ba70a38e4f6254e1034e3f6c7c4e5cdade52e66486fa35004a8",
+   "size": 549
+  },
+  "assets/lib/zeronet/ZeroFrame.coffee": {
+   "sha512": "342048e3d262bc140212e271f752bdb20fbd103bef6073f5107eb2fc031eda23",
+   "size": 2207
+  },
+  "assets/lib/zeronet/all.js": {
+   "sha512": "fae592d3a8f2f7b45c0472247125e7a9b1b894a28bbe1b34b742697801a20860",
+   "size": 255791
+  },
+  "assets/lib/zeronet/class.js": {
+   "sha512": "affe3568586a4883a5cbe628743ee317dbcbfef58af4b15e4933828d09e581b9",
+   "size": 1341
+  },
+  "assets/lib/zeronet/zerochat.js": {
+   "sha512": "1bb1b9020eccacace9735baebc8579f3e75fd6ba12af2801816676d3b89c7259",
+   "size": 1384
+  },
+  "assets/lib/zeronet/zeroframe.js": {
+   "sha512": "d0066c5b409ef484cd48fe9d7fd74625370d0c5076047248863fd9e965b78493",
+   "size": 4566
+  },
   "css/all.css": {
    "sha512": "1baeab2b22dca59d434800b5ffcbcf470520dc7f2eee7ee4a0a7ebc7e87468ef",
    "size": 163041
@@ -15,64 +675,32 @@
    "size": 672
   },
   "dbschema.json": {
-   "sha512": "7996d60b522185ed085f718fb4e2afdfa4c4358a9225190d7940d41fd701bd58",
-   "size": 3064
+   "sha512": "6ded190bdfd463dfd7b76595d713d50c8ee67f481ea5ae1d54efe955357deae1",
+   "size": 5326
   },
-  "img/edit.png": {
-   "sha512": "60ba4297e205b038bf7852ead2b88f9373cd8848408bb258dbcebb086d43f056",
-   "size": 237
-  },
-  "img/loading.gif": {
-   "sha512": "8a42b98962faea74618113166886be488c09dad10ca47fe97005edc5fb40cc00",
-   "size": 723
-  },
-  "img/topic-chat.png": {
-   "sha512": "f41719987d5f5d797591857648c0d4cf33a11d7f1a42428a2456c28e0957c88e",
-   "size": 238
-  },
-  "img/topic-group.png": {
-   "sha512": "1f9305544e3350d62f0c76caf5202e256848206d18485e0451dc050201f86a7b",
-   "size": 310
+  "edit.html": {
+   "sha512": "58814ff5e617cf3f21c84f497817e2dab54777d559193d18cd2ce7defd4b0ad6",
+   "size": 5984
   },
   "index.html": {
-   "sha512": "3eec318f78ad5cf01e34ed1e813dd14f8534eace2575ecb119857e6eeeaac145",
-   "size": 7864
+   "sha512": "c7a0d5316c28523467aa05beaf78499ada1d6c87848f28411ea44f0d8e1981fd",
+   "size": 5577
   },
-  "js/all.js": {
-   "sha512": "d52ed295f5849693ad2fa04396e2510936b6d1b8abcfdb4570f786e2e92f8bab",
-   "size": 227837
+  "moderate.html": {
+   "sha512": "b97a74833a634da1a462cd76d000a7d38d83dba329eabbefe0b8530d5ca908f4",
+   "size": 11210
   },
-  "languages/da.json": {
-   "sha512": "f1670f1095b803cb7c26964afd7f3c0e97bd5e3c789e6325b93d2aa35a44f911",
-   "size": 1190
+  "new.html": {
+   "sha512": "c94a2c15109e77aa110a352497307706fd91ec98161ce6ea19088373dad46e15",
+   "size": 4034
   },
-  "languages/fr.json": {
-   "sha512": "0c370934896255d20af0552e55757f48df79c386412f696dba050abf5ef34854",
-   "size": 1229
+  "topic.html": {
+   "sha512": "2e6682e7c8b5d8f8e839d182823f28a8db12346fdfd84b796de214abe9ff6480",
+   "size": 10583
   },
-  "languages/hu.json": {
-   "sha512": "9a8e6178a4a30a5879173529934fcc6f68bf32f10c27d08f0d87d28f970822b1",
-   "size": 1202
-  },
-  "languages/it.json": {
-   "sha512": "fb8f20094d6201b4013a785f6c31d5339a2c94fd86b0396d91c8f3bb8711c3e6",
-   "size": 1237
-  },
-  "languages/pl.json": {
-   "sha512": "d68b3b31cc68c8d2cc4f13aefac1053c3def536fe6440cbab48ac199f2f06481",
-   "size": 1285
-  },
-  "languages/uk.json": {
-   "sha512": "d8025af0fbdd7b586774d2fedb1dc8790dc7921bf8e058e370bd08b3b6b2555f",
-   "size": 1570
-  },
-  "languages/zh-tw.json": {
-   "sha512": "e1fa599b88cd0e75b16a393e3e1d260b6ed533ae5760241265f159a3c319e4f8",
-   "size": 1131
-  },
-  "languages/zh.json": {
-   "sha512": "d549f4ca956d53ec08956d8609063954dd2795a22f8126ab5c9f5f14b971b700",
-   "size": 1131
+  "user-admin.html": {
+   "sha512": "7b65835c44afaf12006f30e0922859aacccbf8aa6478ed3718e6af792e9238a5",
+   "size": 5344
   }
  },
  "ignore": "((js|css)/(?!all.(js|css))|data/users/.*db|data/users/.*/.*|data/archived|.*.py)",
@@ -83,7 +711,7 @@
   }
  },
  "inner_path": "content.json",
- "modified": 1480938461.883878,
+ "modified": 1484487298.489019,
  "postmessage_nonce_security": true,
  "settings": {
   "admin": "nofish",
@@ -94,15 +722,15 @@
   ]
  },
  "sign": [
-  62250647220060625396747986225500569422341236994022983072418748906180561777423,
-  72070029001402856434561990455489218118272287441416821055584451924533943696046
+  56089433528487225398680367256129707077187374784111011112111524473622456041994,
+  115198805729809643938101658745515436964155796508629081808817363456544936921708
  ],
- "signers_sign": "HBPn5urOC/c0y8mGEvO0lDCFGHg8bJ4SQUGaSYRCq8MjJc158SgAwzkChCxX35otOZspvbUQJI7zk5pDo0qknBE=",
+ "signers_sign": "G+i37SRfLQimaEVk580j9IscJZVUmZ80l4NTSRI7+luCu/KjXXoTvUZcvyB0AJIjMqzCyWTp8xOvARSoC3XFPRM=",
  "signs": {
-  "16JdWTFUUSQyqH6Ks72ASzG8CCpd4ZMzZb": "G+rRj29sBSEA0I+2yKPuZw602+SQEe3jdLHMOb/cRUxDLq+GWCf1Xd2I/HByZnL8eHb5cRlLBe35tqHY85XRRdg="
+  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "G2Pfhm33yv2cCBewg68RgGPAhMezMQQBP6VMi8RGSEf66ZppREAkv5//k1feUP8CfPX2BbjzxvEwnbaTGodEwIM="
  },
  "signs_required": 1,
- "title": "myZeroTalk",
+ "title": "ZeroVo\u02c4T",
  "translate": [
   "index.html",
   "js/all.js"

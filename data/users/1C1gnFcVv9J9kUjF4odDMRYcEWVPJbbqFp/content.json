@@ -1,0 +1,41 @@
+{
+ "address": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb",
+ "cert_auth_type": "web",
+ "cert_sign": "G/nikm0eGXtVnydgUvOEdmoPbW0TgFW6sO1Sfph7HN4j3Jo3FOCc4BYtPJ7ZS48ex3ysac80CZCyoHFd580RhgI=",
+ "cert_user_id": "davidnelband@zeroid.bit",
+ "files": {
+  "Cat_Saloon.mp4": {
+   "sha512": "8e823c4380a76001b3b719ee08fe1a5ef7d0e0a9512d3c3b78a4506c7ff7e0a1",
+   "size": 4573210
+  },
+  "V3nom.gif": {
+   "sha512": "9fb23386cc27254d6e7a3a24dfde70a7a6946e871e4d3ec5d376b2b4ad0f1c82",
+   "size": 151778
+  },
+  "data.json": {
+   "sha512": "4e22490df3d18421cd649d267c565ef08f12c90763f9322bc4e22b0f02fe5b39",
+   "size": 25266
+  },
+  "topic-chat.png": {
+   "sha512": "f41719987d5f5d797591857648c0d4cf33a11d7f1a42428a2456c28e0957c88e",
+   "size": 238
+  },
+  "topic-group.png": {
+   "sha512": "1f9305544e3350d62f0c76caf5202e256848206d18485e0451dc050201f86a7b",
+   "size": 310
+  },
+  "unnamed.png": {
+   "sha512": "ea2df1cdaa133a547090637a263b7292759f1c3e4feaf9e2ba241e5259493183",
+   "size": 60201
+  },
+  "wwlogo.png": {
+   "sha512": "ba513aec51ce55391dfd08ab7e5c8a3c77a2391b7fd0f46facdac73a990dbd68",
+   "size": 151512
+  }
+ },
+ "inner_path": "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/content.json",
+ "modified": 1482265571.678103,
+ "signs": {
+  "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp": "G1ttYcH23CUJyA0Q6Jgqh5VM9PRFv8T5HDung5+cs8mTf9gktcHoCOVj1rf3RupYTxzi8pqjUN5yPyJsHKrzZNY="
+ }
+}
