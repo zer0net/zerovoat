@@ -318,6 +318,14 @@ main aside.main-sidebar ul li a.btn {
 #channels .channel-list small {
   vertical-align: super;
 }
+#channels .channel-list .channel-list-counter {
+  width: 100%;
+  float: left;
+  padding: 0 5px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #B10DC9;
+}
 #channels .channel-list .channel-item {
   float: left;
   padding: 5px;
@@ -328,11 +336,16 @@ main aside.main-sidebar ul li a.btn {
   }
 }
 #channels .channel-list .channel-item .channel-item-wrap {
+  border: 1px solid transparent;
   background-color: white;
   width: 100%;
   float: left;
   min-height: 220px;
   padding: 10px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 #channels .channel-list .channel-item .channel-item-wrap > div {
   padding: 0;
@@ -395,7 +408,10 @@ main aside.main-sidebar ul li a.btn {
 #channels .channel-list .channel-item .channel-item-bottom {
   font-size: 12px;
 }
-#channels .channel-list .channel-item:hover a.btn-go {
+#channels .channel-list .channel-item:hover .channel-item-wrap {
+  border: 1px solid #B10DC9;
+}
+#channels .channel-list .channel-item:hover .channel-item-wrap a.btn-go {
   color: #666;
 }
 .channel-header .channel-item-top h3 {

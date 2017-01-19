@@ -101,7 +101,7 @@
 			"user_id": "davidnelband@zeroid.bit"
 		}
 	],
-	"next_comment_id": 34,
+	"next_comment_id": 36,
 	"comment": [
 		{
 			"comment_id": 2,
@@ -339,6 +339,22 @@
 			"body": "love pipboy",
 			"added": 1482157724153,
 			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp34",
+			"comment_parent_id": 0,
+			"topic_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r961",
+			"body": "welcome!",
+			"added": 1484742260670,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp35",
+			"comment_parent_id": 0,
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "Da, eto typo novoyo reddit, tolko Xuje :)",
+			"added": 1484743107839,
+			"user_id": "davidnelband@zeroid.bit"
 		}
 	],
 	"topic_vote": [
@@ -449,9 +465,44 @@
 			"vote": 1,
 			"added": 1482265571479,
 			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb51",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"vote": 1,
+			"added": 1484742114289,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb52",
+			"topic_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r962",
+			"vote": 1,
+			"added": 1484742242900,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb53",
+			"topic_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r961",
+			"vote": 1,
+			"added": 1484742263186,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb54",
+			"topic_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b1",
+			"vote": 1,
+			"added": 1484743051154,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb55",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw2",
+			"vote": 1,
+			"added": 1484743054905,
+			"user_id": "davidnelband@zeroid.bit"
 		}
 	],
-	"next_topic_vote_id": 51,
+	"next_topic_vote_id": 56,
 	"comment_vote": [
 		{
 			"comment_vote_id": 7,
@@ -571,9 +622,37 @@
 			"vote": 1,
 			"added": 1482157726240,
 			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_vote_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp26",
+			"comment_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp35",
+			"vote": 1,
+			"added": 1484743115763,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_vote_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp27",
+			"comment_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b1",
+			"vote": 1,
+			"added": 1484743119460,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_vote_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp28",
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N4",
+			"vote": 0,
+			"added": 1484743121438,
+			"user_id": "davidnelband@zeroid.bit"
+		},
+		{
+			"comment_vote_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp29",
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N5",
+			"vote": 1,
+			"added": 1484743123921,
+			"user_id": "davidnelband@zeroid.bit"
 		}
 	],
-	"next_comment_vote_id": 26,
+	"next_comment_vote_id": 30,
 	"channel": [
 		{
 			"channel_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp1",

@@ -1,0 +1,82 @@
+{
+	"user": [
+		{
+			"user_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw",
+			"user_name": "balancer73@zeroid.bit",
+			"added": 1484676099502
+		}
+	],
+	"channel": [
+		{
+			"body": null,
+			"edited": null,
+			"added": 1484676150490,
+			"user_id": "balancer73@zeroid.bit",
+			"name": "Russian",
+			"title": null,
+			"channel_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"json_id": 36,
+			"description": "For russian speaking"
+		}
+	],
+	"next_channel_id": 2,
+	"topic": [
+		{
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"channel_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"title": "Это что-то типа нового Reddit?",
+			"body": "Сабж.",
+			"type": "topic",
+			"added": 1484676173255,
+			"user_id": "balancer73@zeroid.bit"
+		},
+		{
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw2",
+			"channel_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"title": "Занимательная топонимика: мечта логопеда",
+			"type": "topic",
+			"added": 1484676784872,
+			"user_id": "balancer73@zeroid.bit"
+		}
+	],
+	"next_topic_id": 3,
+	"file": [
+		{
+			"file_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"item_type": "topic",
+			"item_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw2",
+			"file_type": "jpg",
+			"file_name": "hdmUJrYo5-A.jpg",
+			"user_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw",
+			"added": 1484676784028
+		}
+	],
+	"next_file_id": 2,
+	"comment": [
+		{
+			"comment_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"comment_parent_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N1",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "Вот и можно пощупать :) «Хабраэффект» не получится, т.к. ZeroNet. Обломать с закрытием разработчики не смогут, так как оно клонируется. Если будет работать — почему бы и не пощупать? :)",
+			"added": 1484677756543,
+			"user_id": "balancer73@zeroid.bit"
+		},
+		{
+			"comment_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw2",
+			"comment_parent_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N5",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "Подождём, пока допилят, или допилим сами :)",
+			"added": 1484678314617,
+			"user_id": "balancer73@zeroid.bit"
+		},
+		{
+			"comment_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw3",
+			"comment_parent_id": 0,
+			"topic_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b1",
+			"body": "Я смотрел в своё время. Но идея не показалась мне жизнеспособной. Сами по себе федеративные сети — это неплохо, но там нет нормального распространения контента. И они пилят собственные движки, что приводит к массе паразитных расходов сил... Опять же, пытаются раскрутить сети с нуля. Не должно взлететь.\n\n...\n\nЯ пытаюсь решить подобную задачу с другой стороны. Взять популярный форум и реализовать распространение/обмен контентом с другими форумами через реализацию протокола обмена сообщениями и драйверов к популярным форумным движкам. ИМХО, так шансов получить живучую систему больше. Хотя бы потому, что базироваться будет на уже имеющемся сообществе :)\n\nПравда, разрабатываю проект в одиночку и в очень фоновом, ленивом режиме, так что за два года получил только простые ретрансляции между парой движков.\n\nhttp://www.infonesy.wrk.ru/\n\nС ZeroNet двухстороннее гейтование в планах. Как только решу, что делать с большими объёмами данных в ZeroNet :)\n\nhttp://127.0.0.1:43110/1F4WVHDpQYxuJL6xEY3EZTYkZds9TTjVHC/\n\nhttp://127.0.0.1:43110/17yiPtXkxqJY6RDyxfh1ZYYWhdq92tbQpE/",
+			"added": 1484759899974,
+			"user_id": "balancer73@zeroid.bit"
+		}
+	],
+	"next_comment_id": 4
+}

@@ -398,6 +398,15 @@ main {
     		vertical-align: super;			
 		}
 
+		.channel-list-counter {
+		    width: 100%;
+		    float: left;
+		    padding: 0 5px;
+		    line-height: 100%;
+		    text-transform: uppercase;
+		    color: #B10DC9;			
+		}
+
 		.channel-item {
 			float: left;
 			padding: 5px;
@@ -407,11 +416,13 @@ main {
 			}
 
 			.channel-item-wrap {
+				border:1px solid transparent;
 				background-color: white;
 			    width: 100%;
 			    float: left;
 			    min-height: 220px;
 			    padding: 10px;
+				.transition();
 
 			    > div {
 			    	padding: 0;
@@ -490,9 +501,11 @@ main {
 			}
 
 			&:hover {
-
-				a.btn-go {
-					color: #666;
+				.channel-item-wrap {
+					border:1px solid #B10DC9;
+					a.btn-go {
+						color: #666;
+					}
 				}
 			}
 		}		

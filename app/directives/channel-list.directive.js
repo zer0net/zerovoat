@@ -20,6 +20,7 @@ app.directive('channelList', [
     };
 
     var template =  '<div class="channel-list col-lg-12">' +
+                      '<div class="channel-list-counter"><p style="float:right; text-align:right; text-transform:uppercase:">number of channels:{{channels.length}}</p></div>' +
                       '<div ng-repeat="channel in channels" class="channel-item col-xs-6 col-sm-4 col-md-3" ng-init="countChannelTopics(channel)">' +
                           '<div class="channel-item-wrap" ng-init="renderChannelListItem(channel)">' +
                             '<div class="channel-item-top col-xs-12">' +
@@ -35,12 +36,12 @@ app.directive('channelList', [
                                 '</div>' +                              
                               '</div>' +
                             '</div>' +
+                            '<div class="channel-item-description col-xs-12">' +
+                              '<article ng-bind="channel.description"></article>' +
+                            '</div>' +
                             '<div class="channel-item-bottom col-xs-12">' +
                               'Created <span am-time-ago="channel.added"></span><br/>' +
                               '<span class="blue user-name" ng-bind="channel.user_name"></span>' +
-                            '</div>' +
-                            '<div class="channel-item-description col-xs-12">' +
-                              '<article ng-bind="channel.description"></article>' +
                             '</div>' +
                           '</div>' +
                       '</div>' +

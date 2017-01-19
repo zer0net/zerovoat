@@ -1,0 +1,17 @@
+{
+ "address": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb",
+ "cert_auth_type": "web",
+ "cert_sign": "G8eXxg2jVHPHT/zs3zwOvr6pocZOHOlyu0Yvbq7A5NW6ODAkrMDLENaOoMRqPaff7cGGHbHxRzsdeuyH4YKE/rI=",
+ "cert_user_id": "denisdenisov@zeroid.bit",
+ "files": {
+  "data.json": {
+   "sha512": "86d4878664e7d5a5e03a5a9e2e9c360e7abb8a0252d3790c3b6db69a0c1fef72",
+   "size": 146
+  }
+ },
+ "inner_path": "data/users/1BLE24RB7y27orc6ygKM4upwGcESx7bxxz/content.json",
+ "modified": 1484771482,
+ "signs": {
+  "1BLE24RB7y27orc6ygKM4upwGcESx7bxxz": "G4+h2nRh5i0tUbSGIQj7bre4oRjsdAvz2NcZKAFGQjxa0JVLApYvsTLsCSWnyJOZOzhiB/pCswxU8aies6vDjUo="
+ }
+}
