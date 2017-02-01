@@ -1,28 +1,63 @@
-app.directive('topicList', [
-	function() {
+app.directive('topicList', ['$rootScope',
+	function($rootScope) {
 
 		// topic list controller
 		var controller = function($scope,$element) {
 			
 			$scope.init = function(){
-				$scope.loading = true;				
-				var query;
+
+				// loading
+				$scope.loading = true;
+
+				// default sort options
+				$scope.sort = {
+					name:'New',
+					val:'-added'
+				};
+				
+				// paging
+				$scope.paging = { 
+					currentPage:1,
+					itemsPerPage:20,
+				};				
+
+				// generate query
+				$scope.generateQuery();
+			};
+
+			// generate query
+			$scope.generateQuery = function(){
 				// if front page
 				if ($scope.section === 'main'){
-					query = ["SELECT * FROM topic ORDER BY -added LIMIT 15"];
+					$scope.query = ["SELECT * FROM topic ORDER BY -added LIMIT " + $scope.paging.itemsPerPage + " OFFSET " + $scope.paging.itemsPerPage * ($scope.paging.currentPage - 1)];
+					$scope.count_query = ["SELECT COUNT(*) FROM topic ORDER BY -added"];
 				} else {
 					// if admin section
 					if ($scope.admin_section){
-						query = ["SELECT * FROM topic WHERE user_id='"+$scope.user.user_id+"' ORDER BY added"];
+						$scope.query = ["SELECT * FROM topic WHERE user_id='"+$scope.user.user_id+"' ORDER BY -added LIMIT " + $scope.paging.itemsPerPage + " OFFSET " + $scope.paging.itemsPerPage * ($scope.paging.currentPage - 1)];
+						$scope.count_query = ["SELECT COUNT(*) FROM topic WHERE user_id='"+$scope.user.user_id+"' ORDER BY -added"];
 					} else {
-						query = ["SELECT * FROM topic WHERE channel_id='"+$scope.channel.channel_id+"' ORDER BY added"];
+						$scope.query = ["SELECT * FROM topic WHERE channel_id='"+$scope.channel.channel_id+"' ORDER BY -added LIMIT " + $scope.paging.itemsPerPage + " OFFSET " + $scope.paging.itemsPerPage * ($scope.paging.currentPage - 1)];
+						$scope.count_query = ["SELECT COUNT(*) FROM topic WHERE channel_id='"+$scope.channel.channel_id+"' ORDER BY -added"];
 					}
 				}
-				$scope.getTopicList(query);
+				// count topics
+				$scope.countTopics($scope.query);
 			};
 
-			// init channel topic list
-			$scope.getTopicList = function(query){
+			// count topics
+			$scope.countTopics = function(query){
+				Page.cmd("dbQuery",$scope.count_query, function(topic_count){
+					// total items
+					$scope.paging.totalItems = topic_count[0]['COUNT(*)'];
+					// get topics
+					$scope.getTopics(query);
+				});
+			};
+
+			// get topics
+			$scope.getTopics = function(query){
+				console.log(query);
 				Page.cmd("dbQuery", query, function(topics) {
 					$scope.$apply(function(){
 						$scope.topics = topics;
@@ -34,9 +69,9 @@ app.directive('topicList', [
 				});
 			};
 
-			// init topic list item
+			// get topic channel
 			$scope.getTopicChannel = function(topic,index){
-				var query = ["SELECT * FROM channel WHERE channel_id='"+topic.channel_id+"' ORDER BY added LIMIT 15"];
+				var query = ["SELECT * FROM channel WHERE channel_id='"+topic.channel_id+"' ORDER BY added"];
 				Page.cmd("dbQuery", query, function(channel) {
 					$scope.$apply(function(){
 						topic.channel = channel[0];
@@ -55,8 +90,19 @@ app.directive('topicList', [
 				} else if (topic.show_body === false || !topic.show_body){
 					topic.show_body = true;
 					topic.toggleClass = 'collapse';
-				}				
+				}
 			};
+
+
+			// page change
+			$scope.pageChanged = function(){
+				$scope.generateQuery();
+			};
+
+			// on sort topics
+			$rootScope.$on('sortTopics',function(event,mass){
+				$scope.sort = mass;
+			});
 
 		};
 
@@ -65,7 +111,7 @@ app.directive('topicList', [
 							'<!-- loading -->' +
 						    '<span ng-show="loading" class="loader col-xs-12"></span>' +
 						    '<!-- /loading -->' +
-						    '<div ng-repeat="topic in topics | orderBy:\'-added\'" ng-show="topic.visible" class="topic-item row" moderations ng-init="getItemModerations(topic)">' +
+						    '<div ng-repeat="topic in topics | orderBy:sort.val" ng-show="topic.visible" class="topic-item row" moderations ng-init="getItemModerations(topic)">' +
 								'<div class="topic-item-left votes" votes ng-init="getTopicVotes(topic)">' +
 									'<a ng-click="onUpVoteTopic(topic)" class="vote-arrow arrow-up"></a>' +
 									'<span class="votes-sum-total">{{topic.votes_sum}}</span>' +
@@ -108,6 +154,7 @@ app.directive('topicList', [
 								    '</div>' +
 							    '</div>' +
 						    '</div>' +
+						    '<ul uib-pagination total-items="paging.totalItems" items-per-page="paging.itemsPerPage" ng-model="paging.currentPage" class="pagination-sm" boundary-link-numbers="true" rotate="false" ng-change="pageChanged()"></ul>' +
 						'</section>';
 
 		return {

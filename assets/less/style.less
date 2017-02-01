@@ -211,23 +211,53 @@ header {
 		padding: 0;
 	}
 
-	h2 {
-		margin: 0 0 5px 0;
-		padding: 15px 0;
-		float: left;
-	}
-
-	span.channel-name {
-	    display: block;
-	    float: left;
-	    padding-top: 25px;
-	    padding-left: 10px;
-	    font-size: 16px;
-	    font-weight: bold;	
-	}
-
 	nav.navbar-default {
 		background-color: white;
+
+		.navbar-container-top {
+			padding: 0 100px 0 25px;
+
+			.header-left {
+				height: 67px;
+    			overflow: hidden;
+    			padding-left: 55px;
+				
+				img {
+					width: 100px;
+				    margin-left: -25px;
+				    position: absolute;
+				    left: 0;
+				    top: 4px;
+				}
+
+				.logo-section {
+				    float: left;
+				    width: 100%;
+
+				    .logo-section-top {
+					    padding: 15px 0 0 0;
+					    width: 100%;
+					    float: left;
+
+						h2 {
+							margin: 0;
+							padding: 0;
+							float: left;
+						}
+
+						span.channel-name {
+						    display: block;
+						    float: left;
+						    padding-top: 9px;
+						    padding-left: 5px;
+						    font-size: 16px;
+						    font-weight: bold;	
+						}
+
+				    }
+				}
+			}
+		}
 
 		ul {
 			list-style-type: none;
@@ -404,7 +434,22 @@ main {
 		    padding: 0 5px;
 		    line-height: 100%;
 		    text-transform: uppercase;
-		    color: #B10DC9;			
+		    color: #B10DC9;
+
+		    p {
+		    	padding-top: 10px;
+		    }
+
+		    label {
+			    width: 20%;
+			    float: left;
+			    padding-top: 10px;
+   		    }
+
+		    select {
+		    	width: 80%;
+		    	float: right;
+		    }
 		}
 
 		.channel-item {
@@ -537,6 +582,52 @@ main {
 
 #topic-list {
 	padding: 0 15px;
+}
+
+ul.pagination {
+	li {
+		display: none;
+	
+		&.pagination-prev,
+		&.pagination-next {
+			float: left;
+		    background: #bbe5ff;
+		    background: -webkit-linear-gradient(top,#bbe5ff,#a6ddff);
+		    background: -moz-linear-gradient(top,#bbe5ff,#a6ddff);
+		    background: -ms-linear-gradient(top,#bbe5ff,#a6ddff);
+		    background: -o-linear-gradient(top,#bbe5ff,#a6ddff);
+		    border: 1px solid #70b7e3;
+		    border-radius: 2px;
+		    color: #2b4758;
+		    display: inline;
+		    font-size: 10px;
+		    padding: 2px 6px;
+		    text-align: center;
+		    font-weight: bold;
+			font-size: 14px;
+			font-weight: normal;
+			border: solid #70b7e3;
+			border-width: 1px 1px 2px;
+			color: #2b4758;
+		    
+
+		    a {
+			    float: left;
+			    width: 100%;
+			    background: transparent;
+			    padding: 0;
+			    border: 0;		    	
+		    }
+
+			&.disabled {
+				display: none;
+			}
+		}
+	}
+
+	li + li {
+		margin-left: 5px;
+	}
 }
 
 .topic-item {

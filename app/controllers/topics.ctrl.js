@@ -8,10 +8,10 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope',
 			var query = ["SELECT * FROM topic WHERE topic_id='"+topic_id+"'"];
 			Page.cmd("dbQuery", query, function(topic) {
 				$scope.topic = topic[0];
+				$scope.topic.user_name = $scope.topic.user_id.split('@')[0];
 				// get channel
 				var query = ["SELECT * FROM channel WHERE channel_id='"+$scope.topic.channel_id+"'"];
 				Page.cmd("dbQuery", query, function(channel) {
-					console.log(channel);
 					$scope.topic.channel = channel[0];
 					$rootScope.$broadcast('setChannel',$scope.topic.channel);
 					// count topic comments

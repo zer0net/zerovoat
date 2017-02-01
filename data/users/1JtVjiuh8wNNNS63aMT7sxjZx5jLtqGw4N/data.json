@@ -64,9 +64,41 @@
 			"body": "very reddit, such talks, wow",
 			"added": 1484715870359,
 			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N7",
+			"comment_parent_id": 0,
+			"topic_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b1",
+			"body": "Вот тут подробнее отписал http://127.0.0.1:43110/1PV114iDXgvMrcr9f2pExS5yhxYyDuYTQG/?Post:7:%D0%9A%D1%80%D0%B8%D1%82%D0%B8%D0%BA%D0%B0+%D1%81%D0%B5%D1%82%D0%B8+Diaspora*\n\nЯ слабо верю  в перспективы. Одно дело, когда недостатки присутсвуют, другое дело, когда их защищают и оправдывают и несчитают нужным  устранять. В ZN тоже сейчас много проблем, но это эксперементальный проект в состоянии активной разработки. Никто не собирается его замораживать в текущем состоянии. Плюс он адаптируемый к множеству разных применений.",
+			"added": 1484849972265,
+			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N8",
+			"comment_parent_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp35",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "tsveta prijanije",
+			"added": 1484851576159,
+			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N9",
+			"comment_parent_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b3",
+			"topic_id": "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b1",
+			"body": "Не приоритетно, не решаемо, трудно, затратно, все что надо - работает.",
+			"added": 1484852832844,
+			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N10",
+			"comment_parent_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N5",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "тест",
+			"added": 1485865712808,
+			"user_id": "antignu@zeroid.bit"
 		}
 	],
-	"next_comment_id": 7,
+	"next_comment_id": 11,
 	"comment_vote": [
 		{
 			"comment_vote_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N1",
@@ -76,5 +108,17 @@
 			"user_id": "antignu@zeroid.bit"
 		}
 	],
-	"next_comment_vote_id": 2
+	"next_comment_vote_id": 2,
+	"topic": [
+		{
+			"topic_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N1",
+			"channel_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp1",
+			"title": "Bug: Third-level comments are not displayed",
+			"body": "Need to be fixed.",
+			"type": "topic",
+			"added": 1485870369678,
+			"user_id": "antignu@zeroid.bit"
+		}
+	],
+	"next_topic_id": 2
 }

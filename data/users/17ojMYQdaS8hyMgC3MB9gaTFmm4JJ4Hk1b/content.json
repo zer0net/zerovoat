@@ -5,13 +5,13 @@
  "cert_user_id": "tolstoevsky@zeroid.bit",
  "files": {
   "data.json": {
-   "sha512": "f416d30aa5048c2caa4bd69461434f8a267819bd282af90c003d602c6ca0e111",
-   "size": 1387
+   "sha512": "24d795a63578a1a4fe201338815c1b24bdbbbf78dbb5fba26d6e9a9e457b1084",
+   "size": 1734
   }
  },
  "inner_path": "data/users/17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b/content.json",
- "modified": 1484810298.746905,
+ "modified": 1484851689.077688,
  "signs": {
-  "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b": "HBzbh1cjkjMRn20+/zc5JXBspxJd5sRWTVUDv2qAqJLspHRXNZXgLQA8uObnwm6GZ1pXJ7TsAnF2LD83db19U8c="
+  "17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b": "G4lJ1CfLRW+10S0HSXzmpY2jbfvC712kzr3x5diMDgaHH5C2golEJJGapjtvDimK+LQI8GV6Um48Bb4Im27m/I4="
  }
 }

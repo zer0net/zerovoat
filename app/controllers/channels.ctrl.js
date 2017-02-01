@@ -136,7 +136,6 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 					data.moderator.push(moderator);
 					// update next moderator id #
 					data.next_moderator_id += 1;
-					console.log(data);
 					// write to file
 					var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 					Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
@@ -153,5 +152,65 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 			});
 		};
 
+		// get sector
+		$scope.getSector = function() {
+			$scope.loading = false;
+			var sector_id = $location.$$absUrl.split('sector_id=')[1].split('&')[0];
+			var query = ["SELECT * FROM sector WHERE sector_id='"+sector_id+"'"];
+			Page.cmd("dbQuery", query, function(sector) {
+				console.log(sector);
+				$scope.sector = sector[0];
+				$rootScope.$broadcast('setSector',$scope.sector);
+				$scope.loading = false;
+				$scope.$apply();
+			});				
+		};
+
+		// create sector
+		$scope.createSector = function(sector){
+			// inner path to user's data.json file
+			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			// get data.json
+			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
+				// render data
+				if (data){ 
+					data = JSON.parse(data);
+					if (!data.sector){
+						data.sector = [];
+						data.next_sector_id = 1;
+					}
+				} else { 
+					data = { 
+						next_sector_id:1, 
+						sector:[] 
+					}; 
+				}
+
+				// new category entry
+				sector.sector_id = $scope.page.site_info.auth_address + data.next_channel_id.toString();
+				sector.added = +(new Date);
+				// user id
+				if ($scope.page.site_info.cert_user_id){ sector.user_id = $scope.page.site_info.cert_user_id; } 
+				else { sector.user_id = $scope.page.site_info.auth_address; }				
+				// add category to user's categorys
+				data.sector.push(sector);
+				// update next category id #
+				data.next_sector_id += 1;
+				// write to file
+				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
+					console.log(res);
+					// sign & publish site
+					Page.cmd("sitePublish",{"inner_path":inner_path}, function(res) {
+						console.log(res);
+						// apply to scope
+						$scope.$apply(function() {
+							Page.cmd("wrapperNotification", ["done", "sector Created!", 10000]);
+							$window.location.href = '/'+ $scope.page.site_info.address +'/?sector_id='+sector.sector_id;
+						});
+					});
+				});
+			});
+		};
 	}
 ]);

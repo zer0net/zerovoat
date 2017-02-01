@@ -42,8 +42,17 @@ app.controller('MainCtrl', ['$scope','$rootScope','$location',
 					// update site
 					Page.cmd('siteUpdate',{"address":$scope.page.site_info.address});
 					// apply 
-					$scope.$apply();
+					$scope.$apply(function(){
+						// get site config
+						$scope.getConfig();
+					});
 				});
+		    };
+
+		    // get config
+		    $scope.getConfig = function(){
+		    	$scope.site_title = 'Zeronet Central';
+		    	$scope.site_slogan = 'The Central Place of Zeronet';
 		    };
 
 		    // set channel - global
@@ -61,6 +70,8 @@ app.controller('MainCtrl', ['$scope','$rootScope','$location',
 					$scope.section = 'channels';
 				} else if (route.indexOf('channel') > -1){
 					$scope.section = 'channel';
+				} else if (route.indexOf('sector') > -1) {
+					$scope.section = 'sector';
 				} else {
 					$scope.section = 'main';
 				}

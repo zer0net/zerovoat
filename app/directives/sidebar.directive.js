@@ -4,7 +4,7 @@ app.directive('sidebar', ['$rootScope',
 		// topic list controller
 		var controller = function($scope,$element) {
 			$scope.init = function(){
-				console.log($scope.channel);
+
 			};
 		};
 
@@ -18,11 +18,12 @@ app.directive('sidebar', ['$rootScope',
 	 							'<hr ng-if="channel" style="float: left;width: 100%;"/>' +
 								'<ul class="col-xs-12">' +
 									'<li ng-if="!page.site_info.cert_user_id"><a ng-click="selectUser()" class="blue">login</a> to participate</li>' +
-									'<li ng-if="!page.site_info.cert_user_id"><hr/></li>' +
+									'<li ng-if="!page.site_info.cert_user_id" ng-if="!channel"><hr/></li>' +
 									'<li ng-if="page.site_info.cert_user_id" ng-show="!channel">' +
-										'<a class="btn" href="new.html?channel">Create New Channel</a>' +
+										// '<a class="btn" href="new.html?channel">Create New Channel</a>' +
+										// '<a ng-if="page.site_info.settings.own" class="btn" href="new.html?sector">Create New Sector</a>' +
 									'</li>' +
-									'<li><a class="btn" href="/{{page.site_info.address}}/?channels">Channels</a></li>' +
+									'<li ng-if="!channel"><a class="btn" href="/{{page.site_info.address}}/?channels">Channels</a></li>' +
 								'</ul> ' +
 							'</div>' +
 						'</aside>';

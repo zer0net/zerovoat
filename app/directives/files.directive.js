@@ -72,7 +72,6 @@ app.directive('files', ['$rootScope',
 				// get file by item type & item id
 				var query = ["SELECT * FROM file WHERE item_type='"+item_type+"' AND item_id='"+item[item_id]+"' ORDER BY added"];
 				Page.cmd("dbQuery", query, function(file) {
-					console.log(file);
 					if (file.length > 0){
 						item.file = file[0];
 						$scope.renderFile(item);
@@ -154,9 +153,7 @@ app.directive('files', ['$rootScope',
 						$scope.updateCahnnel(item);
 					}
 				} else if ($scope.section === 'topic'){
-					console.log($scope.section);
 					if ($scope.view === 'new'){
-						console.log($scope.view);
 						$scope.createTopic(item);
 					} else if ($scope.view === 'edit'){
 						$scope.updateTopic(item);
@@ -226,7 +223,6 @@ app.directive('files', ['$rootScope',
 					data.file.push(file);
 					// update next file id #
 					data.next_file_id += 1;
-					console.log(data);
 					// upload file
 					var file_path = 'data/users/' + $scope.page.site_info.auth_address + '/' + file.file_name;
 					Page.cmd("fileWrite", [file_path, data_uri], function(res) {

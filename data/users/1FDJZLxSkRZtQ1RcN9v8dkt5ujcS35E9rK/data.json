@@ -1,0 +1,19 @@
+{
+	"user": [
+		{
+			"user_id": "1FDJZLxSkRZtQ1RcN9v8dkt5ujcS35E9rK",
+			"user_name": "kuwagata@zeroid.bit",
+			"added": 1485475225564
+		}
+	],
+	"topic_vote": [
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb1",
+			"topic_id": "1BLE24RB7y27orc6ygKM4upwGcESx7bxxz1",
+			"vote": 1,
+			"added": 1485475235939,
+			"user_id": "kuwagata@zeroid.bit"
+		}
+	],
+	"next_topic_vote_id": 2
+}

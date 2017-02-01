@@ -28,13 +28,18 @@
   <main id="main-content" class="container" ng-if="page" ng-controller="ChannelsCtrl">
     <section>
       <!-- channel form -->
-      <section ng-show="section === 'channel'">
+      <section ng-if="section === 'sector'">
+        <sector-form></sector-form>      
+      </section>
+      <!-- /channel form -->
+      <!-- channel form -->
+      <section ng-if="section === 'channel'">
         <channel-form></channel-form>      
       </section>
       <!-- /channel form -->
       <!-- topic form -->
-      <section ng-init="getChannel()">
-        <section ng-controller="TopicsCtrl" ng-show="section === 'topic'" ng-if="channel">
+      <section  ng-if="section === 'topic'" ng-init="getChannel()">
+        <section ng-controller="TopicsCtrl" ng-if="channel">
           <topic-form></topic-form>      
         </section>      
       </section>
@@ -77,6 +82,7 @@
   <script type="text/javascript" src="app/controllers/main.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/channels.ctrl.js"></script>
   <script type="text/javascript" src="app/directives/channel-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/sector-form.directive.js"></script>  
   <script type="text/javascript" src="app/controllers/topics.ctrl.js"></script>
   <script type="text/javascript" src="app/directives/dropzone.directive.js"></script>
   <script type="text/javascript" src="app/directives/topic-form.directive.js"></script>

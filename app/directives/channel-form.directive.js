@@ -26,6 +26,18 @@ app.directive('channelForm', [
 				});			
 			};
 
+			// on create channel
+			$scope.onCreateChannel = function(channel){
+				$scope.loading = true;
+				$scope.createChannel(channel);
+			};
+
+			// on update channel
+			$scope.onUpdateChannel = function(channel,moderators){
+				$scope.loading = true;
+				$scope.updateChannel(channel,moderators);
+			};
+
 		};
 
 		var template = '<section ng-init="initChannelForm()" id="channel-form" class="form">' +
@@ -44,8 +56,9 @@ app.directive('channelForm', [
 						    '</div>' +						    
 						    '<div class="form-field row">' +
 						      '<div class="col-xs-offset-2 col-xs-10">' +
-						        '<button ng-if="mode === \'new\'" class="btn primary-btn" ng-click="createChannel(channel)">submit</button>' +
-						        '<button ng-if="mode === \'edit\'" class="btn primary-btn" ng-click="updateChannel(channel,moderators)">update</button>' +
+						        '<button ng-hide="loading" ng-if="mode === \'new\'" class="btn primary-btn" ng-click="onCreateChannel(channel)">submit</button>' +
+						        '<button ng-hide="loading" ng-if="mode === \'edit\'" class="btn primary-btn" ng-click="onUpdateChannel(channel,moderators)">update</button>' +
+						        '<span ng-show="loading" class="loader"></span>' + 
 						      '</div>' +
 						    '</div>' +
 						'</section>';

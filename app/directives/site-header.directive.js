@@ -6,16 +6,27 @@ app.directive('siteHeader', ['$rootScope',
 			
 			$scope.init = function () {
 				// site menu
-				$scope.siteMenu();
+				if ($scope.section === 'main' || $scope.section === 'channel'){
+					$scope.sortMenu();
+				}
 			};
 
 			// site menu
-			$scope.siteMenu = function() {
-				// menu items array
-				$scope.menuItems = [{
-					text:'New Topic',
-					link:''
-				}];
+			$scope.sortMenu = function() {
+				$scope.sort = {
+					options:[{
+						name:'New',
+						val:'-added'
+					},{
+						name:'Top',
+						val:'-votes_sum'
+					}]
+				};
+			};
+
+			// sort topics
+			$scope.sortTopics = function(option){
+				$rootScope.$broadcast('sortTopics',option);
 			};
 
 			// get user info
@@ -106,16 +117,32 @@ app.directive('siteHeader', ['$rootScope',
 
 		var template =  '<header ng-if="page" id="top">' +
 						    '<nav class="navbar navbar-default navbar-fixed-top" ng-init="init()">' +
-							    '<section class="container">' +
+							    '<section class="navbar-container-top">' +
 							    	'<div class="row">' +
-								    	'<div class="col-xs-4 header-left">' +
-								    		'<h2><a href="/{{page.site_info.address}}/">Zerovoat</a></h2>' +
-								    		'<span class="channel-name" ng-if="channel"><a href="index.html?channel_id={{channel.channel_id}}">/{{channel.name}}</a></span>' +
+								    	'<div class="col-xs-5 header-left" layout="row">' +
+								    		'<img src="assets/img/logo.png"/>' +
+								    		'<div class="logo-section" layout="row">' + 
+								    			'<div flex="100" class="logo-section-top">' + 
+									    			'<h2 style="margin-bottom:0;padding-bottom:0;"><a href="/{{page.site_info.address}}/">{{site_title}}</a></h2>' +
+									    			'<span class="channel-name" ng-if="channel"><a href="index.html?channel_id={{channel.channel_id}}">/{{channel.name}}</a></span>' +
+									    		'</div>' +
+									    		'<span flex="100" style="clear:both;float: left;">{{site_slogan}}</span>' + 
+								    		'</div>' +
 								    	'</div>' +
-								    	'<ul class="col-xs-4">' +
-								    		'<li ng-show="channel" ng-if="page.site_info.cert_user_id">' + 
+								    	'<ul class="col-xs-3">' +
+								    		'<li ng-repeat="option in sort.options" ng-if="section === \'main\' || section === \'channel\'">' + 
+									    		'<a ng-click="sortTopics(option)">' + 
+									    			'<button class="btn btn-primary">{{option.name}}</button>' +
+									    		'</a>' +
+								    		'</li>' +
+								    		'<li ng-if="section === \'channel\' && channel" ng-show="page.site_info.cert_user_id">' + 
 									    		'<a href="new.html?topic+channel_id={{channel.channel_id}}">' + 
 									    			'<button class="btn btn-primary">New Topic</button>' +
+									    		'</a>' +
+								    		'</li>' +
+								    		'<li ng-if="section === \'channels\'" ng-if="page.site_info.cert_user_id">' + 
+									    		'<a href="new.html?channel">' + 
+									    			'<button class="btn btn-primary">Create Channel</button>' +
 									    		'</a>' +
 								    		'</li>' +
 								    	'</ul>' +

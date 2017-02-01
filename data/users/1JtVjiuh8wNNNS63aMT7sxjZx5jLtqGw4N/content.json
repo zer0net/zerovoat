@@ -5,13 +5,13 @@
  "cert_user_id": "antignu@zeroid.bit",
  "files": {
   "data.json": {
-   "sha512": "a89009f28ab5d31cb708b937c2c1087142334608dc22dd91e447226e286fafbb",
-   "size": 3066
+   "sha512": "437ef906664997f7dd26ce8743a1092ca8892422f73eb72f3cc2ac200e22aa2d",
+   "size": 5382
   }
  },
  "inner_path": "data/users/1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N/content.json",
- "modified": 1484715870,
+ "modified": 1485870369,
  "signs": {
-  "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N": "G35d3ILa8U6hWwItgKzhxTe/mqaAQFA0rtdbT+Vq+uy3wfZWCmTshFXg4bCKveNubKHWjTNb3Dl6Rqh+A0u6AGM="
+  "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N": "GzPUtpfQRHao1+B6yQAQjM1+j4kNUX6+tT1JWKBxWIOC97QePBVfZZjvjd1Vz6bzsPV8gXKzGZn46rv3ZBvTkcw="
  }
 }

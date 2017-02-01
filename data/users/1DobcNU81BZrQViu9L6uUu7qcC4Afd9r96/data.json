@@ -85,9 +85,25 @@
 			"body": "Планируется ли какое-нибудь взаимодействие с популярными сетями типа FB?",
 			"added": 1484780517351,
 			"user_id": "shibe@zeroid.bit"
+		},
+		{
+			"comment_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r964",
+			"comment_parent_id": "1DrSLKfNNSXJUsnLYCGbQKy9autfvsBu2L1",
+			"topic_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r961",
+			"body": "much reply",
+			"added": 1484849059860,
+			"user_id": "shibe@zeroid.bit"
+		},
+		{
+			"comment_id": "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r965",
+			"comment_parent_id": 0,
+			"topic_id": "19sggoAZ4hcorrrfWoFWP9rwfpVsL29cnZ1",
+			"body": "How do I watch?",
+			"added": 1484910875401,
+			"user_id": "shibe@zeroid.bit"
 		}
 	],
-	"next_comment_id": 4,
+	"next_comment_id": 6,
 	"topic_vote": [
 		{
 			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb1",

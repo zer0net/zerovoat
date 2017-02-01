@@ -81,6 +81,26 @@
       </section>
     </section>
     <!-- /channel view -->
+    <!-- sector view -->
+    <section ng-if="section === 'sector'" class="container">
+      <section ng-init="getSector()">
+        <span class="loader" ng-show="loading"></span>
+        <!-- channels -->
+        <section channels ng-init="getSectorChannels(sector)" class="main-content col-xs-9" ng-hide="loading" ng-if="sector"> 
+          <!-- topic list -->
+          <channel-list></channel-list>
+          <!-- /topic list -->
+        </section>
+        <!-- /topics -->
+        <!-- side bar -->
+        <section class="col-xs-3" ng-hide="loading" ng-if="sector">
+          <sidebar></sidebar>
+        </section>
+        <!-- /sidebar -->
+      </section>
+    </section>
+    <!-- /sector view -->
+
   </main>
   <!-- /main -->
 

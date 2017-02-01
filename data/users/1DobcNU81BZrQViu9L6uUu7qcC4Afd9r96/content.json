@@ -9,13 +9,13 @@
    "size": 34209
   },
   "data.json": {
-   "sha512": "48d48ce2228d655ef3dca881006043f3b4988b94063493070c1df4ca64a22449",
-   "size": 2917
+   "sha512": "6878cfa801557b6cf2d0f71579c8445672f361a1f275f106ba537859dd4916a3",
+   "size": 3420
   }
  },
  "inner_path": "data/users/1DobcNU81BZrQViu9L6uUu7qcC4Afd9r96/content.json",
- "modified": 1484794315,
+ "modified": 1484910875,
  "signs": {
-  "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r96": "HPJa0FI64tMzSZJvdOyBVuxED/NC7qWYurLD8AD67gPvKtRwjo2dHp86RuXzP6kxUMMRYOCfT7sXLH45bNWgypA="
+  "1DobcNU81BZrQViu9L6uUu7qcC4Afd9r96": "G9TKXrw0ZmLxCes/LMLvD1OoRmeVxT7HlYNS290/S+msHyqNRmOsZieDJHuC2mRWcQG/f2wxpRSXnQLqwVGGCYI="
  }
 }

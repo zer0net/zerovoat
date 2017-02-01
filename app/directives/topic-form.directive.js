@@ -23,6 +23,18 @@ app.directive('topicForm', ['$rootScope',
 				}
 			};
 
+			// pre create item
+			$scope.preCreateItem = function(topic){
+				$scope.loading = true;
+				$scope.onCreateItem(topic);
+			};
+
+			// pre create item
+			$scope.preUpdateItem = function(topic){
+				$scope.loading = true;
+				$scope.onUpdateItem(topic);
+			};
+
 		};
 
 		var template = '<section ng-init="initTopicForm()" id="topic-form" class="form">' +
@@ -40,14 +52,6 @@ app.directive('topicForm', ['$rootScope',
 	      								'<div ng-show="form.$submitted || form.Title.$touched">' +
 	      									'<div ng-show="form.Title.$error.required">Title is required.</div>' +
 	      								'</div>' +
-								      '</div>' +
-								    '</div>' +
-								    '<div class="form-field row">' +
-								      '<label class="col-xs-2">Channel</label>' +
-								      '<div class="col-xs-10">' +
-								        '<select class="form-control" ng-model="topic.channel_id" channels ng-init="getChannels()">' +
-								          '<option ng-repeat="ch in channels" value="{{ch.channel_id}}">{{ch.name}}</option>' +
-								        '</select>' +
 								      '</div>' +
 								    '</div>' +
 								    '<div class="form-field row">' +
@@ -71,8 +75,9 @@ app.directive('topicForm', ['$rootScope',
 								    '<hr/>' +
 								    '<div class="form-field row">' +
 								      '<div class="col-xs-offset-2 col-xs-10">' +
-								        '<button ng-if="view === \'new\'" class="btn primary-btn" ng-click="onCreateItem(topic)">submit</button>' +
-								        '<button ng-if="view === \'edit\'" class="btn primary-btn" ng-click="onUpdateItem(topic)">update</button>' +						      
+								        '<button ng-hide="loading" ng-if="view === \'new\'" class="btn primary-btn" ng-click="preCreateItem(topic)">submit</button>' +
+								        '<button ng-hide="loading" ng-if="view === \'edit\'" class="btn primary-btn" ng-click="preUpdateItem(topic)">update</button>' +						      
+								        '<span ng-show="loading" class="loader"></span>' + 
 								      '</div>' +
 								    '</div>' +
 							    '</div>' +

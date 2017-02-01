@@ -13,7 +13,8 @@
 				{"node": "user", "table": "user"},
 				{"node": "moderator", "table": "moderator"},
 				{"node": "moderation", "table": "moderation"},
-				{"node": "file", "table": "file"}
+				{"node": "file", "table": "file"},
+				{"node": "sector", "table": "sector"}				
 			],
 			"to_keyvalue": ["next_comment_id", "next_topic_id"]
 		},
@@ -37,6 +38,21 @@
 			"indexes": ["CREATE UNIQUE INDEX channel_key ON channel(channel_id, json_id)"],
 			"schema_changed": 1
 		},
+		"sector": {
+			"cols": [
+				["sector_id", "TEXT"],
+				["user_id","TEXT"],
+				["name","TEXT"],
+				["description","TEXT"],
+				["title", "TEXT"],
+				["body", "TEXT"],
+				["added", "DATETIME"],
+				["edited", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX sector_key ON sector(sector_id, json_id)"],
+			"schema_changed": 1
+		},		
 		"topic": {
 			"cols": [
 				["topic_id", "TEXT"],

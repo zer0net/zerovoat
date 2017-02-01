@@ -6,7 +6,7 @@ app.directive('comments', [
 			
 			// get topic comments
 			$scope.getTopicComments = function(topic) {
-				var query = ["SELECT * FROM comment WHERE topic_id='"+$scope.topic.topic_id+"' AND comment_parent_id='0' ORDER BY added"];
+				var query = ["SELECT * FROM comment WHERE topic_id='"+$scope.topic.topic_id+"' AND comment_parent_id='0' ORDER BY -added"];
 				Page.cmd("dbQuery", query, function(comments) {
 					$scope.$apply(function(){
 						topic.comments = comments;
@@ -26,7 +26,7 @@ app.directive('comments', [
 
 			// get comment replys
 			$scope.getCommentReplys = function(comment) {
-				var query = ["SELECT * FROM comment WHERE topic_id='"+$scope.topic.topic_id+"' AND comment_parent_id='"+comment.comment_id+"' ORDER BY added"];
+				var query = ["SELECT * FROM comment WHERE topic_id='"+$scope.topic.topic_id+"' AND comment_parent_id='"+comment.comment_id+"' ORDER BY -added"];
 				Page.cmd("dbQuery", query, function(comments) {
 					$scope.$apply(function(){
 						comment.replys = comments;
@@ -86,9 +86,10 @@ app.directive('comments', [
 			};
 
 			// post comment
-			$scope.postComment = function(comment) {
-				var comment_body = comment.body;
-				comment.body = '';
+			$scope.postComment = function(s_comment) {
+				var comment_body = s_comment.body;
+				s_comment.body = '';
+				s_comment.loading = true;
 				// inner path to user's data.json file
 				var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
 				// get data.json
@@ -130,6 +131,7 @@ app.directive('comments', [
 							$scope.$apply(function() {
 								Page.cmd("wrapperNotification", ["done", "Comment Posted!", 10000]);
 								if (!$scope.topic.comments) $scope.topic.comments = [];
+								s_comment.loading = false;
 								$scope.topic.comments.push(comment);
 							});
 						});
@@ -138,7 +140,10 @@ app.directive('comments', [
 			};
 
 			// post reply
-			$scope.postReply = function(reply,comment) {
+			$scope.postReply = function(s_reply,comment) {
+				var reply_body = s_reply.body;
+				s_reply.body = '';
+				s_reply.loading = true;
 				comment.show_reply = false;
 				// inner path to user's data.json file
 				var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
@@ -162,7 +167,7 @@ app.directive('comments', [
 						comment_id:$scope.page.site_info.auth_address + data.next_comment_id.toString(),
 						comment_parent_id:comment.comment_id,
 						topic_id:$scope.topic.topic_id,
-						body:reply.body,
+						body:reply_body,
 						added:+(new Date)
 					};
 					// user id
@@ -181,6 +186,7 @@ app.directive('comments', [
 							$scope.$apply(function() {
 								Page.cmd("wrapperNotification", ["done", "Reply Posted!", 10000]);
 								if (!comment.replys) comment.replys = [];
+								s_reply.loading = false;
 								comment.replys.push(reply);
 							});
 						});
