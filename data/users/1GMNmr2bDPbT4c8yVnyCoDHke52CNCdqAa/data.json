@@ -20,7 +20,14 @@
 			"vote": 1,
 			"added": 1484552236173,
 			"user_id": "apuar@zeroid.bit"
+		},
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb3",
+			"topic_id": "1AWwhg4EiWAVttfQboJZ4wJfX3WawfJT3h4",
+			"vote": 1,
+			"added": 1486517868186,
+			"user_id": "apuar@zeroid.bit"
 		}
 	],
-	"next_topic_vote_id": 3
+	"next_topic_vote_id": 4
 }

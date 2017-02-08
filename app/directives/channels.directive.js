@@ -6,9 +6,11 @@ app.directive('channels', [
 			
 			// get channels
 			$scope.getChannels = function (user_id) {
+				console.log(user_id);
 				$scope.loading = true;
 				var query = ["SELECT * FROM channel"];
 				if (user_id) query = ["SELECT * FROM channel WHERE user_id='"+user_id+"'"]; 
+				console.log(query);
 				Page.cmd("dbQuery", query, function(channels) {
 					$scope.$apply(function(){
 						$scope.channels = channels;
@@ -19,6 +21,7 @@ app.directive('channels', [
 
 			// get channels
 			$scope.getModeratedChannels = function (user_id) {
+				console.log(user_id);
 				$scope.loading = true;
 				var query = ["SELECT * FROM moderator WHERE user_name='"+user_id+"'"];
 				Page.cmd("dbQuery", query, function(moderator) {

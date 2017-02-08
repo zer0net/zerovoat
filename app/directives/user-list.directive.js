@@ -18,7 +18,6 @@ app.directive('userList', [
 			$scope.getChannelModerators = function (channel) {
 				var query = ["SELECT * FROM moderator WHERE channel_id='"+channel.channel_id+"'"]; 
 				Page.cmd("dbQuery", query, function(moderators) {
-					console.log(moderators);
 					$scope.$apply(function(){
 						$scope.moderators = moderators;
 					});

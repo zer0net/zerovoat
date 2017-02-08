@@ -1,5 +1,5 @@
-app.directive('files', ['$rootScope',
-	function($rootScope) {
+app.directive('files', ['$rootScope','File',
+	function($rootScope,File) {
 
 		// files directive controller
 		var controller = function($scope,$element) {
@@ -23,16 +23,21 @@ app.directive('files', ['$rootScope',
 				};
 			};
 
+			// init channel layout as item
+			$scope.channelLayoutFileUpload = function(){
+				$scope.item = $scope.channel;
+				$scope.multiple_files = true;
+			};
+
 			// read file
 			$scope.readFile = function(item,file){
 				// reader instance
 				$scope.reader = new FileReader();
 				// reader onload
 				$scope.reader.onload = function(){
-					// file
-					$scope.file = file;
 					// file name
-					var file_name = $scope.file.name.split(' ').join('_').normalize('NFKD').replace(/[\u0300-\u036F]/g, '').replace(/ß/g,"ss");
+					var file_name = file.name.split(' ').join('_').normalize('NFKD').replace(/[\u0300-\u036F]/g, '').replace(/ß/g,"ss");
+					file_name = file_name.replace(/([^a-z0-9]+)/gi, '-');
 					// get file type
 					var splitByLastDot = function(text) {
 					    var index = text.lastIndexOf('.');
@@ -47,124 +52,76 @@ app.directive('files', ['$rootScope',
 					// change btn text
 					$scope.upload_btn_text = file_name;
 					// get file media type
-					item = $scope.getFileMediaType(item);
+					item = File.getFileMediaType(item,$scope.page.site_info.address,$scope.view);
 					// apply to scope
+					console.log(item.file);
 					$scope.$apply();
 				};
 				// reader read file
 				$scope.reader.readAsDataURL(file);
 			};
 
+			// on read file
+			$scope.onReadFile = function(file){
+				$scope[$scope.item_type][file.model_name] = file.data_uri;
+				if (!$scope.files) $scope.files = [];
+				$scope.files.push(file);
+			};
+
 			// get items file
 			$scope.getItemFile = function(item){
-				// find items type & id name filed
-				var item_type,
-					item_id;
-				for (var i in item){
-					if (i.indexOf('comment_id') > -1){
-						item_type = 'comment';
-						item_id = 'comment_id';
-					} else if (i.indexOf('topic_id') > -1){
-						item_type = 'topic';
-						item_id='topic_id';
-					}
-				}
+				// find items type & id name field
+				var f= File.determineItemTypeId(item);				
 				// get file by item type & item id
-				var query = ["SELECT * FROM file WHERE item_type='"+item_type+"' AND item_id='"+item[item_id]+"' ORDER BY added"];
+				var query = ["SELECT * FROM file WHERE item_type='"+f.item_type+"' AND item_id='"+item[f.item_id]+"' ORDER BY added"];
 				Page.cmd("dbQuery", query, function(file) {
 					if (file.length > 0){
 						item.file = file[0];
-						$scope.renderFile(item);
+						item = File.getFileMediaType(item,$scope.page.site_info.address,$scope.view);
 					}
 				}); 
 			};
 
-			// render file
-			$scope.renderFile = function(item){
-				item = $scope.getFileMediaType(item);
-			};
-
-			$scope.getFileMediaType = function(item){
-				if (item.file.file_type === 'png' ||
-					item.file.file_type === 'gif' ||
-					item.file.file_type === 'jpeg'||
-					item.file.file_type === 'jpg'){
-					item.image = true;
-					item.image_path = '/' + $scope.page.site_info.address + '/data/users/' + item.file.user_id + '/' + item.file.file_name;
-				} else if (item.file.file_type === 'mp4' ||
-				    item.file.file_type === 'mov' ||
-				    item.file.file_type === 'mpeg'||
-				    item.file.file_type === 'avi' ||
-				    item.file.file_type === 'ogg') {
-					item.video = true;
-					var sources;
-					if ($scope.view === 'new'){
-						sources = [
-							{
-								src:item.file.data_uri,
-								type:'video/'+item.file.file_type
-							}
-						];
-					} else {
-						sources = [
-							{
-								src:'/' + $scope.page.site_info.address + '/data/users/' + item.file.user_id + '/' + item.file.file_name,
-								type:'video/'+item.file.file_type
-							}
-						];
-					}
-					item.player = {
-						autoPlay:false,
-						sources: sources,
-						theme: "/" + $scope.page.site_info.address + "/assets/lib/videos/videogular-themes-default/videogular.css"
-					};
-				}
-				return item;
-			};
-
 			// on create item
 			$scope.onCreateItem = function(item){
-				if (item.file){
-					var msg = 'uploading file';
-					$scope.showLoadingMsg(msg);
-					$scope.createFile(item);
+				$scope.loading = true;
+				if ($scope.files){
+					$scope.filesIndex = 0;
+					$scope.createFile(item,$scope.files[$scope.filesIndex]);
 				} else {
-					$scope.routeItem(item);
+					if (item.file){
+						var msg = 'uploading file';
+						$scope.showLoadingMsg(msg);
+						$scope.createFile(item);
+					} else {
+						$scope.routeItem(item);
+					}		
 				}
 			};
 
 			// on update item
 			$scope.onUpdateItem = function(item){
-				if (item.file){
-					var msg = 'uploading file';
-					$scope.showLoadingMsg(msg);
-					$scope.createFile(item);
+				$scope.loading = true;				
+				if ($scope.files){
+					$scope.filesIndex = 0;					
+					$scope.createFile(item,$scope.files[$scope.filesIndex]);
 				} else {
-					$scope.routeItem(item);
-				}
-			};
-
-			// route item
-			$scope.routeItem = function(item){
-				if ($scope.section === 'channel'){
-					if ($scope.view === 'new'){
-						$scope.createChannel(item);
-					} else if ($scope.view === 'edit'){
-						$scope.updateCahnnel(item);
+					if (item.file){
+						var msg = 'uploading file';
+						$scope.showLoadingMsg(msg);
+						$scope.createFile(item);
+					} else {
+						$scope.routeItem(item);
 					}
-				} else if ($scope.section === 'topic'){
-					if ($scope.view === 'new'){
-						$scope.createTopic(item);
-					} else if ($scope.view === 'edit'){
-						$scope.updateTopic(item);
-					}
-				} else {
-					$scope.createComment(item);
 				}
 			};
 
 			// create file
-			$scope.createFile = function(item){
+			$scope.createFile = function(item,file){
+				// if no file is passed seperately
+				if (!file) file = item.file;
+				// if file has model name, delete said model name from item to prevent saving data uri to json
+				if (file.model_name) delete $scope[$scope.item_type][file.model_name];
 				// inner path to user's data.json file
 				var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
 				// get data.json
@@ -182,40 +139,16 @@ app.directive('files', ['$rootScope',
 							file:[] 
 						}; 
 					}
-					// find items type & id name filed
-					var item_id,
-						item_type;
-					if ($scope.section === 'channel'){
-						item_type = $scope.section;
-						if (!data.next_channel_id){
-							item_id = 1;
-						} else {
-							item_id = data.next_channel_id;
-						}
-					} else if ($scope.section === 'topic'){
-						item_type = $scope.section;
-						if (!data.next_topic_id){
-							item_id = 1;
-						} else {
-							item_id = data.next_topic_id;
-						}
-					} else {
-						item = data.next_comment_id;
-						if (!data.next_comment_id){
-							item_id = 1;
-						} else {
-							item_id = data.next_comment_id;
-						}
-					}
 					// save data uri
-					var data_uri = item.file.data_uri.split('base64,')[1];
+					var data_uri = file.data_uri.split('base64,')[1];
 					// new file entry
 					file = {
 						file_id:$scope.page.site_info.auth_address + data.next_file_id.toString(),
-						item_type:item_type,
-						item_id:$scope.page.site_info.auth_address + item_id.toString(),
-						file_type:item.file.file_type,
-						file_name:item.file.name,
+						item_type:$scope.item_type,
+						item_id:File.determineItemId(data,$scope),
+						file_type:file.file_type,
+						file_name:file.name + '.' + file.file_type,
+						model_name:file.model_name,
 						user_id:$scope.page.site_info.auth_address,
 						added:+(new Date)
 					};
@@ -223,6 +156,7 @@ app.directive('files', ['$rootScope',
 					data.file.push(file);
 					// update next file id #
 					data.next_file_id += 1;
+					console.log(file);
 					// upload file
 					var file_path = 'data/users/' + $scope.page.site_info.auth_address + '/' + file.file_name;
 					Page.cmd("fileWrite", [file_path, data_uri], function(res) {
@@ -237,12 +171,53 @@ app.directive('files', ['$rootScope',
 								// apply to scope
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "File Uploaded!", 10000]);
-									$scope.routeItem(item);
+									if ($scope.files){
+										$scope.createNextFile(item);
+									} else {
+										$scope.routeItem(item);
+									}
 								});
 							});
 						});
 					});
 				});
+			};
+
+			// create multiple files
+			$scope.createNextFile = function(item){
+				$scope.filesIndex += 1;
+				if ($scope.files.length > $scope.filesIndex){
+					$scope.createFile(item,$scope.files[$scope.filesIndex]);
+				} else {
+					$scope.routeItem(item);
+				}
+			};
+
+			// route item
+			$scope.routeItem = function(item){
+				if ($scope.section === 'channel'){
+					if ($scope.view === 'new'){
+						$scope.createChannel(item);
+					} else if ($scope.view === 'edit'){
+						if ($scope.mode){
+							if ($scope.mode === 'new'){
+								$scope.onCreateLayout(item);
+							} else if ($scope.mode === 'edit') {
+								$scope.onUpdateLayout(item);
+							}
+						} else {
+							$scope.updateCahnnel(item);
+						}
+					}
+				} else if ($scope.section === 'topic'){
+					if ($scope.view === 'new'){
+						$scope.createTopic(item);
+					} else if ($scope.view === 'edit'){
+						$scope.updateTopic(item);
+					}
+				} else {
+					$scope.createComment(item);
+				}
 			};
 
 			// show loading msg
@@ -255,7 +230,6 @@ app.directive('files', ['$rootScope',
 			$scope.finishLoading = function(){
 				$scope.loading = false;
 			};
-
 
 		};
 

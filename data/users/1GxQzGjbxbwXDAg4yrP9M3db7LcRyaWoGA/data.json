@@ -1,0 +1,39 @@
+{
+	"user": [
+		{
+			"user_id": "1GxQzGjbxbwXDAg4yrP9M3db7LcRyaWoGA",
+			"user_name": "miren@zeroid.bit",
+			"added": 1486187052207
+		},
+		{
+			"user_id": "1GxQzGjbxbwXDAg4yrP9M3db7LcRyaWoGA",
+			"user_name": "miren@zeroid.bit",
+			"added": 1486187064048
+		},
+		{
+			"user_id": "1GxQzGjbxbwXDAg4yrP9M3db7LcRyaWoGA",
+			"user_name": "miren@zeroid.bit",
+			"added": 1486187079788
+		},
+		{
+			"user_id": "1GxQzGjbxbwXDAg4yrP9M3db7LcRyaWoGA",
+			"user_name": "miren@zeroid.bit",
+			"added": 1486187087301
+		},
+		{
+			"user_id": "1GxQzGjbxbwXDAg4yrP9M3db7LcRyaWoGA",
+			"user_name": "miren@zeroid.bit",
+			"added": 1486187094400
+		}
+	],
+	"topic_vote": [
+		{
+			"topic_vote_id": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb1",
+			"topic_id": "1BLE24RB7y27orc6ygKM4upwGcESx7bxxz1",
+			"vote": 1,
+			"added": 1486187082304,
+			"user_id": "miren@zeroid.bit"
+		}
+	],
+	"next_topic_vote_id": 2
+}

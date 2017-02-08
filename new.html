@@ -4,9 +4,10 @@
 <head>
 
   <!-- CSS -->
-    <!-- lib -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- app -->
+    <link href="assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/angular-text/text-angular.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   <!-- /CSS -->
 
@@ -65,7 +66,8 @@
   <script type="text/javascript" src="assets/lib/angular/angular-aria.min.js"></script>
   <script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>  
   <script type="text/javascript" src="assets/lib/angular-bootstrap/angular-bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>  
+  <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js"></script>  
   <script type="text/javascript" src="assets/lib/moment/moment.js"></script>
   <script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
   <script type="text/javascript" src="assets/lib/dropzone/dropzone.js"></script>
@@ -76,6 +78,14 @@
   <script type="text/javascript" src="assets/lib/videos/videogular-buffering/vg-buffering.js"></script>
   <script type="text/javascript" src="assets/lib/videos/videogular-overlay-play/vg-overlay-play.js"></script>
   <script type="text/javascript" src="assets/lib/videos/videogular-poster/vg-poster.js"></script>
+
+  <!-- text angular -->
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-rangy.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-setup.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.umd.js"></script>
+
 
   <!-- app -->
   <script type="text/javascript" src="app/application.js"></script>
@@ -90,6 +100,9 @@
   <script type="text/javascript" src="app/directives/site-header.directive.js"></script>
   <script type="text/javascript" src="app/directives/files.directive.js"></script>
   <script type="text/javascript" src="app/directives/video-player.directive.js"></script>
+
+  <script type="text/javascript" src="app/services/file.service.js"></script>
+  <script type="text/javascript" src="app/services/moderation.service.js"></script>
 
 </body>
 

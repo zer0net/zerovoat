@@ -4,29 +4,22 @@ app.directive('siteHeader', ['$rootScope',
 		// topic list controller
 		var controller = function($scope,$element) {
 			
+			// init layout preview view
+			$scope.initLayoutPreviewView = function(){
+				$scope.layoutPreview = true;
+				$scope.topicSortMenu();
+			};
+
+			// init site header
 			$scope.init = function () {
-				// site menu
+				// meta links menu
+				$scope.metaLinksMenu();
+				// sort menus
 				if ($scope.section === 'main' || $scope.section === 'channel'){
-					$scope.sortMenu();
+					$scope.topicSortMenu();
+				} else if ($scope.section === 'channels'){
+					$scope.channelSortMenu();
 				}
-			};
-
-			// site menu
-			$scope.sortMenu = function() {
-				$scope.sort = {
-					options:[{
-						name:'New',
-						val:'-added'
-					},{
-						name:'Top',
-						val:'-votes_sum'
-					}]
-				};
-			};
-
-			// sort topics
-			$scope.sortTopics = function(option){
-				$rootScope.$broadcast('sortTopics',option);
 			};
 
 			// get user info
@@ -113,13 +106,76 @@ app.directive('siteHeader', ['$rootScope',
 				});				
 			};
 
+			// meta links menu
+			$scope.metaLinksMenu = function() {
+				$scope.links = [{
+					title:'ZeroNet',
+					link:'/'+$scope.page.site_info.address + '/?channel_id=1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ2'
+				},{
+					title:'Politics',
+					link:'/'+$scope.page.site_info.address + '/?channel_id=1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ1'
+				},{
+					title:'Russian',
+					link:'/'+$scope.page.site_info.address + '/?channel_id=1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1'
+				},{
+					title:'Wallpapers',
+					link:'/'+$scope.page.site_info.address + '/?channel_id=1DpPY5S6HpxsK6CQGWKZbKh9gVo1LnXze11'
+				}]
+			};
+
+			// topic sort menu
+			$scope.topicSortMenu = function() {
+				$scope.sort = {
+					options:[{
+						name:'New',
+						val:'-added'
+					},{
+						name:'Top',
+						val:'-votes_sum'
+					}]
+				};
+			};
+
+			// sort topics
+			$scope.sortTopics = function(option){
+				$rootScope.$broadcast('sortTopics',option);
+			};
+
+		    // channel sort menu
+		    $scope.channelSortMenu = function(){
+				// sort options
+				$scope.sort = {
+					options:[{
+					name:'Number of topics',
+					val:'-topics_total'
+					},{
+					name:'Last topic',
+					val:'-last_topic_date'
+					},{
+					name:'A - Z',
+					val:'name'
+					},{
+					name:'Newest',
+					val:'-added'
+					},{
+					name:'Oldest',
+					val:'added'
+					}]
+				};
+				// set default sort option
+				$scope.sort.current = $scope.sort.options[0];
+		    };
+
 		};
 
-		var template =  '<header ng-if="page" id="top">' +
-						    '<nav class="navbar navbar-default navbar-fixed-top" ng-init="init()">' +
+		var template =  '<header ng-if="page" id="top" ng-init="init()">' +
+							'<div class="meta-header">' +
+								'<a ng-repeat="link in links" href="{{link.link}}">{{link.title}}</a>' +
+							'</div>' + 
+						    '<nav class="navbar navbar-default navbar-fixed-top">' +
 							    '<section class="navbar-container-top">' +
 							    	'<div class="row">' +
-								    	'<div class="col-xs-5 header-left" layout="row">' +
+								    	'<div class="header-left" ng-class="[{\'col-xs-9\': layoutPreview},{\'col-xs-6\': !layoutPreview}]" layout="row">' +
 								    		'<img src="assets/img/logo.png"/>' +
 								    		'<div class="logo-section" layout="row">' + 
 								    			'<div flex="100" class="logo-section-top">' + 
@@ -129,30 +185,28 @@ app.directive('siteHeader', ['$rootScope',
 									    		'<span flex="100" style="clear:both;float: left;">{{site_slogan}}</span>' + 
 								    		'</div>' +
 								    	'</div>' +
-								    	'<ul class="col-xs-3">' +
-								    		'<li ng-repeat="option in sort.options" ng-if="section === \'main\' || section === \'channel\'">' + 
+								    	'<ul class="col-xs-3" ng-if="section !== \'channels\'">' +
+								    		'<li ng-if="section === \'main\' || section === \'channel\'" ng-repeat="option in sort.options">' + 
 									    		'<a ng-click="sortTopics(option)">' + 
 									    			'<button class="btn btn-primary">{{option.name}}</button>' +
 									    		'</a>' +
 								    		'</li>' +
-								    		'<li ng-if="section === \'channel\' && channel" ng-show="page.site_info.cert_user_id">' + 
+								    		'<li ng-if="section === \'channel\'" ng-show="page.site_info.cert_user_id">' + 
 									    		'<a href="new.html?topic+channel_id={{channel.channel_id}}">' + 
 									    			'<button class="btn btn-primary">New Topic</button>' +
 									    		'</a>' +
 								    		'</li>' +
-								    		'<li ng-if="section === \'channels\'" ng-if="page.site_info.cert_user_id">' + 
-									    		'<a href="new.html?channel">' + 
-									    			'<button class="btn btn-primary">Create Channel</button>' +
-									    		'</a>' +
-								    		'</li>' +
 								    	'</ul>' +
-								    	'<div class="col-xs-4">' +
-									    	'<div class="user-menu" ng-init="getUserInfo()" ng-if="page.site_info.cert_user_id">' +
+								    	'<div class="col-xs-3 sort-channels" ng-if="section === \'channels\' && !layoutPreview">' +
+								    	    '<label>SORT:</label>' + 
+                            				'<select class="form-control" ng-model="sort.current" value="sort.current.name" ng-options="s_option.name for s_option in sort.options"></select>' +
+								    	'</div>' +
+								    	'<div class="col-xs-3" ng-if="!layoutPreview">' +
+									    	'<div class="user-menu fg-color-secondary" ng-init="getUserInfo()" ng-if="page.site_info.cert_user_id">' +
 										    	'<div ng-if="!loading">' +
 										    		'<span ng-bind="user.user_id" class="blue user-name"></span>' +
 										    		'<span>| <a title="channels" href="user-admin.html?section=my_channels"><span class="glyphicon glyphicon-book"></span> [{{user.channelsCount}}]</a></span>' +
 										    		'<span>| <a title="topics" href="user-admin.html?section=topics"><span class="glyphicon glyphicon-file"></span> [{{user.topicsCount}}]</a></span>' +
-										    		'<span>| <a title="comments" href="user-admin.html?section=comments"><span class="glyphicon glyphicon-comment"></span> [{{user.commentsCount}}]</a></span>' +
 										    		'<span>| <a title="logout" ng-click="selectUser()">logout</a></span>' +
 										    	'</div>' +
 										    	'<span class="loader" ng-if="loading"></span>' +

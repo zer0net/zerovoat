@@ -6,6 +6,8 @@ app.directive('channelForm', [
 			
 			// init channel form
 			$scope.initChannelForm = function () {
+				$scope.loading = false;
+				$scope.item_type = 'channel';
 				if ($scope.view === 'new'){
 					$scope.mode = 'new';
 					$scope.info_text = 'You are creating a new channel'
@@ -21,7 +23,6 @@ app.directive('channelForm', [
 				var query = ["SELECT * FROM moderator WHERE channel_id='"+channel.channel_id+"'"];
 				Page.cmd("dbQuery", query, function(moderators) {
 					$scope.moderators = moderators;
-					console.log(moderators);
 					$scope.$apply();
 				});			
 			};

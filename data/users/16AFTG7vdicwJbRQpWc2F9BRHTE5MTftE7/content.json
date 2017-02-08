@@ -5,13 +5,13 @@
  "cert_user_id": "shift@zeroid.bit",
  "files": {
   "data.json": {
-   "sha512": "abcb2627f15274b38dbfca4e4ced816e5613992d63121f8d1e390910c0470eeb",
-   "size": 1164
+   "sha512": "d44dbacf57bcac4ccc6e4606b2e5f4ee551ca26a6e01689fce0c12ad95a14922",
+   "size": 1820
   }
  },
  "inner_path": "data/users/16AFTG7vdicwJbRQpWc2F9BRHTE5MTftE7/content.json",
- "modified": 1484751982,
+ "modified": 1485993532,
  "signs": {
-  "16AFTG7vdicwJbRQpWc2F9BRHTE5MTftE7": "G+Y1qDRSXaNaQWgeBJNDgt0EWckXO0Dp7e454x8Di6boAhOjC20/RDTv8aSvm/6kEikIStBstj4qBZ9vFGYI7MY="
+  "16AFTG7vdicwJbRQpWc2F9BRHTE5MTftE7": "G6QdHbuxYCeNR6IsGAygXAE1MA+S8f2trAkon90P5Temhm5vGAOtAQT8oHEA+STTFKSjz70Mm3SCJDod5x0wbpw="
  }
 }

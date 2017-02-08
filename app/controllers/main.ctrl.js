@@ -89,10 +89,11 @@ app.controller('MainCtrl', ['$scope','$rootScope','$location',
 				} else {
 					$scope.view = 'main';
 				}
+				console.log($scope.section);
+				console.log($scope.view);
 			};
 
 		/** INIT **/
-
 
 
 	}

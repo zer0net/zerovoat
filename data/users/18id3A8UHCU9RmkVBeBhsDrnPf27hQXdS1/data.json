@@ -1,0 +1,19 @@
+{
+	"user": [
+		{
+			"user_id": "18id3A8UHCU9RmkVBeBhsDrnPf27hQXdS1",
+			"user_name": "warlock@zeroid.bit",
+			"added": 1486238918557
+		}
+	],
+	"channel": [
+		{
+			"name": "Liberty",
+			"description": "General discussion about all liberty related. Libertarianism, Anarco-capitalism, Agorism,",
+			"channel_id": "18id3A8UHCU9RmkVBeBhsDrnPf27hQXdS11",
+			"added": 1486239415860,
+			"user_id": "warlock@zeroid.bit"
+		}
+	],
+	"next_channel_id": 2
+}

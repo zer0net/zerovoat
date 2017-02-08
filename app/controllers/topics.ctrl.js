@@ -1,5 +1,5 @@
-app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope',
-	function($scope,$location,$window,$rootScope) {
+app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce',
+	function($scope,$location,$window,$rootScope,$sce) {
 
 		// get topic by url params
 		$scope.getTopic = function() {
@@ -10,19 +10,21 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope',
 				$scope.topic = topic[0];
 				$scope.topic.user_name = $scope.topic.user_id.split('@')[0];
 				// get channel
-				var query = ["SELECT * FROM channel WHERE channel_id='"+$scope.topic.channel_id+"'"];
-				Page.cmd("dbQuery", query, function(channel) {
-					$scope.topic.channel = channel[0];
-					$rootScope.$broadcast('setChannel',$scope.topic.channel);
-					// count topic comments
-					var query = ["SELECT count(*) FROM comment WHERE topic_id='"+$scope.topic.topic_id+"'"];
-					Page.cmd("dbQuery", query, function(commentsCount) {
-						$scope.$apply(function(){
-							$scope.loading = false;
-							$scope.topic.comments_total = commentsCount[0]['count(*)'];
-						});
-					});
-				});	
+				$scope.getChannel($scope.topic);
+				// count topic comments
+				$scope.countTopicComments();
+			});
+		};
+
+		// count topic comments
+		$scope.countTopicComments = function(){
+			// count topic comments
+			var query = ["SELECT count(*) FROM comment WHERE topic_id='"+$scope.topic.topic_id+"'"];
+			Page.cmd("dbQuery", query, function(commentsCount) {
+				$scope.$apply(function(){
+					$scope.loading = false;
+					$scope.topic.comments_total = commentsCount[0]['count(*)'];
+				});
 			});
 		};
 
@@ -80,6 +82,40 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope',
 			});
 		};
 		
+		// update topic
+		$scope.updateTopic = function(topic){
+			// inner path to user's data.json file
+			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			// get data.json
+			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
+				data = JSON.parse(data);
+				// get topic's index
+				var topicIndex;
+				data.topic.forEach(function(tp,index){
+					if (tp.topic_id === topic.topic_id){
+						topicIndex = index;
+					}
+				});	
+				// remove & re-add topic to user's topics
+				data.topic.splice(topicIndex,1);
+				data.topic.push(topic);
+				// write to file
+				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
+					console.log(res);
+					// sign & publish site
+					Page.cmd("sitePublish",{"inner_path":inner_path}, function(res) {
+						console.log(res);
+						// apply to scope
+						$scope.$apply(function() {
+							Page.cmd("wrapperNotification", ["done", "Topic Updated!", 10000]);
+							$window.location.href = '/'+ $scope.page.site_info.address +'/topic.html?topic_id='+topic.topic_id;
+						});
+					});
+				});
+			});
+		};
+
 		// on rootscope create topic
 		$rootScope.$on('createTopic',function(event,mass){
 			$scope.createTopic(mass);

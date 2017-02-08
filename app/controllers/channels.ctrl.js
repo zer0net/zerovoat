@@ -2,17 +2,57 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 	function($scope,$location,$window,$rootScope) {
 
 		// get channel
-		$scope.getChannel = function() {
-			$scope.loading = false;
-			var channel_id = $location.$$absUrl.split('channel_id=')[1].split('&')[0];
+		$scope.getChannel = function(topic) {
+			$scope.channel_loading = true;
+			var channel_id;
+			if (topic){
+				channel_id = topic.channel_id;
+			} else {
+				channel_id = $location.$$absUrl.split('channel_id=')[1].split('&')[0];
+			}
 			var query = ["SELECT * FROM channel WHERE channel_id='"+channel_id+"'"];
 			Page.cmd("dbQuery", query, function(channel) {
-				$scope.channel = channel[0];
-				$rootScope.$broadcast('setChannel',$scope.channel);
-				$scope.loading = false;
-				$scope.$apply();
-			});				
+				$scope.$apply(function(){
+					$scope.channel = channel[0];
+					$rootScope.$broadcast('setChannel',$scope.channel);
+					$scope.getChannelLayout();
+				});
+			});
 		};
+
+		// get channel layout 
+		$scope.getChannelLayout = function(){
+			var query = ["SELECT * FROM channel_layout WHERE channel_id='"+$scope.channel.channel_id+"'"];
+			Page.cmd("dbQuery", query, function(channel_layout) {
+				$scope.$apply(function(){
+					if (channel_layout[0]){
+						$scope.channel.layout = channel_layout[0];
+						$scope.getChannelLayoutFiles();
+					} else {
+						$scope.channel_loading = false;
+						$scope.channel_ready = true;
+					}
+				});
+			});			
+		};
+
+		// get channel layout files
+		$scope.getChannelLayoutFiles = function(){
+			var query = ["SELECT * FROM file WHERE item_type='layout' AND item_id='"+$scope.channel.layout.channel_layout_id+"'"];
+			Page.cmd("dbQuery", query, function(layout_files) {
+				if (layout_files){
+					layout_files.forEach(function(l_file,index){
+						var attr_name = l_file.model_name;
+						$scope.channel.layout[attr_name] = '/' + $scope.page.site_info.address + '/data/users/' + l_file.user_id + '/' + l_file.file_name;
+					});
+				}
+				$scope.$apply(function(){
+					$scope.channel_loading = false;
+					$scope.channel_ready = true;
+				});
+			});
+		};
+
 
 		// create channel
 		$scope.createChannel = function(channel){
@@ -33,7 +73,6 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 						channel:[] 
 					}; 
 				}
-
 				// new category entry
 				channel.channel_id = $scope.page.site_info.auth_address + data.next_channel_id.toString();
 				channel.added = +(new Date);
@@ -44,7 +83,6 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 				data.channel.push(channel);
 				// update next category id #
 				data.next_channel_id += 1;
-				console.log(channel);
 				// write to file
 				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
 				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
@@ -102,6 +140,7 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
 			// get data.json
 			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
+				// is channel mod
 				var isChannelMod = false;
 				// render data
 				if (data){ 
@@ -111,7 +150,7 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 						data.next_moderator_id = 1;
 					} else {
 						data.moderator.forEach(function(mod,index){
-							if (mod.user_name === $scope.page.site_info.cert_user_id){
+							if (mod.user_name === moderator){
 								isChannelMod = true;
 								Page.cmd("wrapperNotification", ["info", "User is already a moderator for this channel!", 10000]);								
 							}
@@ -158,7 +197,6 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 			var sector_id = $location.$$absUrl.split('sector_id=')[1].split('&')[0];
 			var query = ["SELECT * FROM sector WHERE sector_id='"+sector_id+"'"];
 			Page.cmd("dbQuery", query, function(sector) {
-				console.log(sector);
 				$scope.sector = sector[0];
 				$rootScope.$broadcast('setSector',$scope.sector);
 				$scope.loading = false;
@@ -212,5 +250,89 @@ app.controller('ChannelsCtrl', ['$scope','$location','$window','$rootScope',
 				});
 			});
 		};
+
+		// create channel layout
+		$scope.createChannelLayout = function(channel,layout){
+			// inner path to user's data.json file
+			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			// get data.json
+			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
+				// render data
+				if (data){ 
+					data = JSON.parse(data);
+					if (!data.channel_layout){
+						data.channel_layout = [];
+						data.next_channel_layout_id = 1;
+					}
+				} else { 
+					data = { 
+						next_channel_layout_id:1, 
+						channel_layout:[] 
+					}; 
+				}
+
+				// new channel layout entry
+				var channel_layout = layout;
+				channel_layout.channel_id = channel.channel_id;
+				channel_layout.channel_layout_id = $scope.page.site_info.auth_address + data.next_channel_id.toString();
+				channel_layout.added = +(new Date);
+				// user id
+				if ($scope.page.site_info.cert_user_id){ channel_layout.user_id = $scope.page.site_info.cert_user_id; } 
+				else { channel_layout.user_id = $scope.page.site_info.auth_address; }				
+				// add channel layout to user's channel layouts
+				data.channel_layout.push(channel_layout);
+				// update next channel layout id #
+				data.next_channel_layout_id += 1;
+				// write to file
+				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
+					console.log(res);
+					// sign & publish site
+					Page.cmd("sitePublish",{"inner_path":inner_path}, function(res) {
+						console.log(res);
+						// apply to scope
+						$scope.$apply(function() {
+							Page.cmd("wrapperNotification", ["done", "Channel Layout Created!", 10000]);
+							$window.location.href = '/'+ $scope.page.site_info.address +'/?channel_id='+channel.channel_id;
+						});
+					});
+				});
+			});			
+		};
+
+		// update channel layout
+		$scope.updateChannelLayout = function(layout){
+			// inner path to user's data.json file
+			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			// get data.json
+			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
+				data = JSON.parse(data);
+				// get channel's index
+				var chanLayoutIndex;
+				data.channel_layout.forEach(function(ch_layout,index){
+					if (ch_layout.channel_layout_id === layout.channel_layout_id){
+						chanLayoutIndex = index;
+					}
+				});	
+				// remove & re-add channel to user's channels
+				data.channel_layout.splice(chanLayoutIndex,1);
+				data.channel_layout.push(layout);
+				// write to file
+				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
+					console.log(res);
+					// sign & publish site
+					Page.cmd("sitePublish",{"inner_path":inner_path}, function(res) {
+						console.log(res);
+						// apply to scope
+						$scope.$apply(function() {
+							Page.cmd("wrapperNotification", ["done", "Channel Layout Updated!", 10000]);
+							$window.location.href = '/'+ $scope.page.site_info.address +'/?channel_id='+layout.channel_id;
+						});
+					});
+				});
+			});
+		};
+
 	}
 ]);

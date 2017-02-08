@@ -4,12 +4,13 @@
 <head>
 
   <!-- CSS -->
-    <!-- lib -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- app -->
+    <link href="assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/angular-text/text-angular.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   <!-- /CSS -->
-
+  
   <!-- HTML5 Shim -->
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,13 +37,13 @@
           </div>
           <!-- /header -->
           <!-- my channels -->
-          <section ng-if="admin_section === 'my_channels'" id="channels" channels ng-init="getChannels(user.user_id)">
+          <section ng-if="admin_section === 'my_channels'" id="channels" channels ng-init="getChannels(user.user_name)">
             <span ng-show="loading" class="loader"></span>
             <admin-channel-list ng-hide="loading"></admin-channel-list>
           </section>
           <!-- /my channels -->
           <!-- moderated channels -->
-          <section ng-if="admin_section === 'moderated_channels'" id="channels" channels ng-init="getModeratedChannels(user.user_id)">
+          <section ng-if="admin_section === 'moderated_channels'" id="channels" channels ng-init="getModeratedChannels(user.user_name)">
             <span ng-show="loading" class="loader"></span>
             <admin-channel-list ng-hide="loading"></admin-channel-list>
           </section>
@@ -87,7 +88,8 @@
   <script type="text/javascript" src="assets/lib/angular/angular-aria.min.js"></script>
   <script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>  
   <script type="text/javascript" src="assets/lib/angular-bootstrap/angular-bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>  
+  <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js"></script>
   <script type="text/javascript" src="assets/lib/moment/moment.js"></script>
   <script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
 
@@ -97,6 +99,13 @@
   <script type="text/javascript" src="assets/lib/videos/videogular-buffering/vg-buffering.js"></script>
   <script type="text/javascript" src="assets/lib/videos/videogular-overlay-play/vg-overlay-play.js"></script>
   <script type="text/javascript" src="assets/lib/videos/videogular-poster/vg-poster.js"></script>
+
+  <!-- text angular -->
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-rangy.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-setup.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.umd.js"></script>
 
   <!-- app -->
   <script type="text/javascript" src="app/application.js"></script>
@@ -110,6 +119,9 @@
   <script type="text/javascript" src="app/directives/topic-list.directive.js"></script>
   <script type="text/javascript" src="app/directives/moderations.directive.js"></script>    
   <script type="text/javascript" src="app/directives/files.directive.js"></script>    
+
+  <script type="text/javascript" src="app/services/file.service.js"></script>
+  <script type="text/javascript" src="app/services/moderation.service.js"></script>
 
 </body>
 

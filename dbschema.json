@@ -6,6 +6,7 @@
 		".+/data.json": {
 			"to_table": [
 				{"node": "channel", "table": "channel"},
+				{"node": "channel_layout", "table": "channel_layout"},
 				{"node": "topic", "table": "topic"},
 				{"node": "topic_vote", "table": "topic_vote"},
 				{"node": "comment", "table": "comment"},
@@ -38,21 +39,43 @@
 			"indexes": ["CREATE UNIQUE INDEX channel_key ON channel(channel_id, json_id)"],
 			"schema_changed": 1
 		},
-		"sector": {
+		"channel_layout": {
 			"cols": [
-				["sector_id", "TEXT"],
-				["user_id","TEXT"],
-				["name","TEXT"],
-				["description","TEXT"],
-				["title", "TEXT"],
-				["body", "TEXT"],
+				["channel_layout_id", "TEXT"],
+				["channel_id","TEXT"],
+				["btn_bg_color","TEXT"],
+				["btn_text_color","TEXT"],
+				["btn_border_color","TEXT"],
+				["bg_color","TEXT"],
+				["bg_image","TEXT"],
+				["bg_image_attachment","TEXT"],
+				["bg_image_position","TEXT"],
+				["bg_image_size","TEXT"],
+				["bg_image_repeat","TEXT"],
+				["fg_color","TEXT"],
+				["fg_color_secondary","TEXT"],
+				["header_bg_color","TEXT"],
+				["header_bg_image","TEXT"],
+				["subheader_bg_color","TEXT"],
+				["subheader_bg_image","TEXT"],
+				["subheader_bg_size","TEXT"],
+				["subheader_bg_repeat","TEXT"],
+				["subheader_bg_position","TEXT"],
+				["subheader_height","TEXT"],
+				["subheader_title_color","TEXT"],
+				["subheader_title_margin_left","TEXT"],
+				["subheader_title_margin_top","TEXT"],
+				["subheader_title_text","TEXT"],
+				["text_color", "TEXT"],
+				["subtext_color", "TEXT"],				
+				["link_color", "TEXT"],
+				["heading_color", "TEXT"],
 				["added", "DATETIME"],
-				["edited", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
-			"indexes": ["CREATE UNIQUE INDEX sector_key ON sector(sector_id, json_id)"],
+			"indexes": ["CREATE UNIQUE INDEX channel_layout_key ON channel_layout(channel_layout_id, json_id)"],
 			"schema_changed": 1
-		},		
+		},
 		"topic": {
 			"cols": [
 				["topic_id", "TEXT"],
@@ -136,9 +159,12 @@
 				["moderation_id","TEXT"],
 				["moderator_name","TEXT"],
 				["channel_id","TEXT"],
+				["topic_id","TEXT"],
+				["comment_id","TEXT"],
 				["item_type","TEXT"],
 				["item_id","TEXT"],
 				["visible","BOOLEAN"],
+				["current","BOOLEAN"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
@@ -152,6 +178,7 @@
 				["item_id","TEXT"],
 				["item_type","TEXT"],
 				["file_name","TEXT"],
+				["model_name","TEXT"],
 				["user_id","TEXT"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]

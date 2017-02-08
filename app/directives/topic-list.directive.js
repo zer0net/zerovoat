@@ -1,9 +1,10 @@
-app.directive('topicList', ['$rootScope',
-	function($rootScope) {
+app.directive('topicList', ['$rootScope','$location',
+	function($rootScope,$location) {
 
 		// topic list controller
 		var controller = function($scope,$element) {
 			
+			// init topic list
 			$scope.init = function(){
 
 				// loading
@@ -17,16 +18,28 @@ app.directive('topicList', ['$rootScope',
 				
 				// paging
 				$scope.paging = { 
-					currentPage:1,
 					itemsPerPage:20,
 				};				
 
+				// current page
+				var currentPage = $location.$$absUrl.split('&')[0].split('page=')[1];				
+				if (currentPage){
+					$scope.paging.currentPage = currentPage
+				} else {
+					$scope.paging.currentPage = 1;
+				}
+
+				// next page
+				$scope.paging.nextPage = parseInt($scope.paging.currentPage) + 1;
+
 				// generate query
 				$scope.generateQuery();
+				
 			};
 
 			// generate query
 			$scope.generateQuery = function(){
+
 				// if front page
 				if ($scope.section === 'main'){
 					$scope.query = ["SELECT * FROM topic ORDER BY -added LIMIT " + $scope.paging.itemsPerPage + " OFFSET " + $scope.paging.itemsPerPage * ($scope.paging.currentPage - 1)];
@@ -50,6 +63,7 @@ app.directive('topicList', ['$rootScope',
 				Page.cmd("dbQuery",$scope.count_query, function(topic_count){
 					// total items
 					$scope.paging.totalItems = topic_count[0]['COUNT(*)'];
+					$scope.paging.numPages = Math.ceil($scope.paging.totalItems / $scope.paging.itemsPerPage);
 					// get topics
 					$scope.getTopics(query);
 				});
@@ -57,27 +71,30 @@ app.directive('topicList', ['$rootScope',
 
 			// get topics
 			$scope.getTopics = function(query){
-				console.log(query);
 				Page.cmd("dbQuery", query, function(topics) {
 					$scope.$apply(function(){
 						$scope.topics = topics;
-						$scope.topics.forEach(function(topic,index){
-							topic.user_name = topic.user_id.split('@')[0];
-							$scope.getTopicChannel(topic,index);
-						});
+						$scope.loading = false;
 					});
 				});
 			};
 
+			// render topic list item
+			$scope.renderTopicListItem = function(topic) {
+				topic.user_name = topic.user_id.split('@')[0];
+				if (!$scope.channel){
+					$scope.getTopicChannel(topic);
+				} else {
+					topic.channel = $scope.channel;
+				}
+			};
+
 			// get topic channel
-			$scope.getTopicChannel = function(topic,index){
+			$scope.getTopicChannel = function(topic){
 				var query = ["SELECT * FROM channel WHERE channel_id='"+topic.channel_id+"' ORDER BY added"];
 				Page.cmd("dbQuery", query, function(channel) {
 					$scope.$apply(function(){
 						topic.channel = channel[0];
-						if ((index + 1) === $scope.topics.length){
-							$scope.loading = false;
-						}
 					});
 				});
 			};
@@ -93,7 +110,6 @@ app.directive('topicList', ['$rootScope',
 				}
 			};
 
-
 			// page change
 			$scope.pageChanged = function(){
 				$scope.generateQuery();
@@ -108,9 +124,6 @@ app.directive('topicList', ['$rootScope',
 
 		// topic list template
 		var template = '<section id="topic-list" ng-init="init()">' +
-							'<!-- loading -->' +
-						    '<span ng-show="loading" class="loader col-xs-12"></span>' +
-						    '<!-- /loading -->' +
 						    '<div ng-repeat="topic in topics | orderBy:sort.val" ng-show="topic.visible" class="topic-item row" moderations ng-init="getItemModerations(topic)">' +
 								'<div class="topic-item-left votes" votes ng-init="getTopicVotes(topic)">' +
 									'<a ng-click="onUpVoteTopic(topic)" class="vote-arrow arrow-up"></a>' +
@@ -125,18 +138,17 @@ app.directive('topicList', ['$rootScope',
 								    '<div class="topic-item-image">'+
 								        '<figure><a href="topic.html?topic_id={{topic.topic_id}}" ng-if="topic.image"><img ng-src="{{topic.image_path}}"/></a></figure>' +
 								    '</div>' +
-								    '<div class="topic-item-body">' +
+								    '<div class="topic-item-body" ng-init="renderTopicListItem(topic)">' +
 								      	'<div class="topic-item-header">' +
 								        	'<h3><a href="topic.html?topic_id={{topic.topic_id}}">{{topic.title}}</a></h3>' +
-								        	'<div ng-if="view === \'moderate\'" class="topic-moderation-menu">'+
-								        		'visible:{{topic.moderation.visible}}'+
+								        	'<div ng-if="view === \'moderate\' || view === \'edit\'" class="topic-moderation-menu">'+
 								        		'<a ng-click="toggleTopicVisibility(topic)">' +
 								        			'<span ng-class="[{\'glyphicon glyphicon-eye-open\': topic.visible === 1 || topic.moderation.visible === 1},{\'glyphicon glyphicon-eye-close\': topic.moderation.visible === 0}]"></span>' + 
 								        		'</a>' +
-								        		'<a href="/{{page.site_info.address}}/moderate.html?topic_id={{topic.topic_id}}"><span class="glyphicon glyphicon-pencil"></span></a>' +						        		
+								        		'<a ng-if="topic.user_id === page.site_info.cert_user_id" href="/{{page.site_info.address}}/moderate.html?topic_id={{topic.topic_id}}"><span class="glyphicon glyphicon-pencil"></span></a>' +						        		
 								        	'</div>' +
 								      	'</div>' +
-								        '<div class="topic-info in-list">' +
+								        '<div class="topic-info in-list subtext-color">' +
 								          '<a class="toggle-btn {{topic.toggleClass}}" ng-click="toggleTopicBody(topic)"></a>' +
 								          'submitted <span am-time-ago="topic.added"></span> ' +
 								          'by <span class="user-name blue" ng-bind="topic.user_name"></span> ' +
@@ -147,14 +159,20 @@ app.directive('topicList', ['$rootScope',
 								          '<a href="topic.html?topic_id={{topic.topic_id}}#comment-list"><b comments ng-init="countTopicComments(topic)">{{topic.comments_total}} comments</b></a>' +
 								        '</div>' +
 								        '<div class="topic-body" ng-show="topic.show_body">' +
-								          '<article ng-if="topic.body" ng-bind="topic.body"></article>' +
+								          '<article ng-if="topic.body" ng-bind="topic.body" class="fg-color-secondary"></article>' +
 									      '<figure ng-if="topic.image"><img ng-src="{{topic.image_path}}"/></figure>' +
 									      '<div ng-if="topic.video"><video-player ng-init="initVideoPlayer(topic.player)"></video-player></div>' +
 								        '</div>' +
 								    '</div>' +
 							    '</div>' +
 						    '</div>' +
-						    '<ul uib-pagination total-items="paging.totalItems" items-per-page="paging.itemsPerPage" ng-model="paging.currentPage" class="pagination-sm" boundary-link-numbers="true" rotate="false" ng-change="pageChanged()"></ul>' +
+						    '<ul ng-if="paging.numPages > 1" class="topic-list-navigation">' +
+						    	'<li ng-if="paging.currentPage > 1"><a href="/{{page.site_info.address}}/index.html?page={{paging.currentPage - 1}}">Prev</a></li>' +
+						    	'<li ng-if="paging.numPages > paging.currentPage"><a href="/{{page.site_info.address}}/index.html?page={{paging.nextPage}}">Next</a></li>' +
+						    '</ul>' +
+						    '<div layout="row" flex="100" ng-if="topics.length === 0">' +
+						    	'<span>no topics yet, <a href="/{{page.site_info.adderess}}/new.html?topic+channel_id={{channel.channel_id}}">create a new topic!</span>' +
+						    '</div>' +
 						'</section>';
 
 		return {

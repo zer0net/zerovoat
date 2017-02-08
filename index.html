@@ -4,9 +4,10 @@
 <head>
 
   <!-- CSS -->
-    <!-- lib -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- app -->
+    <link href="assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lib/angular-text/text-angular.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   <!-- /CSS -->
 
@@ -63,23 +64,33 @@
     </section>
     <!-- /channels -->
     <!-- channel view -->
-    <section ng-if="section === 'channel'" class="container">
-      <section ng-init="getChannel()">
-        <span class="loader" ng-show="loading"></span>
+    <section ng-if="section === 'channel'" ng-init="getChannel()">
+      <!-- loader -->
+      <span class="loader" ng-show="channel_loading"></span>
+      <!-- /loader -->
+      <!-- layout -->
+      <channel-layout-css ng-if="channel.layout" ng-init="initChannelLayoutCss(channel.layout)"></channel-layout-css>
+      <!-- /layout -->   
+      <!-- subheader -->
+      <subheader ng-if="channel.layout" ng-init="initSubHeader(channel.layout)"></subheader>
+      <!-- subheader -->
+      <!-- channel -->
+      <section class="container" ng-if="channel" ng-hide="channel_loading">
         <!-- topics -->
-        <section class="main-content col-xs-9" ng-hide="loading" ng-if="channel"> 
+        <section class="main-content col-xs-9 fg-color" ng-if="channel"> 
           <!-- topic list -->
           <topic-list></topic-list>
           <!-- /topic list -->
         </section>
         <!-- /topics -->
         <!-- side bar -->
-        <section class="col-xs-3" ng-hide="loading" ng-if="channel">
+        <section class="col-xs-3">
           <sidebar></sidebar>
         </section>
         <!-- /sidebar -->
       </section>
-    </section>
+      <!-- /channel -->
+      </section>
     <!-- /channel view -->
     <!-- sector view -->
     <section ng-if="section === 'sector'" class="container">
@@ -100,7 +111,6 @@
       </section>
     </section>
     <!-- /sector view -->
-
   </main>
   <!-- /main -->
 
@@ -122,6 +132,7 @@
   <script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>  
   <script type="text/javascript" src="assets/lib/angular-bootstrap/angular-bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js"></script>  
+  <script type="text/javascript" src="assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js"></script>
   <script type="text/javascript" src="assets/lib/moment/moment.js"></script>
   <script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
 
@@ -132,20 +143,32 @@
   <script type="text/javascript" src="assets/lib/videos/videogular-overlay-play/vg-overlay-play.js"></script>
   <script type="text/javascript" src="assets/lib/videos/videogular-poster/vg-poster.js"></script>
 
+  <!-- text angular -->
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-rangy.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular-setup.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.min.js"></script>
+  <script type="text/javascript" src="assets/lib/angular-text/text-angular.umd.js"></script>
+
   <!-- app -->
   <script type="text/javascript" src="app/application.js"></script>
   <script type="text/javascript" src="app/controllers/main.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/channels.ctrl.js"></script>
   <script type="text/javascript" src="app/directives/site-header.directive.js"></script>
+  <script type="text/javascript" src="app/directives/subheader.directive.js"></script>
   <script type="text/javascript" src="app/directives/sidebar.directive.js"></script>
   <script type="text/javascript" src="app/directives/topic-list.directive.js"></script>
   <script type="text/javascript" src="app/directives/channels.directive.js"></script>
   <script type="text/javascript" src="app/directives/channel-list.directive.js"></script>
+  <script type="text/javascript" src="app/directives/channel-layout-css.directive.js"></script>
   <script type="text/javascript" src="app/directives/votes.directive.js"></script>
   <script type="text/javascript" src="app/directives/comments.directive.js"></script>    
   <script type="text/javascript" src="app/directives/moderations.directive.js"></script>
   <script type="text/javascript" src="app/directives/files.directive.js"></script>
   <script type="text/javascript" src="app/directives/video-player.directive.js"></script>
+
+  <script type="text/javascript" src="app/services/file.service.js"></script>
+  <script type="text/javascript" src="app/services/moderation.service.js"></script>
 
 </body>
 

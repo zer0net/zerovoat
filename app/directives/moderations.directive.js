@@ -1,5 +1,5 @@
-app.directive('moderations', [
-	function() {
+app.directive('moderations', ['Moderation',
+	function(Moderation) {
 
 		// moderations controller
 		var controller = function($scope,$element) {
@@ -18,15 +18,15 @@ app.directive('moderations', [
 				var item_type,
 					item_id;
 				for (var i in item){
-					if (i.indexOf('comment_id') > -1){
+					if (i === 'topic_id'){
 						item_type = 'topic';
-						item_id = 'topic_id';
-					} else if (i.indexOf('topic_id') > -1){
+						item_id='topic_id';
+					} else if (i === 'comment_id'){
 						item_type = 'comment';
-						item_id='comment_id';
-					}
+						item_id = 'comment_id';
+					} 
 				}
-				var query = ["SELECT * FROM moderation WHERE item_type='"+item_type+"' AND item_id='"+item[item_id]+"' ORDER BY added"];
+				var query = ["SELECT * FROM moderation WHERE item_type='"+item_type+"' AND item_id='"+item[item_id]+"' AND current=1 ORDER BY added"];
 				Page.cmd("dbQuery", query, function(moderations) {
 					if (moderations.length > 0){
 						item.moderations = moderations;
@@ -91,20 +91,21 @@ app.directive('moderations', [
 						data = { 
 							next_moderation_id:1, 
 							moderation:[] 
-						}; 
+						};
 					}
 					// moderation obj
 					moderation.moderation_id = $scope.page.site_info.auth_address + data.next_moderation_id.toString();
-					if ($scope.channel){
-						moderation.channel_id = $scope.channel.channel_id;
-					} else if ($scope.topic){
-						moderation.channel_id = $scope.topic.channel_id;						
-					}
-					moderation.moderator_name = $scope.moderator.user_name;
+					moderation.current = true;
 					moderation.added = +(new Date);
-					// add comment to user's comments
+					// get current moderation object & index
+					var c_mod = Moderation.findCurrentItemModeration(data.moderation,moderation);
+					if (c_mod){
+						data.moderation.splice(c_mod.index,1);
+						data.moderation.push(c_mod.moderation);
+					}
+					// add moderation to user's moderations
 					data.moderation.push(moderation);
-					// update next comment id #
+					// update next moderation id #
 					data.next_moderation_id += 1;
 					// write to file
 					var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
@@ -126,8 +127,11 @@ app.directive('moderations', [
 				// toggle topic visibility
 				$scope.toggleTopicVisibility = function(topic){
 					var moderation = {
+						channel_id:$scope.channel.channel_id,
 						item_type:'topic',
-						item_id:topic.topic_id
+						item_id:topic.topic_id,
+						moderator_name:$scope.moderator.user_name,
+						topic_id:topic.topic_id
 					}
 					$scope.toggleItemVisibility(moderation,topic);
 				};
@@ -139,8 +143,11 @@ app.directive('moderations', [
 				// toggle comment visibility
 				$scope.toggleCommentVisibility = function(comment){
 					var moderation = {
+						channel_id:$scope.channel.channel_id,
 						item_type:'comment',
-						item_id:comment.comment_id
+						item_id:comment.comment_id,
+						moderator_name:$scope.moderator.user_name,
+						topic_id:$scope.topic.topic_id						
 					}
 					$scope.toggleItemVisibility(moderation,comment);
 				};

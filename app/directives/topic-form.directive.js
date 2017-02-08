@@ -6,6 +6,7 @@ app.directive('topicForm', ['$rootScope',
 
 			// init topic form
 			$scope.initTopicForm = function () {
+				$scope.item_type = 'topic';
 				if ($scope.view === 'new'){
 					// init topic obj
 					$scope.topic = {
@@ -57,7 +58,7 @@ app.directive('topicForm', ['$rootScope',
 								    '<div class="form-field row">' +
 								      '<label class="col-xs-2">Text</label>' +
 								      '<div class="col-xs-10">' +
-								        '<textarea class="form-control" ng-model="topic.body"></textarea>' +
+								        '<text-angular name="topic_body" ng-model="topic.body"></text-angular>' +
 								      '</div>' +
 								    '</div>' +
 								    '<div class="form-field row" ng-init="initFileUpload(topic)">' +

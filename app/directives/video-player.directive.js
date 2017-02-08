@@ -9,7 +9,7 @@ app.directive('videoPlayer', ['$sce','$timeout',
 			};
 			// on player ready
 			$scope.onPlayerReady = function($API){
-				console.log($API);
+				// console.log($API);
 			};
 		};
 

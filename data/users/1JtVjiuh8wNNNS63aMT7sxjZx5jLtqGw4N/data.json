@@ -96,9 +96,17 @@
 			"body": "тест",
 			"added": 1485865712808,
 			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N11",
+			"comment_parent_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N10",
+			"topic_id": "1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw1",
+			"body": "тест",
+			"added": 1485964876944,
+			"user_id": "antignu@zeroid.bit"
 		}
 	],
-	"next_comment_id": 11,
+	"next_comment_id": 12,
 	"comment_vote": [
 		{
 			"comment_vote_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N1",
@@ -106,9 +114,16 @@
 			"vote": 1,
 			"added": 1484678411731,
 			"user_id": "antignu@zeroid.bit"
+		},
+		{
+			"comment_vote_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N2",
+			"comment_id": "1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp45",
+			"vote": 1,
+			"added": 1485964826602,
+			"user_id": "antignu@zeroid.bit"
 		}
 	],
-	"next_comment_vote_id": 2,
+	"next_comment_vote_id": 3,
 	"topic": [
 		{
 			"topic_id": "1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N1",
