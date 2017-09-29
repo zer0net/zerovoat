@@ -6,14 +6,14 @@ app.directive('sidebar', ['$rootScope',
 			
 			// init sidebar
 			$scope.init = function(){
-				if ($scope.section === 'main'){
+				if ($scope.view === 'main'){
 					$scope.getLastestChannels();
 				}
 			};
 
 			// get latest channels
 			$scope.getLastestChannels = function(){
-				var query = ["SELECT * FROM channel ORDER BY -added LIMIT 5"];
+				var query = ["SELECT * FROM channel WHERE name NOT NULL ORDER BY -added LIMIT 5"];
 				Page.cmd("dbQuery", query, function(channels) {
 					$scope.channels = channels;
 					$scope.$apply();
@@ -31,18 +31,17 @@ app.directive('sidebar', ['$rootScope',
 									'<hr/>' + 
 									'<span>ChanOp: {{channel.user_id.split("@")[0]}}</span>' +
 	 							'</div>' +
-	 							// '<hr ng-if="channel" style="float: left;width: 100%;"/>' +
-								'<ul class="col-xs-12 main-section-sidebar-menu" ng-if="section === \'main\'">' +
+								'<ul class="col-xs-12 main-section-sidebar-menu" ng-if="view === \'main\'">' +
 									'<li><h3>Newest Channels</h3></li>' +
-									'<li ng-repeat="channel in channels"><a class="btn" href="/{{page.site_info.address}}/?channel_id={{channel.channel_id}}">{{channel.name}}</a></li>' +
+									'<li ng-repeat="channel in channels track by $index"><a class="btn" href="/{{page.site_info.address}}/index.html?view:channel+channel_id={{channel.channel_id}}"><span>{{channel.name}}</span></a></li>' +
 									'<li><hr/></li>' +
-									'<li><a class="btn" href="/{{page.site_info.address}}/?channels">All Channels</a></li>' +
+									'<li><a class="btn" href="/{{page.site_info.address}}/index.html?view:channels">All Channels</a></li>' +
 								'</ul> ' +
-								'<div class="col-xs-12" ng-if="section === \'channels\'">' +
+								'<div class="col-xs-12" ng-if="view === \'channels\'">' +
 		                        	'<p style="text-transform:uppercase;">number of channels : {{channels.length}}</p>' +
 		                        	'<ul style="padding:0;">' + 
 									'<li ng-if="page.site_info.cert_user_id" ng-show="!channel">' +
-										'<a class="btn" href="new.html?channel">Create New Channel</a>' +
+										'<a class="btn" href="index.html?view:new+section:channel">Create New Channel</a>' +
 									'</li>' +
 									'</ul>' +
 								'</div>' +

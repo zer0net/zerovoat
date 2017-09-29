@@ -1,0 +1,28 @@
+{
+	"cluster":"19gtNiKNZMq6nTdWThGCQQAS2bCYAY1tFh",
+	"clusters":[{
+		"cluster_id":"19gtNiKNZMq6nTdWThGCQQAS2bCYAY1tFh"
+	},{
+		"cluster_id":"1MzV32sv55VSD5Vr7u3mcMPsX2oG9PHusr"
+	},{
+		"cluster_id":"15fDN4wasXuyS8krtKvrxEVmWWLz6Qh518"
+	}],
+	"merger_name":"CDN",
+	"versions":{
+		"a":"5JLwSwpk8",
+		"b":"mN7FmgC8z",
+		"c":"AAdXHiHy",
+		"d":"ky928UAh3vDJ",
+		"e":"rXsm4sdsuV",
+		"f":"pNWVetsjTxyLV"
+	},
+	"o_versions":{
+		"a":"5JxRNCL3W",
+		"b":"TqjHuSivNB",
+		"c":"qDkaMvVkgz",
+		"d":"ShWDotXYw2",
+		"e":"rXsm4sdsuV",
+		"f":"rXRmJFrd9RuV"
+	}
+}
+

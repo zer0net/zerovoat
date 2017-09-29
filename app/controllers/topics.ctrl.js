@@ -1,30 +1,17 @@
-app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce',
-	function($scope,$location,$window,$rootScope,$sce) {
+app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce','Item',
+	function($scope,$location,$window,$rootScope,$sce,Item) {
 
 		// get topic by url params
 		$scope.getTopic = function() {
 			$scope.loading = true;
-			var topic_id = $location.$$absUrl.split('?')[1].split('&')[0].split('topic_id=')[1];
-			var query = ["SELECT * FROM topic WHERE topic_id='"+topic_id+"'"];
+			var query = Item.generateTopicQuery($location.$$absUrl);
 			Page.cmd("dbQuery", query, function(topic) {
 				$scope.topic = topic[0];
-				$scope.topic.user_name = $scope.topic.user_id.split('@')[0];
-				// get channel
-				$scope.getChannel($scope.topic);
-				// count topic comments
-				$scope.countTopicComments();
-			});
-		};
-
-		// count topic comments
-		$scope.countTopicComments = function(){
-			// count topic comments
-			var query = ["SELECT count(*) FROM comment WHERE topic_id='"+$scope.topic.topic_id+"'"];
-			Page.cmd("dbQuery", query, function(commentsCount) {
-				$scope.$apply(function(){
-					$scope.loading = false;
-					$scope.topic.comments_total = commentsCount[0]['count(*)'];
-				});
+				console.log($scope.topic);
+				if ($scope.topic.channel_id){
+					$scope.getChannel($scope.topic);					
+				}
+				$scope.loading = false;
 			});
 		};
 
@@ -32,8 +19,8 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 		$scope.createTopic = function(topic){
 			var msg = 'creating topic';
 			$scope.showLoadingMsg(msg);
-			// inner path to user's data.json file
-			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			// inner path to user's json files
+			var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 			// get data.json
 			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 				// render data
@@ -51,13 +38,21 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 				}
 				// new topic entry
 				topic = {
-					topic_id:$scope.page.site_info.auth_address + data.next_topic_id.toString(),
+					topic_id:$scope.page.site_info.auth_address + "topic" + data.next_topic_id.toString(),
 					channel_id:topic.channel_id,
 					title:topic.title,
 					body:topic.body,
+					embed_url:topic.embed_url,					
 					type:'topic',
 					added:+(new Date)
 				};
+				
+				if (topic.body){
+					topic.body_p = topic.body.replace(/<\/?[^>]+(>|$)/g, "");
+				} else {
+					topic.body_p = '';
+				}
+
 				// user id
 				if ($scope.page.site_info.cert_user_id){ topic.user_id = $scope.page.site_info.cert_user_id; } 
 				else { topic.user_id = $scope.page.site_info.auth_address; }				
@@ -66,7 +61,7 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 				// update next topic id #
 				data.next_topic_id += 1;
 				// write to file
-				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 					console.log(res);
 					// sign & publish site
@@ -75,7 +70,8 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 						// apply to scope
 						$scope.$apply(function() {
 							Page.cmd("wrapperNotification", ["done", "Topic Created!", 10000]);
-							$window.location.href = '/'+ $scope.page.site_info.address +'/topic.html?topic_id='+topic.topic_id;
+							var link = '/'+ $scope.page.site_info.address +'/index.html?view:topic+topic_id='+topic.topic_id;
+							$scope.updateContentJson(link);
 						});
 					});
 				});
@@ -85,7 +81,7 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 		// update topic
 		$scope.updateTopic = function(topic){
 			// inner path to user's data.json file
-			var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+			var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 			// get data.json
 			Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 				data = JSON.parse(data);
@@ -96,9 +92,21 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 						topicIndex = index;
 					}
 				});	
+
+				var u_topic = {
+					topic_id:topic.topic_id,
+					channel_id:topic.channel_id,
+					user_id:topic.user_id,
+					title:topic.title,
+					body:topic.body,
+					body_p:topic.body.replace(/<\/?[^>]+(>|$)/g, ""),
+					embed_code:topic.embed_code,
+					type:'topic',
+					added:topic.added
+				};
 				// remove & re-add topic to user's topics
 				data.topic.splice(topicIndex,1);
-				data.topic.push(topic);
+				data.topic.push(u_topic);
 				// write to file
 				var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
 				Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
@@ -109,7 +117,7 @@ app.controller('TopicsCtrl', ['$scope','$location','$window','$rootScope','$sce'
 						// apply to scope
 						$scope.$apply(function() {
 							Page.cmd("wrapperNotification", ["done", "Topic Updated!", 10000]);
-							$window.location.href = '/'+ $scope.page.site_info.address +'/topic.html?topic_id='+topic.topic_id;
+							$window.location.href = '/'+ $scope.page.site_info.address +'/index.html?view:topic+topic_id='+topic.topic_id;
 						});
 					});
 				});

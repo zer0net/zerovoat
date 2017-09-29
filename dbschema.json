@@ -1,23 +1,24 @@
 {
-	"db_name": "zerovoat",
-	"db_file": "data/users/zerovoat.db",
+	"db_name": "zeroverse",
+	"db_file": "merged-CDN/zeroverse.db",
 	"version": 2,
 	"maps": {
-		".+/data.json": {
+        ".+/data/users/.+/data.json":{
 			"to_table": [
 				{"node": "channel", "table": "channel"},
 				{"node": "channel_layout", "table": "channel_layout"},
-				{"node": "topic", "table": "topic"},
-				{"node": "topic_vote", "table": "topic_vote"},
 				{"node": "comment", "table": "comment"},
 				{"node": "comment_vote", "table": "comment_vote"},
-				{"node": "user", "table": "user"},
-				{"node": "moderator", "table": "moderator"},
-				{"node": "moderation", "table": "moderation"},
 				{"node": "file", "table": "file"},
-				{"node": "sector", "table": "sector"}				
-			],
-			"to_keyvalue": ["next_comment_id", "next_topic_id"]
+				{"node": "file_to_item", "table": "file_to_item"},
+  				{"node": "moderator", "table": "moderator"},
+				{"node": "moderation", "table": "moderation"},
+				{"node": "notification", "table": "notification"},
+				{"node": "notification_read", "table": "notification_read"},
+				{"node": "topic", "table": "topic"},
+				{"node": "topic_vote", "table": "topic_vote"},
+				{"node": "user", "table": "user"}
+			]
 		},
 		".+/content.json": {
 			"to_keyvalue": [ "cert_user_id" ]
@@ -34,6 +35,14 @@
 				["body", "TEXT"],
 				["added", "DATETIME"],
 				["edited", "DATETIME"],
+                ["channel_address", "TEXT"],
+                ["channel_name", "TEXT"],
+                ["channel_description", "TEXT"],
+                ["logo_file", "TEXT"],
+                ["cluster_id", "TEXT"],
+                ["date_added", "INTEGER"],
+                ["hide", "INTEGER"],
+                ["user", "TEXT"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX channel_key ON channel(channel_id, json_id)"],
@@ -76,21 +85,6 @@
 			"indexes": ["CREATE UNIQUE INDEX channel_layout_key ON channel_layout(channel_layout_id, json_id)"],
 			"schema_changed": 1
 		},
-		"topic": {
-			"cols": [
-				["topic_id", "TEXT"],
-				["channel_id","TEXT"],
-				["user_id","TEXT"],
-				["title", "TEXT"],
-				["body", "TEXT"],
-				["type", "TEXT"],
-				["parent_topic_uri", "TEXT"],
-				["added", "DATETIME"],
-				["json_id", "INTEGER REFERENCES json (json_id)"]
-			],
-			"indexes": ["CREATE UNIQUE INDEX topic_key ON topic(topic_id, json_id)"],
-			"schema_changed": 1
-		},
 		"comment": {
 			"cols": [
 				["comment_id", "TEXT"],
@@ -103,7 +97,7 @@
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
-			"indexes": ["CREATE INDEX topic_uri ON comment(topic_uri)", "CREATE UNIQUE INDEX comment_key ON comment(json_id, comment_id)"],
+			"indexes": ["CREATE INDEX comment_key ON comment(topic_uri)", "CREATE UNIQUE INDEX comment_uri ON comment(json_id, comment_id)"],
 			"schema_changed": 1
 		},
 		"comment_vote": {
@@ -119,27 +113,33 @@
 			"indexes": ["CREATE UNIQUE INDEX comment_vote_key ON comment_vote(comment_uri, json_id)", "CREATE INDEX comment_vote_uri ON comment_vote(comment_uri)"],
 			"schema_changed": 1
 		},
-		"topic_vote": {
+		"file": {
 			"cols": [
-				["topic_vote_id","TEXT"],
-				["topic_id","TEXT"],
+				["file_id","TEXT"],
+				["file_type","TEXT"],
+				["item_id","TEXT"],
+				["item_type","TEXT"],
+				["file_name","TEXT"],
+				["model_name","TEXT"],
 				["user_id","TEXT"],
-				["topic_uri", "TEXT"],
-				["vote", "INTEGER"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
-			"indexes": ["CREATE UNIQUE INDEX topic_vote_topic_key ON topic_vote(topic_uri, json_id)", "CREATE INDEX topic_vote_uri ON topic_vote(topic_uri)"],
+			"indexes": ["CREATE UNIQUE INDEX file_key ON file(file_id, json_id)"],
 			"schema_changed": 1
 		},
-		"user": {
+		"file_to_item": {
 			"cols": [
+				["file_to_item_id","TEXT"],
+				["item_type","TEXT"],
+				["item_id","TEXT"],
+				["file_id","TEXT"],
+				["cluster_id","TEXT"],
 				["user_id","TEXT"],
-				["user_name","TEXT"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
-			"indexes": ["CREATE UNIQUE INDEX user_key ON user(user_id, json_id)"],
+			"indexes": ["CREATE UNIQUE INDEX file_to_item_key ON file_to_item(file_to_item_id, json_id)"],
 			"schema_changed": 1
 		},
 		"moderator": {
@@ -158,11 +158,13 @@
 			"cols": [
 				["moderation_id","TEXT"],
 				["moderator_name","TEXT"],
+				["moderation_type","TEXT"],
 				["channel_id","TEXT"],
 				["topic_id","TEXT"],
 				["comment_id","TEXT"],
 				["item_type","TEXT"],
 				["item_id","TEXT"],
+				["sticky_id","TEXT"],
 				["visible","BOOLEAN"],
 				["current","BOOLEAN"],
 				["added", "DATETIME"],
@@ -171,21 +173,73 @@
 			"indexes": ["CREATE UNIQUE INDEX moderation_key ON moderation(moderation_id, json_id)"],
 			"schema_changed": 1
 		},
-		"file": {
+		"notification": {
 			"cols": [
-				["file_id","TEXT"],
-				["file_type","TEXT"],
-				["item_id","TEXT"],
-				["item_type","TEXT"],
-				["file_name","TEXT"],
-				["model_name","TEXT"],
+				["notification_id","TEXT"],
 				["user_id","TEXT"],
+				["item_type","TEXT"],
+				["item_id","TEXT"],				
+				["t_user_id","TEXT"],
+				["t_item_type","TEXT"],
+				["t_item_id","TEXT"],
+				["topic_id","TEXT"],
+				["topic_title","TEXT"],				
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
-			"indexes": ["CREATE UNIQUE INDEX file_key ON file(file_id, json_id)"],
+			"indexes": ["CREATE UNIQUE INDEX notification_key ON notification(notification_id, json_id)"],
 			"schema_changed": 1
-		}					
+		},
+		"notification_read": {
+			"cols": [
+				["notification_read_id","TEXT"],
+				["notification_id","TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX notification_read_key ON notification_read(notification_read_id, json_id)"],
+			"schema_changed": 1
+		},
+		"topic": {
+			"cols": [
+				["topic_id", "TEXT"],
+				["channel_id","TEXT"],
+				["user_id","TEXT"],
+				["title", "TEXT"],
+				["body", "TEXT"],
+				["body_p", "TEXT"],
+				["embed_url", "TEXT"],
+				["type", "TEXT"],
+				["parent_topic_uri", "TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX topic_key ON topic(topic_id, json_id)"],
+			"schema_changed": 1
+		},
+		"topic_vote": {
+			"cols": [
+				["topic_vote_id","TEXT"],
+				["topic_id","TEXT"],
+				["user_id","TEXT"],
+				["topic_uri", "TEXT"],
+				["vote", "INTEGER"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX topic_vote_key ON topic_vote(topic_uri, json_id)", "CREATE INDEX topic_vote_uri ON topic_vote(topic_uri)"],
+			"schema_changed": 1
+		},
+		"user": {
+			"cols": [
+				["user_id","TEXT"],
+				["user_name","TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX user_key ON user(user_id, json_id)"],
+			"schema_changed": 1
+		}				
 	},
 	"feeds": {
 		"Topics": "SELECT title AS title, body AS body, added AS date_added, 'topic' AS type, '?Topic:' || topic.topic_id || '_' || topic_creator_json.directory AS url FROM topic LEFT JOIN json AS topic_creator_json ON (topic_creator_json.json_id = topic.json_id)",

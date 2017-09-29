@@ -8,6 +8,7 @@ app.directive('userList', [
 			$scope.getUsers = function () {
 				var query = ["SELECT * FROM user"]; 
 				Page.cmd("dbQuery", query, function(users) {
+					console.log(users);
 					$scope.$apply(function(){
 						$scope.users = users;
 					});

@@ -14,7 +14,7 @@
     }
 
     ZeroChat.prototype.selectUser = function() {
-      Page.cmd("certSelect", [["zeroid.bit", "zeroverse.bit"]]);
+      Page.cmd("certSelect", [["zeroid.bit","zv.anonymous"]]);
       return false;
     };
 

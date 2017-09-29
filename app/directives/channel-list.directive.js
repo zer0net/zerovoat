@@ -31,12 +31,12 @@ app.directive('channelList', [
     };
 
     var template =  '<section class="channel-view-container">' +
-                      '<div class="channel-list col-lg-9" ng-init="initChannelsSort()">' +
+                      '<div class="channel-list col-sm-9 col-xs-12" ng-init="initChannelsSort()">' +
                         '<div ng-repeat="channel in channels | orderBy:sort.current.val" class="channel-item col-xs-12" ng-init="getChannelsTopics(channel)">' +
                             '<div class="channel-item-wrap" ng-init="renderChannelListItem(channel)">' +
                               '<div class="channel-item-top col-xs-12">' +
-                                '<h3><a href="/{{page.site_info.address}}/?channel_id={{channel.channel_id}}"><span>{{channel.name}}</span><small class="channel-topic-count">[{{channel.topics_total}}]</small></a></h3>' +
-                                '<a href="/{{page.site_info.address}}/?channel_id={{channel.channel_id}}" class="btn-go">›</a>' +
+                                '<h3><a href="/{{page.site_info.address}}/index.html?view:channel+channel_id={{channel.channel_id}}"><span>{{channel.name}}</span><small class="channel-topic-count">[{{channel.topics_total}}]</small></a></h3>' +
+                                '<a href="/{{page.site_info.address}}/index.html?view:channel+channel_id={{channel.channel_id}}" class="btn-go">›</a>' +
                                 '<div class="admin-options">' +
                                   '<div ng-if="admin_section === \'my_channels\'">' +
                                     '<a href="edit.html?channel_id={{channel.channel_id}}"><span class="glyphicon glyphicon-pencil"></span></a>' +
@@ -58,7 +58,7 @@ app.directive('channelList', [
                             '</div>' +
                         '</div>' +
                       '</div>' +
-                      '<div class="channels-sidebar col-lg-3">' +
+                      '<div class="channels-sidebar col-sm-3 col-xs-12">' +
                         '<sidebar></sidebar>' +
                       '</div>' + 
                     '</section>';

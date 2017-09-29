@@ -9,11 +9,9 @@ app.directive('channelForm', [
 				$scope.loading = false;
 				$scope.item_type = 'channel';
 				if ($scope.view === 'new'){
-					$scope.mode = 'new';
-					$scope.info_text = 'You are creating a new channel'
+					$scope.info_text = 'You are creating a new channel. Before adding another channel, please check if any of the existing Channels already cover your topic to avoid duplication.'
 				} else if ($scope.view === 'edit') {
 					$scope.selected = '';
-					$scope.mode = 'edit';
 					$scope.info_text = 'You are editing the channel '+$scope.channel.name;
 				}
 			};
@@ -29,8 +27,18 @@ app.directive('channelForm', [
 
 			// on create channel
 			$scope.onCreateChannel = function(channel){
-				$scope.loading = true;
-				$scope.createChannel(channel);
+				var query = ["SELECT count(*) FROM channel WHERE name='"+channel.name+"'"];
+				Page.cmd("dbQuery", query, function(channel_name) {
+					$scope.$apply(function(){
+						if (channel_name[0]['count(*)'] > 0) {
+							$scope.name_error = true;
+						} else {
+							$scope.name_error = false;
+							$scope.loading = true;
+							$scope.createChannel(channel);
+						}
+					});
+				});
 			};
 
 			// on update channel
@@ -47,6 +55,7 @@ app.directive('channelForm', [
 						      '<label class="col-xs-2">Name</label>' +
 						      '<div class="col-xs-10">' +
 						        '<input class="form-control" ng-model="channel.name"/>' +
+						        '<p ng-if="name_error" class="error">* channel name is allready taken. choose a different name</p>' +
 						      '</div>' +
 						    '</div>' +
 						    '<div class="form-field row">' +
@@ -57,8 +66,8 @@ app.directive('channelForm', [
 						    '</div>' +						    
 						    '<div class="form-field row">' +
 						      '<div class="col-xs-offset-2 col-xs-10">' +
-						        '<button ng-hide="loading" ng-if="mode === \'new\'" class="btn primary-btn" ng-click="onCreateChannel(channel)">submit</button>' +
-						        '<button ng-hide="loading" ng-if="mode === \'edit\'" class="btn primary-btn" ng-click="onUpdateChannel(channel,moderators)">update</button>' +
+						        '<button ng-hide="loading" ng-if="view === \'new\'" class="btn primary-btn" ng-click="onCreateChannel(channel)">submit</button>' +
+						        '<button ng-hide="loading" ng-if="view === \'edit\'" class="btn primary-btn" ng-click="onUpdateChannel(channel,moderators)">update</button>' +
 						        '<span ng-show="loading" class="loader"></span>' + 
 						      '</div>' +
 						    '</div>' +

@@ -4,39 +4,35 @@
  "background-color": "#F5F5F5",
  "cloneable": true,
  "cloned_from": "16JdWTFUUSQyqH6Ks72ASzG8CCpd4ZMzZb",
- "description": "The Mother-Board of ZeroNet",
+ "description": "",
  "files": {
-  "README.md": {
-   "sha512": "3eecab3e42c364d670165f5df2a28648d1bd28429a7a4c2a785261ede77a20b1",
-   "size": 10
-  },
   "app/application.js": {
    "sha512": "03f8aa27979e31a84fadbf8d1e4b2525fe4eb716ccb968e8888c816115f8fcd2",
    "size": 368
   },
   "app/controllers/channels.ctrl.js": {
-   "sha512": "9d17092e297c183518df968ac36ebf9dd7482e45402dba58c9905e18d75251ba",
-   "size": 11735
+   "sha512": "3ba076f01c59287997fa3909a4c276fa7631d706ffd5e75fe22d1a4754b5a1f8",
+   "size": 17234
   },
   "app/controllers/main.ctrl.js": {
-   "sha512": "79960ac2e79c090d6bf443801b9ffbe8ea214ce3613238a2b24a2a2d63c5673d",
-   "size": 2423
+   "sha512": "40f67a4d95009a3c7cd92bb1b4652180f85e83d5a1ffddc0246789d53f55b188",
+   "size": 9921
   },
   "app/controllers/topics.ctrl.js": {
-   "sha512": "fff6a1ec2d6c825b589f063ebdc744f0a271d585b77d5c4d1ff69adfc16d067e",
-   "size": 4342
+   "sha512": "ffb823f7ae5d208150ac2318a0452e9007479cb4ecc02329dda6d09509a88258",
+   "size": 4516
   },
   "app/controllers/user-admin.ctrl.js": {
-   "sha512": "4592baa8afdee4201c1fece9e2210361c51a8455a4821d538d49086f870eceaf",
-   "size": 943
+   "sha512": "2e902245027919c38e516a9a3b964f1eb3d36a2b1c9e46db47cc9751a983acb8",
+   "size": 644
   },
   "app/directives/admin-channel-list.directive.js": {
-   "sha512": "6cd4de620673be905068263d5f2887e7919ade6cdb9d14b37a84b5517bb72564",
-   "size": 2515
+   "sha512": "7f71bb1e50003351ecabff8bcb7b6d5032758001235d52c5d2a8e5168b06ab43",
+   "size": 1979
   },
   "app/directives/channel-form.directive.js": {
-   "sha512": "e42520d39ab6785f194b9ca308ddfc1da2b554682eadb9de700097784f183a10",
-   "size": 2482
+   "sha512": "d9602449b4b6d0de40ace5ed5167329495cdfc50ea21e593a00859f22cfb27e1",
+   "size": 2994
   },
   "app/directives/channel-layout-css.directive.js": {
    "sha512": "ffb67f8cdbfd7d3704c7290119d7d21c22148f556d584f42d8ad17a7049ea773",
@@ -47,16 +43,462 @@
    "size": 16523
   },
   "app/directives/channel-list.directive.js": {
+   "sha512": "4a9f400541d11313db0b940bf5d3b94f4d497f86385ee8a10335f47e2362a399",
+   "size": 3915
+  },
+  "app/directives/channels.directive.js": {
+   "sha512": "f27971b687d635d383b51cd5f7e2076ba3b703c56c42a33467d927ba71dd31b1",
+   "size": 1333
+  },
+  "app/directives/comments.directive.js": {
+   "sha512": "4af5475ef64190334dc28b4ff4e27a12b83b780affeccba1e9db68222c482fa7",
+   "size": 7988
+  },
+  "app/directives/dropzone.directive.js": {
+   "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
+   "size": 428
+  },
+  "app/directives/feed-follow.directive.js": {
+   "sha512": "05cf455fe34b1604b1e3e125577aa5a9c784042813635be1f6aec4f58ee4089f",
+   "size": 3718
+  },
+  "app/directives/file-browser.directive.js": {
+   "sha512": "a87a92f7e71c4b86000e059def7c13901fdfee411449e93ba53e67270e474f95",
+   "size": 6784
+  },
+  "app/directives/filereader.directive.js": {
+   "sha512": "585bc7aa0f2428b9a2c21701d2050edda26ec0bbc63bdb3301718f8ad79fec41",
+   "size": 1510
+  },
+  "app/directives/files.directive.js": {
+   "sha512": "4996b97880b1a3ca313f489d22f76a7b350b5aa4e1efa3f686683f89591a43d6",
+   "size": 14484
+  },
+  "app/directives/img-fallback-src.directive.js": {
+   "sha512": "29b67d504153d98e12cda892c2f2332f8be96c434be6d1409990deb73d170365",
+   "size": 272
+  },
+  "app/directives/img-load.directive.js": {
+   "sha512": "e9b5266c80f1e05bb33a0087d91c71e2d3398a5a81121e540538a5de7cbe3b8a",
+   "size": 318
+  },
+  "app/directives/item-edit-toolbar.directive.js": {
+   "sha512": "eeb7d26409089c421be8248514a5c59cd814c58ac2f1b9e4466578504e27b60b",
+   "size": 4173
+  },
+  "app/directives/item-embed.directive.js": {
+   "sha512": "905fff695545354b15b143df1844add4b1f7cb4a52cf0e3a90cac6f57bb7c35c",
+   "size": 1660
+  },
+  "app/directives/moderations.directive.js": {
+   "sha512": "9179303b7409616f24ce9dcd4fa70661eb7096ecef4b02db7a33dfb7160c8db0",
+   "size": 5223
+  },
+  "app/directives/moderator-form.directive.js": {
+   "sha512": "3520ffc4d0542110cf7b2820f67f4e07603f1afed51e3f53c9c1ff8f2bdac166",
+   "size": 2296
+  },
+  "app/directives/sector-form.directive.js": {
+   "sha512": "93e1b6f3d9d10217f274d9eff40a5a5f4116ea0e7e0599a9c8fe0913481e50c1",
+   "size": 2031
+  },
+  "app/directives/sidebar.directive.js": {
+   "sha512": "be31b2b2443251503f41a449196eeb887fe0cc6159b4ab1b7e77c16dcccdae52",
+   "size": 2069
+  },
+  "app/directives/site-header.directive.js": {
+   "sha512": "9de71ab37f9135864401e088deb3c342d573a540dcc024c52c887e36279ccc08",
+   "size": 5778
+  },
+  "app/directives/subheader.directive.js": {
+   "sha512": "e62af86c9e693eedbb8a9fdf8418380ea2fd0bcb2f7a6d06875397e4d7382b0e",
+   "size": 735
+  },
+  "app/directives/topic-comments.directive.js": {
+   "sha512": "9ad32bc334316b8b725864f067296c1e89bcb29b5b2ab49c222bf8014ce44d69",
+   "size": 12160
+  },
+  "app/directives/topic-form.directive.js": {
+   "sha512": "21c36019767d148c811475fc6e468c5a4feed71468ef65580ad5428c13d5bd26",
+   "size": 4614
+  },
+  "app/directives/topic-list-item.directive.js": {
+   "sha512": "c2a6bfdd77979947c47577d72c0375599ef5e70431b7ad67b22387a7ecc05d8e",
+   "size": 4492
+  },
+  "app/directives/topic-list.directive.js": {
+   "sha512": "e8a230fdd709fbf24324884b988ea26035f7b9ba03da8447be6357b56dfb08d3",
+   "size": 3738
+  },
+  "app/directives/topic-media-item.directive.js": {
+   "sha512": "c4ac1b511279c23f2f85a293c651a3b658fd226af589f72d7ade31b677bd4044",
+   "size": 1126
+  },
+  "app/directives/topic-view.directive.js": {
+   "sha512": "0e63e9d6e26fd4305a76c22287b7d182cdcea8e4d98416ee19941ef3d47b1d41",
+   "size": 3711
+  },
+  "app/directives/user-list.directive.js": {
+   "sha512": "52cdb4e7226402404b300c8795af2e6442f736a0f13c06333547609bd4ccdd12",
+   "size": 774
+  },
+  "app/directives/user-menu.directive.js": {
+   "sha512": "a3ba9f50d3e4a1f5c2b5429f42f64d5cfb7481b6d30b09b40c2cbe94e4c56c53",
+   "size": 8929
+  },
+  "app/directives/user-name.directive.js": {
+   "sha512": "72626c8d65bb760ee81b2f69beeef3ba1e0f0a332ff8521ab0d0f831854ba79c",
+   "size": 580
+  },
+  "app/directives/video-player.directive.js": {
+   "sha512": "9d56902faf4b92ba7e1ed6bdd5d2ae5a97f4b758bb8cb0f23c484a347fc61cd2",
+   "size": 2402
+  },
+  "app/directives/votes.directive.js": {
+   "sha512": "63627c3b4170ecf51dcd272d5b37f2f0a7f7e426e540128fbb9e9a988d7b5a42",
+   "size": 18827
+  },
+  "app/services/channel.service.js": {
+   "sha512": "bc868da7d04f030f1c6433ef8b1e283012bd9cdc952f24383178d2cfcf034fa9",
+   "size": 546
+  },
+  "app/services/comment.service.js": {
+   "sha512": "446e660b888655978141e13a76452be31d475168e0619854a99ac0b74d343e65",
+   "size": 1923
+  },
+  "app/services/file.service.js": {
+   "sha512": "93f79b6d535cbc4833485254355b1878520d48f80a32ed2ba4636ddd9ef0a4c0",
+   "size": 10351
+  },
+  "app/services/follow.service.js": {
+   "sha512": "034492b52d9807f438072447b5ea274fc35f07c0b06f3828f1bc281315c18c4f",
+   "size": 1224
+  },
+  "app/services/item.service.js": {
+   "sha512": "fc3b695f4043a7f11f66b15665035b0d6e984cdc53dedec01e190776eec30844",
+   "size": 5002
+  },
+  "app/services/moderation.service.js": {
+   "sha512": "d30e3e71a2e4dd7c963739c797204510c13897f00aaf598da9d1f8dc44b4a25d",
+   "size": 1434
+  },
+  "app/services/notification.service.js": {
+   "sha512": "ee001b03fd637d5e4f870eeee3923ec79203d86e8e905ba5f904487d51f767f1",
+   "size": 2924
+  },
+  "app/services/route.service.js": {
+   "sha512": "67b1d3b903cf72cf259127c000b253f7ff37b9bf8ca1b170067e66bc978665b1",
+   "size": 753
+  },
+  "app/services/user.service.js": {
+   "sha512": "5d8545a040db74310a97858e06ac3524cd0eaf6eae11022b760c6b02c5ef2925",
+   "size": 1453
+  },
+  "assets/css/elements.css": {
+   "sha512": "a4cdf78a6b7696149581e6d07d0164d81e919f4becab37e49980a7c22ed3b918",
+   "size": 314
+  },
+  "assets/css/font-awesome.min.css": {
+   "sha512": "efb922772183246596989d0c54ed02469fba9d181944aebb7eb515051be72f5c",
+   "size": 20766
+  },
+  "assets/css/style.css": {
+   "sha512": "1065bfb33dff96ccd7adb9629c2d42b0080fd4367467134c6e9661f97a58ed2d",
+   "size": 33633
+  },
+  "assets/img/ajax-loader.gif": {
+   "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
+   "size": 723
+  },
+  "assets/less/elements.less": {
+   "sha512": "1955f4df6b8bcea73e97a062037d91a1bfa5168c5061e26aa54d3fd5ad835318",
+   "size": 6313
+  },
+  "assets/less/style.less": {
+   "sha512": "fc353c5eba57600635b825c0434c9d658fb3ff7690a13e65c31cc9ed3a673ace",
+   "size": 27726
+  },
+  "assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js": {
+   "sha512": "75b4a58ecd81c2379006753466cc17ba11ce51a38d613d4b3be780820fbec849",
+   "size": 20375
+  },
+  "assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css": {
+   "sha512": "fb04820e630d1b55ca4317fb1dbcb346108c88c0f056cc4cd5f203fc8dd8d060",
+   "size": 16582
+  },
+  "assets/lib/angular-bootstrap/angular-bootstrap.min.js": {
+   "sha512": "904457577ca18a45eb90077a90a59a283768fc520244d59afeb3dff0ca610653",
+   "size": 124078
+  },
+  "assets/lib/angular-moment/angular-moment.min.js": {
+   "sha512": "780b24f2c31451bd3cbb47f725cbee27ff3452aaaf0d54930d19679270046b56",
+   "size": 4934
+  },
+  "assets/lib/angular-moment/angular-moment.min.js.map": {
+   "sha512": "423b34586545cf595f12dd6e1d40965dc77b0e4f04ba7c9a7cf1437c74ab443c",
+   "size": 6722
+  },
+  "assets/lib/angular-moment/bower.json": {
+   "sha512": "e65dc6458c431065a8d4df631fbd81b6ceb9c9ab42d5549fb84093bdd5f210d7",
+   "size": 522
+  },
+  "assets/lib/angular-moment/karma.conf.js": {
+   "sha512": "5a530f186995601ed7f95cde0111f4587edcb88e503207ae0a89891f9714acb1",
+   "size": 877
+  },
+  "assets/lib/angular-moment/package.json": {
+   "sha512": "af29c2495b6765b04c0c1318cc8e9abbd2528f02844535d568a59f2948828405",
+   "size": 897
+  },
+  "assets/lib/angular-moment/tests.js": {
+   "sha512": "3da5f70734eda36b9726ebd41f285706a49d31f81ee42a3d0fc7000de137c0d6",
+   "size": 33887
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect-templates.js": {
+   "sha512": "962dead5e46191674e800373e5218a1cc59f325d6416cc9547184467b069c388",
+   "size": 3228
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.js": {
+   "sha512": "49c56a64b4a94f688a86f447f79b3d6e3bf01eb50a9c225ca7cda3d0df06efeb",
+   "size": 13067
+  },
+  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js": {
+   "sha512": "08bf6357575894d49972ded8ef0f99109a8a4c8051b7ec3ee273c207a635cf57",
+   "size": 6113
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.js": {
+   "sha512": "877ed70e08e6fa8e5e3be35492cc3f71628e54f46f8e49d1209e320b6921313f",
+   "size": 26833
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.min.js": {
+   "sha512": "24f4da1b52cb36fd0ff96c65d38be6b30d7728620b19f6b39307d983fdd35509",
+   "size": 5861
+  },
+  "assets/lib/angular-sanitize/angular-sanitize.min.js.map": {
+   "sha512": "49bd2b153c58635160bad1bba67f085d8d650636401c93d862c0d082a7024b2c",
+   "size": 10301
+  },
+  "assets/lib/angular-sanitize/bower.json": {
+   "sha512": "1dab18606047e845c1f9a79faefb877d2c545eecf73ea5a2bd7c9790b4046ee2",
+   "size": 174
+  },
+  "assets/lib/angular-sanitize/index.js": {
+   "sha512": "7ce6e41231b923681e3ea023eddc0eb98b0a66ad87673cd2018b3b06bc73f138",
+   "size": 62
+  },
+  "assets/lib/angular-sanitize/package.json": {
+   "sha512": "1d914dfa8ee2f07fd0d5973d95d710fc9fe95d2fc6166991f4923a7d632005dc",
+   "size": 704
+  },
+  "assets/lib/angular-text/text-angular-rangy.min.js": {
+   "sha512": "e84bca89c0802c741f5b1750e3d747f4227a1619d39c0473d91e00c8099cdd2d",
+   "size": 73826
+  },
+  "assets/lib/angular-text/text-angular-sanitize.js": {
+   "sha512": "3dd5697694d7790a4c72a6e89fed080cd48b4f7a762717ed8d8d04f394077f96",
+   "size": 28772
+  },
+  "assets/lib/angular-text/text-angular-sanitize.min.js": {
+   "sha512": "0fa6544a6b5a47525107655fc76ba9e0faced0ce534b950700ba4eec6f6f3c90",
+   "size": 19970
+  },
+  "assets/lib/angular-text/text-angular-setup.js": {
+   "sha512": "c216e10b8e9801b25b2dca3d4f6a91b344c812c617ddd089c40ef682b9537cd6",
+   "size": 47306
+  },
+  "assets/lib/angular-text/text-angular.css": {
+   "sha512": "546b901fda9d82f7320de1ca11b4d379835c9986664e7a4d9e845b6eb04ec9a4",
+   "size": 4257
+  },
+  "assets/lib/angular-text/text-angular.js": {
+   "sha512": "25325cc1d3307dd6bff22e10c422c9abd42398a07bec02407bb2eea2736566ed",
+   "size": 234592
+  },
+  "assets/lib/angular-text/text-angular.min.js": {
+   "sha512": "e9ae87e285dd310a6045f5094c825edf0ea54df4cf8fc97da3efe5743a336dbd",
+   "size": 141714
+  },
+  "assets/lib/angular/angular-animate.min.js": {
+   "sha512": "dff68236699f7bc995143e4f54d9122c13ee7b654086b32d70fd316b57306656",
+   "size": 25599
+  },
+  "assets/lib/angular/angular-aria.min.js": {
+   "sha512": "e2c51e87bfb2c64459dcc3194ad65ae9aa62102fda2c2b5d5c83c9d05157caa3",
+   "size": 3773
+  },
+  "assets/lib/angular/angular-route.min.js": {
+   "sha512": "aa68f619dcde2d2f356fb0ac4eef3853bc004afef41c9042d525ce151704ee3a",
+   "size": 4389
+  },
+  "assets/lib/angular/angular.min.js": {
+   "sha512": "7c60d0ded2382947ccdf961b8427717d4f30d2593f88c9fdd0a3211595bd9f42",
+   "size": 148199
+  },
+  "assets/lib/bitcoinjs/bitcoinjs.min.js": {
+   "sha512": "b895059b73c6ec8a7b9acce37a463d8b0be2b4e28f1868f2e74c16427e13d9ee",
+   "size": 215992
+  },
+  "assets/lib/bootstrap/bootstrap.min.css": {
+   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
+   "size": 121200
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.css": {
+   "sha512": "72d6d433d5564a6108482d39216bcf68ee1b08f8fbcf3af30ca7d787400c1e52",
+   "size": 26132
+  },
+  "assets/lib/bootstrap/css/bootstrap-theme.min.css": {
+   "sha512": "b6aba9e6de57c895e5bd7f1bfc4f69234b30180e00ba0b3316abdd58049adbfe",
+   "size": 23409
+  },
+  "assets/lib/bootstrap/css/bootstrap.css": {
+   "sha512": "a658bd68aabbe7c3cc76caa3340f80bb8089ed96ad2c20978a79e549fbf4db7c",
+   "size": 146010
+  },
+  "assets/lib/bootstrap/css/bootstrap.min.css": {
+   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
+   "size": 121200
+  },
+  "assets/lib/bootstrap/css/bootstrap.min.css.map": {
+   "sha512": "abb1a70ad42986762144fb8700d0adea6130e7a611cf9e978e51248a4e00b775",
+   "size": 542194
+  },
+  "assets/lib/bootstrap/js/bootstrap.js": {
+   "sha512": "850780aed292053275b1e8118f24680e1e34f6d77bd0ba32eb6bac041dfe3b1e",
+   "size": 69707
+  },
+  "assets/lib/bootstrap/js/npm.js": {
+   "sha512": "81bc329ad688d411fcf3decb28454238ec478c192b6ac19a3ee07e9939556cf1",
+   "size": 484
+  },
+  "assets/lib/dropzone/dropzone.js": {
+   "sha512": "5e16c509713762cd14365e2affe6c9d376ea0e6f1268553631dc41dca5fd6111",
+   "size": 64399
+  },
+  "assets/lib/font-awesome/css/font-awesome.css": {
+   "sha512": "e40f27c1d30e5ab4b3db47c3b2373381489d50147c9623d853e5b299364fd659",
+   "size": 37414
+  },
+  "assets/lib/font-awesome/css/font-awesome.min.css": {
+   "sha512": "49f4e24e55fa924faa8ad7debe5ffb2e26d439e25696df6b6f20e7f766b50ea5",
+   "size": 31000
+  },
+  "assets/lib/font-awesome/fonts/FontAwesome.otf": {
+   "sha512": "a3acaaac3a9861ac7a4ba23e52b9115d39b674cb685b45454fb4b80329a4f737",
+   "size": 134808
+  },
+  "assets/lib/jquery/jquery.min.js": {
+   "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
+   "size": 86351
+  },
+  "assets/lib/moment/moment.js": {
+   "sha512": "651e54d33e16ab0ca2fafcfb9c06ef8de815921286358f588e4652c92258e6a7",
+   "size": 104409
+  },
+  "assets/lib/videos/videogular-buffering/vg-buffering.js": {
+   "sha512": "d887384ddd9225b3a19896751e487d8f5b1e4fd1e1718cbe47b06080ed434b25",
+   "size": 3800
+  },
+  "assets/lib/videos/videogular-controls/vg-controls.js": {
+   "sha512": "9ecbca93a0ceab8130fa79878d4e6e1d90bc9167fa46cb97e0f9cc83021ae835",
+   "size": 53147
+  },
+  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.js": {
+   "sha512": "9367947d62a853dac2e88a328a6f7e48764913194147520eb38bf9c1176d7675",
+   "size": 2568
+  },
+  "assets/lib/videos/videogular-poster/vg-poster.js": {
+   "sha512": "cba2a9155bfae750bfbf4887fb1e2827c573c708be5b35e6ab16b29add145495",
+   "size": 1798
+  },
+  "assets/lib/videos/videogular-themes-default/videogular.css": {
+   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
+   "size": 14913
+  },
+  "assets/lib/videos/videogular/videogular.js": {
+   "sha512": "bd26f26a02dddec74e9c4ef77add6b0a20aa471fcf100df182cba70213136ee0",
+   "size": 63473
+  },
+  "assets/lib/zeronet/class.js": {
+   "sha512": "affe3568586a4883a5cbe628743ee317dbcbfef58af4b15e4933828d09e581b9",
+   "size": 1341
+  },
+  "assets/lib/zeronet/zerochat.js": {
+   "sha512": "7abe78c81ae7cb6bb401b962d167c04f969d69ab1f197f0d29acc7edb6347bc0",
+   "size": 1382
+  },
+  "assets/lib/zeronet/zeroframe.js": {
+   "sha512": "d0066c5b409ef484cd48fe9d7fd74625370d0c5076047248863fd9e965b78493",
+   "size": 4566
+  },
+  "content/config.json": {
+   "sha512": "1038bb62027bdbf4710890e81da3739923f9e99ed6e86098a71f486caac03679",
+   "size": 539
+  },
+  "data-default/users/content-default.json": {
+   "sha512": "a7c93be394b52b8474b8cbd2b789a702e147bac04bc6fa5cd34f16059472114d",
+   "size": 734
+  },
+  "dbschema.json": {
+   "sha512": "c08d215515e0847e02828f95f0400f0b667c557c5ab7f5fcf60ef2e75cfd9478",
+   "size": 8503
+  },
+  "index.html": {
+   "sha512": "d2048919509e3281bb4707aaf32c342313735c8a3f6977559f22ee05b2890758",
+   "size": 18787
+  }
+ },
+ "files_optional": {
+  "README.md": {
+   "sha512": "3eecab3e42c364d670165f5df2a28648d1bd28429a7a4c2a785261ede77a20b1",
+   "size": 10
+  },
+  "app/application.js": {
+   "sha512": "03f8aa27979e31a84fadbf8d1e4b2525fe4eb716ccb968e8888c816115f8fcd2",
+   "size": 368
+  },
+  "app/controllers/channels.ctrl.js": {
+   "sha512": "b23f56c31535c50913a9957877685b9d338a4768437420f7445adf78b174c68a",
+   "size": 12421
+  },
+  "app/controllers/main.ctrl.js": {
+   "sha512": "576fb5a98c7588e2733cfdaacbef58e2dc9ebe1dba8cb60e48b57ba640de6f44",
+   "size": 3824
+  },
+  "app/controllers/topics.ctrl.js": {
+   "sha512": "fff6a1ec2d6c825b589f063ebdc744f0a271d585b77d5c4d1ff69adfc16d067e",
+   "size": 4342
+  },
+  "app/controllers/user-admin.ctrl.js": {
+   "sha512": "4b8befa8f0a58481ebcfbabe55740b5b278eda67f16c4d6f5c3a09840ea396b3",
+   "size": 955
+  },
+  "app/directives/admin-channel-list.directive.js": {
+   "sha512": "2e3fcc84f813034396a3fecae7b15f997421468ae3e878dd6d6457b4084527ad",
+   "size": 1911
+  },
+  "app/directives/channel-form.directive.js": {
+   "sha512": "6e22f89dfa38ec9f848cd75bff2a78fa6aa7f8074b30856f7b59ba1d6046ff71",
+   "size": 2606
+  },
+  "app/directives/channel-layout-css.directive.js": {
+   "sha512": "10d9d386022fd35fb97ae1bb060d3d75248fdeaff60ac94a424cf5b5acf6cb41",
+   "size": 3233
+  },
+  "app/directives/channel-layout-interface.directive.js": {
+   "sha512": "d9163b84b344468115ae475ae09ba9c4104eac478d226adaa738aac6b1d4c68c",
+   "size": 16523
+  },
+  "app/directives/channel-list.directive.js": {
    "sha512": "a412a3736767ad423b35dd2afb9d439959186a0a20db5ca3246d8ecd4881fa61",
    "size": 3869
   },
   "app/directives/channels.directive.js": {
-   "sha512": "b0ee5c08a967ae7e6e88f7c8fdd5c91e05857f3891089f1743190a6325d4f7ef",
-   "size": 1323
+   "sha512": "59e04e721d79c5301cbc4079f2ac20cb2afb777539deba7eb16b49db79caeb45",
+   "size": 1247
   },
   "app/directives/comments.directive.js": {
-   "sha512": "b1335421b4d5bdc2015c50f06d44d6b2922bfb89e008061df21cd6b5b0c6c63d",
-   "size": 6055
+   "sha512": "d457742604dc132834413fce7eaca1ebaf9ba92850708828333fc73447a7afc4",
+   "size": 6933
   },
   "app/directives/dropzone.directive.js": {
    "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
@@ -70,9 +512,13 @@
    "sha512": "a50b77eb7d2b7937b81dd2aebfb5a4fd6307f9dc31326404cd0efc92162d5f20",
    "size": 6933
   },
+  "app/directives/item-edit-toolbar.directive.js": {
+   "sha512": "df37ab303f4bd157c274697264336838a041620c53378c7d352d96e4f6f9c549",
+   "size": 3717
+  },
   "app/directives/moderations.directive.js": {
-   "sha512": "625babafff99c133ba8f8ef8ae4eb947ca00274d3bf6ffe37d68cb86210142c2",
-   "size": 4836
+   "sha512": "665f370e521d5337fa9088a435bb8924d4e7bb6d7584f42c342b4eb6bcbf5535",
+   "size": 4489
   },
   "app/directives/moderator-form.directive.js": {
    "sha512": "3520ffc4d0542110cf7b2820f67f4e07603f1afed51e3f53c9c1ff8f2bdac166",
@@ -87,40 +533,64 @@
    "size": 2043
   },
   "app/directives/site-header.directive.js": {
-   "sha512": "73fabc6490270365e3a97ac8ca20b48d3454992ab496efca578f6450d7ff7b75",
-   "size": 8175
+   "sha512": "b2438f41283c999b8405bec7ad67eda96da6e24a4f7afd8fccab8914e827b559",
+   "size": 8534
   },
   "app/directives/subheader.directive.js": {
    "sha512": "e62af86c9e693eedbb8a9fdf8418380ea2fd0bcb2f7a6d06875397e4d7382b0e",
    "size": 735
   },
+  "app/directives/topic-comments.directive.js": {
+   "sha512": "e3648089240fa13d42ad081352cfa06e26798991da49a456a48e59893fd7f422",
+   "size": 5563
+  },
   "app/directives/topic-form.directive.js": {
    "sha512": "35906cf8fbdca9da179e583a8e3c633da7ef576231203628829a13e53af34f73",
    "size": 3505
   },
+  "app/directives/topic-list-item.directive.js": {
+   "sha512": "a5558f8607359bc5cbdf1596c305ebc023146d7a0fa23efd14029b2febe45705",
+   "size": 4010
+  },
   "app/directives/topic-list.directive.js": {
-   "sha512": "0fbaaaa08a3ad4d49478fc0690cc97430d63962124a5edaf5c5b075b53f8d8f4",
-   "size": 7806
+   "sha512": "233935d4110729ca403736dea362f764c5384263e69c2c047445a84943bee665",
+   "size": 5422
+  },
+  "app/directives/topic-view.directive.js": {
+   "sha512": "6e8c3d3fd40775fcabfaf46c4fe027bf84b203c5bf3c4589bbc9b6d95f9b205e",
+   "size": 2668
   },
   "app/directives/user-list.directive.js": {
    "sha512": "b66d606d4d642aebc94931eb00047daf5b55a95af6e46654c7643da942243a30",
    "size": 749
+  },
+  "app/directives/user-name.directive.js": {
+   "sha512": "d91a0091e359878aeb392a5d2b01c014e991e4f4a8075431288ccf4736de2fa9",
+   "size": 552
   },
   "app/directives/video-player.directive.js": {
    "sha512": "81d7af4c22b87cd9830724693cc0cdadf584b17069f343d79dc2e44b2f15f7dc",
    "size": 1890
   },
   "app/directives/votes.directive.js": {
-   "sha512": "3fcf53d8ccf85fdd5c7bf105e147374df8496f6518d3f5121e67307df441fbcd",
-   "size": 17027
+   "sha512": "ff946572a96c962161f1f1c2db3d830ff84e85c698eebed324d831e25a48d6e6",
+   "size": 18158
   },
   "app/services/file.service.js": {
    "sha512": "9883c3fb384f57fd800b202fe6f5a8431f214886ee37f8faef9a4683eb852fc6",
    "size": 2531
   },
+  "app/services/item.service.js": {
+   "sha512": "8bea187384f5c006a6b4daae211164fd1236c001a3119d5e4b69470bfb81e2f7",
+   "size": 668
+  },
   "app/services/moderation.service.js": {
-   "sha512": "f1c541fc8c5793f003c054d4741fdf5129fc6d078e2dee7a72ddf7d204000e5f",
-   "size": 492
+   "sha512": "d30e3e71a2e4dd7c963739c797204510c13897f00aaf598da9d1f8dc44b4a25d",
+   "size": 1434
+  },
+  "app/services/notification.service.js": {
+   "sha512": "4e05ea561127bc289c0f52f6ba775c402be50096dd659705f9dc871598e5ca5e",
+   "size": 389
   },
   "assets/css/elements.css": {
    "sha512": "a4cdf78a6b7696149581e6d07d0164d81e919f4becab37e49980a7c22ed3b918",
@@ -131,20 +601,68 @@
    "size": 20766
   },
   "assets/css/style.css": {
-   "sha512": "1280b694770f55bc8a97ed74a58854ea5bb7d3eec12aab9e25dc5f02e194695a",
-   "size": 21498
+   "sha512": "8c332ab1833a4d54920e9c947d3c55a9f528c6866cbd1eed17d2376af7e3a6b3",
+   "size": 21943
+  },
+  "assets/img/404-not-found.png": {
+   "sha512": "cf8eddd9757836bcfa9de78ecc043e9a5333bcf0f728bd993bfdf8ba04339d01",
+   "size": 17760
   },
   "assets/img/ajax-loader.gif": {
    "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
    "size": 723
+  },
+  "assets/img/banner-default.jpg": {
+   "sha512": "818428d803ad24657ede8b262535369827158702754a9f1d747c4dfc130db00b",
+   "size": 206755
+  },
+  "assets/img/file-loading-icon.jpg": {
+   "sha512": "f254ec23a0e7c2180d6c593170102965f1ac42e7f40ee8c69ad6471f3f5384f6",
+   "size": 13434
+  },
+  "assets/img/file-loading-icon.png": {
+   "sha512": "f1f690ea58a3103ee0acbba66dbdd8dbfe3213ba3effe4b7b397a73d0a770f75",
+   "size": 20000
+  },
+  "assets/img/file-not-found.icon.png": {
+   "sha512": "c564c66ee6bccc1466ee02cade0af054de245dd1eeeb822a29e6cd613a1ac17e",
+   "size": 173236
+  },
+  "assets/img/file-not-found.png": {
+   "sha512": "c564c66ee6bccc1466ee02cade0af054de245dd1eeeb822a29e6cd613a1ac17e",
+   "size": 173236
+  },
+  "assets/img/logo.png": {
+   "sha512": "9ac16b906b6b8c884ee7ee7661712470af2b5311088c1e32cb382da5fdc6b230",
+   "size": 5165
+  },
+  "assets/img/music-icon.jpg": {
+   "sha512": "11faf1fbfcd3202a3ff1fedbcb34349ca38e675398ae3378410a06efdf1101b0",
+   "size": 32544
+  },
+  "assets/img/my-channels-icon.png": {
+   "sha512": "fb4f6ebaa87d0100ca814b682a53ab7c1c7e38ec6f236724178e0173ccb5b1be",
+   "size": 4624
+  },
+  "assets/img/my-channels.png": {
+   "sha512": "713836f9271494b55d93bd1fb032b2b8f2d699e6ffbc6896474fa7a4beba4263",
+   "size": 12193
+  },
+  "assets/img/sprite-sheet.png": {
+   "sha512": "cd703192160409995e145a12aae246e7680ac09d2ee74974df2e3c5927cc3339",
+   "size": 5493
+  },
+  "assets/img/video-play-icon.jpg": {
+   "sha512": "564decec74b021d053be68f609e615044b92245325a1f1161e06050f0eb9a573",
+   "size": 28398
   },
   "assets/less/elements.less": {
    "sha512": "1955f4df6b8bcea73e97a062037d91a1bfa5168c5061e26aa54d3fd5ad835318",
    "size": 6313
   },
   "assets/less/style.less": {
-   "sha512": "dc948bf8ec3b5f64bda3ee58e51f180cd35995151d0c5b6e2b683a269e6ed73c",
-   "size": 17086
+   "sha512": "a08d52ec12da293abf26c9d6da5d2d5e655206909660c3b6257ce19ce8bcc14c",
+   "size": 17552
   },
   "assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js": {
    "sha512": "75b4a58ecd81c2379006753466cc17ba11ce51a38d613d4b3be780820fbec849",
@@ -158,30 +676,6 @@
    "sha512": "904457577ca18a45eb90077a90a59a283768fc520244d59afeb3dff0ca610653",
    "size": 124078
   },
-  "assets/lib/angular-moment/CHANGELOG.md": {
-   "sha512": "7aa316f864809a63de947157a37f079176bba24067a3fdabff250d5c2f28fc57",
-   "size": 9588
-  },
-  "assets/lib/angular-moment/CONTRIBUTING.md": {
-   "sha512": "b859da0d7c8be3000bd70fcd68a59b9b3c935ffa5b7632bd41d5b709bcedbc91",
-   "size": 2072
-  },
-  "assets/lib/angular-moment/Gruntfile.js": {
-   "sha512": "a788250230e693d3976d62bfdac730cb096b835f3bef0d6eab2fac827d95a31d",
-   "size": 937
-  },
-  "assets/lib/angular-moment/LICENSE": {
-   "sha512": "8257a4d3654ff2d893b00b7e635537c1b1447b0fc89b3bc23d5fda2dc94cd4c7",
-   "size": 1099
-  },
-  "assets/lib/angular-moment/README.md": {
-   "sha512": "aab363fdc54090a4d60cff10594a101d51ae5b7d282956f332e1072e1e2513dc",
-   "size": 5872
-  },
-  "assets/lib/angular-moment/angular-moment.js": {
-   "sha512": "4376cb1359c2fe51d9cfa3fb1a125a425a3a8a78fbb2d32e0ffe41cc96b6953b",
-   "size": 19478
-  },
   "assets/lib/angular-moment/angular-moment.min.js": {
    "sha512": "780b24f2c31451bd3cbb47f725cbee27ff3452aaaf0d54930d19679270046b56",
    "size": 4934
@@ -189,10 +683,6 @@
   "assets/lib/angular-moment/angular-moment.min.js.map": {
    "sha512": "423b34586545cf595f12dd6e1d40965dc77b0e4f04ba7c9a7cf1437c74ab443c",
    "size": 6722
-  },
-  "assets/lib/angular-moment/angular-moment.nuspec": {
-   "sha512": "a9b35dbbb89611f52625c8e94019ff605aa31ed5441d4800b282ac82e169b544",
-   "size": 1109
   },
   "assets/lib/angular-moment/bower.json": {
    "sha512": "e65dc6458c431065a8d4df631fbd81b6ceb9c9ab42d5549fb84093bdd5f210d7",
@@ -310,25 +800,13 @@
    "sha512": "72d6d433d5564a6108482d39216bcf68ee1b08f8fbcf3af30ca7d787400c1e52",
    "size": 26132
   },
-  "assets/lib/bootstrap/css/bootstrap-theme.css.map": {
-   "sha512": "29fb34a587af9a4acb185ff3614c0d05afb29c4a759df232bc500553d76a80be",
-   "size": 47706
-  },
   "assets/lib/bootstrap/css/bootstrap-theme.min.css": {
    "sha512": "b6aba9e6de57c895e5bd7f1bfc4f69234b30180e00ba0b3316abdd58049adbfe",
    "size": 23409
   },
-  "assets/lib/bootstrap/css/bootstrap-theme.min.css.map": {
-   "sha512": "35c4094dd35a6d01fecb850fc58f6815e9bd188e70bc5f2aa52d90030d3daea8",
-   "size": 25648
-  },
   "assets/lib/bootstrap/css/bootstrap.css": {
    "sha512": "a658bd68aabbe7c3cc76caa3340f80bb8089ed96ad2c20978a79e549fbf4db7c",
    "size": 146010
-  },
-  "assets/lib/bootstrap/css/bootstrap.css.map": {
-   "sha512": "54232cbdef261553779d60d4c83cd84124147588fbebd3bef6ee0d1cb82473c2",
-   "size": 389287
   },
   "assets/lib/bootstrap/css/bootstrap.min.css": {
    "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
@@ -361,10 +839,6 @@
   "assets/lib/bootstrap/js/bootstrap.js": {
    "sha512": "850780aed292053275b1e8118f24680e1e34f6d77bd0ba32eb6bac041dfe3b1e",
    "size": 69707
-  },
-  "assets/lib/bootstrap/js/bootstrap.min.js": {
-   "sha512": "8b3b64a1bb2f9e329f02d4cd7479065630184ebaed942ee61a9ff9e1ce34c28c",
-   "size": 37045
   },
   "assets/lib/bootstrap/js/npm.js": {
    "sha512": "81bc329ad688d411fcf3decb28454238ec478c192b6ac19a3ee07e9939556cf1",
@@ -414,213 +888,21 @@
    "sha512": "651e54d33e16ab0ca2fafcfb9c06ef8de815921286358f588e4652c92258e6a7",
    "size": 104409
   },
-  "assets/lib/videos/videogular-angulartics/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-angulartics/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-angulartics/README.md": {
-   "sha512": "5f2098206da960d81d6e6052085fbbeaf1f806cfd3f268b44ed50b965243d8c3",
-   "size": 1903
-  },
-  "assets/lib/videos/videogular-angulartics/bower.json": {
-   "sha512": "a056beefbc80d8e0468c33248821718c83cdc6618e401c4a8f12042363a5ad98",
-   "size": 174
-  },
-  "assets/lib/videos/videogular-angulartics/index.js": {
-   "sha512": "63a16d54227d014ae4c854054bad350634a8fe16df3172c8a69d25bc3024370a",
-   "size": 135
-  },
-  "assets/lib/videos/videogular-angulartics/package.json": {
-   "sha512": "7c1cc8d20e47ba610c3f4d6e1c53b951ee18b73d8476de70e6de9866fca36519",
-   "size": 282
-  },
-  "assets/lib/videos/videogular-angulartics/vg-analytics.js": {
-   "sha512": "af50581baa2273f689242eb01ca4ecb3cbd66d8fbf11647f0a8bb0446ac40e9b",
-   "size": 10306
-  },
-  "assets/lib/videos/videogular-angulartics/vg-analytics.min.js": {
-   "sha512": "b10f8773b79e82bb5fa024261a092ab7dc03a3e8f74706a5e196566019b8dcea",
-   "size": 2268
-  },
-  "assets/lib/videos/videogular-buffering/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-buffering/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-buffering/README.md": {
-   "sha512": "678739d9d3ae7b144f1cfb29fd1d00c993d1c032fdfd09ea2e614f75a24d68b9",
-   "size": 1901
-  },
-  "assets/lib/videos/videogular-buffering/bower.json": {
-   "sha512": "7d2546ae0ab228afb9ed046e576b2bf3d3a5b19facb2009233c420e8ebc4acf2",
-   "size": 142
-  },
-  "assets/lib/videos/videogular-buffering/index.js": {
-   "sha512": "8e717234d6f9076e5f225f8b8a1393167b00028c209b40cc2638506d8777b50c",
-   "size": 111
-  },
-  "assets/lib/videos/videogular-buffering/package.json": {
-   "sha512": "c4899b4a39773133b3de0453914260fe651f28bc45d3618d8061171622002920",
-   "size": 239
-  },
   "assets/lib/videos/videogular-buffering/vg-buffering.js": {
    "sha512": "d887384ddd9225b3a19896751e487d8f5b1e4fd1e1718cbe47b06080ed434b25",
    "size": 3800
-  },
-  "assets/lib/videos/videogular-buffering/vg-buffering.min.js": {
-   "sha512": "5b2b6cba164ec58df42dbdc59167699efe859ef23b4e24776b2a72747f145152",
-   "size": 1122
-  },
-  "assets/lib/videos/videogular-controls/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-controls/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-controls/README.md": {
-   "sha512": "2c020e197b867bde1446d170b8843e05340e259b45e8d6eff6b4137a6a3025b1",
-   "size": 1897
-  },
-  "assets/lib/videos/videogular-controls/bower.json": {
-   "sha512": "c25390dd917eb1aa18cfc99b1abe93de483cfee42308b6dd614a9fa61903083c",
-   "size": 140
-  },
-  "assets/lib/videos/videogular-controls/index.js": {
-   "sha512": "3a622f82c57c374a402d8bdd2d5c498dd9c67be64ef330fa5d1cc699aeca1f54",
-   "size": 109
-  },
-  "assets/lib/videos/videogular-controls/package.json": {
-   "sha512": "75efb697976e488cf8ed04ea9ee71d97a6389f0381314e83f430b73f650d142c",
-   "size": 238
   },
   "assets/lib/videos/videogular-controls/vg-controls.js": {
    "sha512": "9ecbca93a0ceab8130fa79878d4e6e1d90bc9167fa46cb97e0f9cc83021ae835",
    "size": 53147
   },
-  "assets/lib/videos/videogular-controls/vg-controls.min.js": {
-   "sha512": "b894b8d8cf8a0741ede20319ef30d964bad362377dae8371d3ca1de399dcc988",
-   "size": 16496
-  },
-  "assets/lib/videos/videogular-ima-ads/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-ima-ads/LICENSE": {
-   "sha512": "f05cbcc531d57a5aab5553a3960edeb27b6eed10ded42bb0c544525615b3461e",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-ima-ads/README.md": {
-   "sha512": "3a876a98d5244d000295e486f69e2827b4f9e6abeabfccedbf94a804f7b29f54",
-   "size": 2482
-  },
-  "assets/lib/videos/videogular-ima-ads/bower.json": {
-   "sha512": "9d92d226b287e972b04ce5bc24ab1ede21966909def86d1db74f423aee200090",
-   "size": 138
-  },
-  "assets/lib/videos/videogular-ima-ads/index.js": {
-   "sha512": "b5d76b3449acd8980c431701ea08ca00d9563ad34911e2275db5ae35bbb1baa9",
-   "size": 106
-  },
-  "assets/lib/videos/videogular-ima-ads/package.json": {
-   "sha512": "87bbafb6d001022e9eb66a28bdd9c143cb293f6f2fb92587211561e67993c7f8",
-   "size": 237
-  },
-  "assets/lib/videos/videogular-ima-ads/vg-ima-ads.js": {
-   "sha512": "ee4c68978233fc9db94129160644a0ceae7b8e57cf6d0f2056cdda719bf73022",
-   "size": 10948
-  },
-  "assets/lib/videos/videogular-ima-ads/vg-ima-ads.min.js": {
-   "sha512": "17c64df3c4d9f858b46d12dc3dabe85538cad216e00b1e81b48d2dc8724d29b9",
-   "size": 4002
-  },
-  "assets/lib/videos/videogular-overlay-play/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-overlay-play/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-overlay-play/README.md": {
-   "sha512": "855b75571eba286166de018714a22a18843f6c9100e15aeb00c9c48eb7a73036",
-   "size": 1913
-  },
-  "assets/lib/videos/videogular-overlay-play/bower.json": {
-   "sha512": "ddd5da22fc579f637094b315c790f4c0de63a1544875219a6006f6f77a40463d",
-   "size": 148
-  },
-  "assets/lib/videos/videogular-overlay-play/index.js": {
-   "sha512": "4874f94d80dde215c1ea27cdb1eace5d6084a25cc0f75be5e6bd2d3cfbb85211",
-   "size": 116
-  },
-  "assets/lib/videos/videogular-overlay-play/package.json": {
-   "sha512": "1b2f2105984ffa894e67fe7a4d541686c04322e90bc07abe399a7b5b4944c8fe",
-   "size": 242
-  },
   "assets/lib/videos/videogular-overlay-play/vg-overlay-play.js": {
    "sha512": "9367947d62a853dac2e88a328a6f7e48764913194147520eb38bf9c1176d7675",
    "size": 2568
   },
-  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.min.js": {
-   "sha512": "9a1c98346395e7d0611f8cfe721ad83d00741b2585d02e9c3cb2bb287c8802b8",
-   "size": 846
-  },
-  "assets/lib/videos/videogular-poster/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-poster/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-poster/README.md": {
-   "sha512": "ea16ea4791176699db1f0ee8e8d6733c780cbe42d04bde14e3e6e705ef58a887",
-   "size": 1889
-  },
-  "assets/lib/videos/videogular-poster/bower.json": {
-   "sha512": "ecdcc18fde77d0345e9fac992c0a4a94bb6495170d7d37acbc9fe7ec0a346909",
-   "size": 136
-  },
-  "assets/lib/videos/videogular-poster/index.js": {
-   "sha512": "7bff4fbf11dfb1b2a4e1617dc5563ab81123a8bafda78a5b82c81d8e3524dd26",
-   "size": 105
-  },
-  "assets/lib/videos/videogular-poster/package.json": {
-   "sha512": "02440018c0ab7cae9c0553259782f1558861325f0b88e942b61eacfbe387e0b1",
-   "size": 236
-  },
   "assets/lib/videos/videogular-poster/vg-poster.js": {
    "sha512": "cba2a9155bfae750bfbf4887fb1e2827c573c708be5b35e6ab16b29add145495",
    "size": 1798
-  },
-  "assets/lib/videos/videogular-poster/vg-poster.min.js": {
-   "sha512": "a2875381aa96d16c66332fce7c501dffdd80cf4e5571fd40166a5fe3914f7c21",
-   "size": 528
-  },
-  "assets/lib/videos/videogular-themes-default/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-themes-default/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-themes-default/README.md": {
-   "sha512": "97b398dea1bde39c80c4c9f12630c072ab19fb613672e0623ddf2c41d025acd5",
-   "size": 1801
-  },
-  "assets/lib/videos/videogular-themes-default/bower.json": {
-   "sha512": "d54c0f170974843e8985a54c5e711b3a51a9e4313be1f763315203f76ba8aed5",
-   "size": 311
   },
   "assets/lib/videos/videogular-themes-default/fonts/videogular.dev.svg": {
    "sha512": "fdd6592253a996beee0cde7ec796ffbd21740448fc08d16b11426ab9f1498ec6",
@@ -642,121 +924,13 @@
    "sha512": "73ef31a2844e8df48ef52416073f60c295f3d0698f121ce10fdc30ba03f73849",
    "size": 1948
   },
-  "assets/lib/videos/videogular-themes-default/package.json": {
-   "sha512": "624b062d6a62b16962e2e84a33601abe422ff5154f2f4910f3f034ae04cc6dab",
-   "size": 250
-  },
   "assets/lib/videos/videogular-themes-default/videogular.css": {
    "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
    "size": 14913
   },
-  "assets/lib/videos/videogular-themes-default/videogular.css.map": {
-   "sha512": "92815a730865699a4556a2be12c52c2844781259d548d81b2bcad6424a34b7f2",
-   "size": 8021
-  },
-  "assets/lib/videos/videogular-themes-default/videogular.min.css": {
-   "sha512": "57afacf328adbb85743073e86dae0ae0db895d471fe5d42fe5e1680db92cf1e1",
-   "size": 11264
-  },
-  "assets/lib/videos/videogular-themes/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular-themes/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular-themes/README.md": {
-   "sha512": "97b398dea1bde39c80c4c9f12630c072ab19fb613672e0623ddf2c41d025acd5",
-   "size": 1801
-  },
-  "assets/lib/videos/videogular-themes/bower.json": {
-   "sha512": "d54c0f170974843e8985a54c5e711b3a51a9e4313be1f763315203f76ba8aed5",
-   "size": 311
-  },
-  "assets/lib/videos/videogular-themes/fonts/videogular.dev.svg": {
-   "sha512": "fdd6592253a996beee0cde7ec796ffbd21740448fc08d16b11426ab9f1498ec6",
-   "size": 5639
-  },
-  "assets/lib/videos/videogular-themes/fonts/videogular.eot": {
-   "sha512": "c75112b0d88a2b14c6e30cc99865d1394d4e4f608513e474329c39f5c2df97cd",
-   "size": 2544
-  },
-  "assets/lib/videos/videogular-themes/fonts/videogular.svg": {
-   "sha512": "7e98167c67730bde8f041e9e4ffea3797732fec50bc46561806838952ef6044d",
-   "size": 5127
-  },
-  "assets/lib/videos/videogular-themes/fonts/videogular.ttf": {
-   "sha512": "f7b136395bae1cd8069dc65cda033e756a7fc30158d41a30e859167edc835893",
-   "size": 2380
-  },
-  "assets/lib/videos/videogular-themes/fonts/videogular.woff": {
-   "sha512": "73ef31a2844e8df48ef52416073f60c295f3d0698f121ce10fdc30ba03f73849",
-   "size": 1948
-  },
-  "assets/lib/videos/videogular-themes/package.json": {
-   "sha512": "624b062d6a62b16962e2e84a33601abe422ff5154f2f4910f3f034ae04cc6dab",
-   "size": 250
-  },
-  "assets/lib/videos/videogular-themes/videogular.css": {
-   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
-   "size": 14913
-  },
-  "assets/lib/videos/videogular-themes/videogular.css.map": {
-   "sha512": "92815a730865699a4556a2be12c52c2844781259d548d81b2bcad6424a34b7f2",
-   "size": 8021
-  },
-  "assets/lib/videos/videogular-themes/videogular.min.css": {
-   "sha512": "57afacf328adbb85743073e86dae0ae0db895d471fe5d42fe5e1680db92cf1e1",
-   "size": 11264
-  },
-  "assets/lib/videos/videogular/Gruntfile.js": {
-   "sha512": "b66bf941a8b0feccf252797e2ad4cf452191e45d340c400326e8011f5089650a",
-   "size": 1177
-  },
-  "assets/lib/videos/videogular/LICENSE": {
-   "sha512": "00e4073e83c7c629146f9a446e0f3e40128f1ce0975d8b4e2a90e82a5c9c23c6",
-   "size": 1073
-  },
-  "assets/lib/videos/videogular/README.md": {
-   "sha512": "84631604ebf76bfed1929cee8fdb599682bce999e1badd2f9ab715858ac10550",
-   "size": 1757
-  },
-  "assets/lib/videos/videogular/bower.json": {
-   "sha512": "bb6ed7ce0422eb2292f96b4ebcd0ea0e461e70f7dcd928545af102650061ce5e",
-   "size": 161
-  },
-  "assets/lib/videos/videogular/index.js": {
-   "sha512": "4cedcb5f5f2beebe22fdea6abbe935151617770c558640c700ebe268b2eeb77c",
-   "size": 119
-  },
-  "assets/lib/videos/videogular/package.json": {
-   "sha512": "997cef1e558447fc40dcf35959ea02462752242df0b30a806c48b300418f02cb",
-   "size": 258
-  },
   "assets/lib/videos/videogular/videogular.js": {
    "sha512": "bd26f26a02dddec74e9c4ef77add6b0a20aa471fcf100df182cba70213136ee0",
    "size": 63473
-  },
-  "assets/lib/videos/videogular/videogular.min.js": {
-   "sha512": "aa498c5e99a5da70528db42f037391a831904230fef39dc547ba756f9a27eb9b",
-   "size": 20513
-  },
-  "assets/lib/zeronet/Class.coffee": {
-   "sha512": "ae32c72fe6615132791361a5e8cf412ddb2a2fa59d9d33db4bb8e29d50a8568d",
-   "size": 490
-  },
-  "assets/lib/zeronet/ZeroChat.coffee": {
-   "sha512": "8ecf12c9bea49ba70a38e4f6254e1034e3f6c7c4e5cdade52e66486fa35004a8",
-   "size": 549
-  },
-  "assets/lib/zeronet/ZeroFrame.coffee": {
-   "sha512": "342048e3d262bc140212e271f752bdb20fbd103bef6073f5107eb2fc031eda23",
-   "size": 2207
-  },
-  "assets/lib/zeronet/all.js": {
-   "sha512": "fae592d3a8f2f7b45c0472247125e7a9b1b894a28bbe1b34b742697801a20860",
-   "size": 255791
   },
   "assets/lib/zeronet/class.js": {
    "sha512": "affe3568586a4883a5cbe628743ee317dbcbfef58af4b15e4933828d09e581b9",
@@ -770,438 +944,24 @@
    "sha512": "d0066c5b409ef484cd48fe9d7fd74625370d0c5076047248863fd9e965b78493",
    "size": 4566
   },
-  "data-default/users/content-default.json": {
-   "sha512": "c1642cc2922a74c3e74991f0194e2acc46dc5e003207a0028dad63c75c41a0ec",
-   "size": 672
-  },
-  "data/users/12u4QT3LdGc3tw2CmP9TtnY19AYuCHo1bv/data.json": {
-   "sha512": "941e60790c2b00ca9a6025a35b40849144147bbf7c2b9b2317f3b0f6202daf04",
-   "size": 148
-  },
-  "data/users/137orjVsd9qkBAoYyUPSCKeQd4s75RZwpS/data.json": {
-   "sha512": "d451627a3d0024abb08043e33ff84e1b29f453d9a3fcce4f50a5ab598e5248e3",
-   "size": 4561
-  },
-  "data/users/13AJA13YQpqUUJ5N233Yex1ZfjEyexKKrm/data.json": {
-   "sha512": "b95d2f4ea6e68f489283c3c449725481f5bdccee978e12eaf296361263223797",
-   "size": 144
-  },
-  "data/users/13Y4W2bG4sRjGgXJkk5BWJWh6vehD4KezN/data.json": {
-   "sha512": "8162265e563c47bc86bac0f6d586b8b1becd2e248376960440fec960dee0697c",
-   "size": 140
-  },
-  "data/users/13eTQePN4cvnxL9qFurmPFgHRTXMGNNbCy/data.json": {
-   "sha512": "e5a061cdf3ced5c155e73ab51209c8d495cedb69aae0f22e88cfd44d7e5bbf3b",
-   "size": 149
-  },
-  "data/users/14nEeyHKvuhBchZp4N4eSwYVNAzvYfwKQF/data.json": {
-   "sha512": "b4a60714348ae2df1126c1e9ad2672c89be03b7ff5fba892e7a2f90371ace673",
-   "size": 143
-  },
-  "data/users/14wuoyzxa5rKTeCUA4XnSMyuaJSRUTV2bf/data.json": {
-   "sha512": "7a5139e73a7bbb82c3257fa92c4e8483781bb8f43c155c4a09e52a0083f673ba",
-   "size": 137
-  },
-  "data/users/15CHkoxQnozZEe1A9uXutFRw3FS46Yspvy/data.json": {
-   "sha512": "71764cc14ee052dff2c1009391412fce2a49ead433a74cd04d0fb9b238fc703e",
-   "size": 142
-  },
-  "data/users/16AFTG7vdicwJbRQpWc2F9BRHTE5MTftE7/data.json": {
-   "sha512": "d44dbacf57bcac4ccc6e4606b2e5f4ee551ca26a6e01689fce0c12ad95a14922",
-   "size": 1820
-  },
-  "data/users/16SgdoeD4a8oVn7AJXpP5v8DVawnS28YkM/data.json": {
-   "sha512": "23cc18e33d882e0374c34225184a280a620200933b892452845f71db6f9dca0d",
-   "size": 2258
-  },
-  "data/users/16YmMiEjDG73LbzyBoKt12TMpCeb24jVQR/data.json": {
-   "sha512": "af3e9b5a80f7b86bb54403e616bf7d6c76fbec95769340548c307a6d2ba1307d",
-   "size": 146
-  },
-  "data/users/17ACFGTkAp5M579ihTRjywGsdWc5QntZR4/data.json": {
-   "sha512": "524bab96decc2e0c54bef961f49bbbbaaae3ca2f45648966212e833ed9277ed3",
-   "size": 663
-  },
-  "data/users/17ojMYQdaS8hyMgC3MB9gaTFmm4JJ4Hk1b/data.json": {
-   "sha512": "24d795a63578a1a4fe201338815c1b24bdbbbf78dbb5fba26d6e9a9e457b1084",
-   "size": 1734
-  },
-  "data/users/17tQX9J2fScN9APmweSUnzEU4EfTG1ojYb/data.json": {
-   "sha512": "23c8300772a7d370af0805dff49775d3ee40900f04c32a1fe2c9d7aa917f0e23",
-   "size": 141
-  },
-  "data/users/17u2WcfawYfECzKMhdUgCenJ7dPP64GGHA/data.json": {
-   "sha512": "5c9950f883fec662b6d0123348168bd25fde393360baa47907db90ca59013829",
-   "size": 141
-  },
-  "data/users/17y5AJJhMnMFBpAmbLMk5TZ2fKonBjZPD6/data.json": {
-   "sha512": "137137eff343babec04b20372fefbdbd853be2acbe4b72e7a8522b6e6bc85da7",
-   "size": 2213
-  },
-  "data/users/18Me3chynTiDfFHtr7QB5Q56MwbFqBw16B/data.json": {
-   "sha512": "69d816b5a55de93ba235774fe223a8cde4182e565d78ebc3ff20c2526d30d6c0",
-   "size": 137
-  },
-  "data/users/18id3A8UHCU9RmkVBeBhsDrnPf27hQXdS1/data.json": {
-   "sha512": "1d6b7276a02f3fffb8ec3899f58e5546a60eb1823654e5dd1af70ff2ad2163c6",
-   "size": 441
-  },
-  "data/users/1958F7oCppj78MP966AfojMQwHg2WUupzq/data.json": {
-   "sha512": "d5095a9c58c025cb2520cd080c59f45893976182c0b5b544fefd9692d976ba3a",
-   "size": 2559
-  },
-  "data/users/19VooSAyz8sBqHyNQcDoq6o5Wa9uar4Hhc/data.json": {
-   "sha512": "555247236cff72433b2fe9293796bd9eaaf5382b5b78f260d503933f2d2cf5a9",
-   "size": 145
-  },
-  "data/users/19sggoAZ4hcorrrfWoFWP9rwfpVsL29cnZ/data.json": {
-   "sha512": "40521cbad191f58c8b6e8d31c5315f122f0aff11b4348b4d1d49bbb31fd59c56",
-   "size": 6824
-  },
-  "data/users/19xkVTXjXQR92UG2TyqtXnRRnGjHuKCbpX/data.json": {
-   "sha512": "bc0e879c734849e2cb05c38bfd4f3361731c35b2290ea3b3b09919ec8068234e",
-   "size": 138
-  },
-  "data/users/1AWwhg4EiWAVttfQboJZ4wJfX3WawfJT3h/data.json": {
-   "sha512": "f7458cc0371bcfa158320ea72b7e04182adc51c29bd5957dd87cbe91a9137fd9",
-   "size": 3931
-  },
-  "data/users/1BLE24RB7y27orc6ygKM4upwGcESx7bxxz/data.json": {
-   "sha512": "fbaee5add719e19d352447e99a4af1fe4150feaf20bffd101d40b5ed54211d41",
-   "size": 1199
-  },
-  "data/users/1ByuEoBeryNCZXqRArMfDiAL9bFTqmM5yN/data.json": {
-   "sha512": "e1d1b0feb6fc9f8762f6be2a17d5abf2e67bd3b1a22d26c73158183f928880ae",
-   "size": 137
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/V3nom.gif": {
-   "sha512": "9fb23386cc27254d6e7a3a24dfde70a7a6946e871e4d3ec5d376b2b4ad0f1c82",
-   "size": 151778
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/data.json": {
-   "sha512": "9175f927cb8b808687f13228d8c29b08555938885ad95d9b35949d950eb7d787",
-   "size": 41925
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/the-master-gif.gif": {
-   "sha512": "4c221e2777796cabfce69dd14b44acdb22a9497107b5d851545799ef89fafefd",
-   "size": 122233
-  },
-  "data/users/1CwbqLCD6TdkinNNNb4GneZxbsoJ6Mw6oE/data.json": {
-   "sha512": "0d46c5e075caf6b773368933d20825c406b38702857525fd42d9df87d0d4b0a8",
-   "size": 268
-  },
-  "data/users/1CxhnwG1VKVyDkwHdyyiEvme2zsE8p3Z5e/data.json": {
-   "sha512": "a47627b7cf05d5c2b4214168447050afb9703a085780e981f3115fcb230cd3d0",
-   "size": 651
-  },
-  "data/users/1DmZKVcmJFANYmNgxMA9YxYE6RXQqJuDFz/data.json": {
-   "sha512": "780dd81583ae11f16c7d5dd0f24eba8912c0df6ea5bf45834e4105ee4999a8f8",
-   "size": 140
-  },
-  "data/users/1DobcNU81BZrQViu9L6uUu7qcC4Afd9r96/data.json": {
-   "sha512": "6878cfa801557b6cf2d0f71579c8445672f361a1f275f106ba537859dd4916a3",
-   "size": 3420
-  },
-  "data/users/1DpPY5S6HpxsK6CQGWKZbKh9gVo1LnXze1/data.json": {
-   "sha512": "daedcbbed75470fb2d4b757d7ae71898baeedf22f0c3ce99e8b6b6c4166b2532",
-   "size": 2796
-  },
-  "data/users/1ED5kEHUideKw92Ncess5yJmP4T2J5Aeqn/data.json": {
-   "sha512": "d6989bb7e7798349ea4cc4304d1defd7c75bff9d6ab39cafe44c89b87309f6d4",
-   "size": 140
-  },
-  "data/users/1FDJZLxSkRZtQ1RcN9v8dkt5ujcS35E9rK/data.json": {
-   "sha512": "601798c0626012e353847ae52ee2802505534f53847ddd0caea12022514ae5fe",
-   "size": 387
-  },
-  "data/users/1G69fxbse5SeNLUFKMaK2M19q7iNM2YjX6/data.json": {
-   "sha512": "0dcc89507076d4418934990b8f236f8c889f6a3cd26514e6fe0a8ccdd14464b8",
-   "size": 191
-  },
-  "data/users/1GAWwPWreQXo1CwcefCgL6w5wYPkNFWbsj/data.json": {
-   "sha512": "ff77f89cdb1a61db585c079bd24f11e0d776940fbab86a6d89e7518e5f55faaf",
-   "size": 475
-  },
-  "data/users/1GF4vSTBhLb7bgW874mtdELEGXSXCK1AhX/data.json": {
-   "sha512": "c6181b6efd77606e981f0eb7c359bf0f6e0f232366177a08b93b4a86d1fe4548",
-   "size": 2302
-  },
-  "data/users/1GMNmr2bDPbT4c8yVnyCoDHke52CNCdqAa/data.json": {
-   "sha512": "99080ffd9ace1662c3735e5127ab1767a0afb9f4a24c1bfb5833f95255a92f11",
-   "size": 773
-  },
-  "data/users/1GuYKebkQAqGJ4tNpNp4TD1UuoHHudCJLA/data.json": {
-   "sha512": "20e16b799d9df97d81246310adb8662b226ffab85430a70062cc9ec59c6c3527",
-   "size": 2410
-  },
-  "data/users/1H1SHzxnPJS3hBbKvfXLqf4QJnXEUgaVe9/data.json": {
-   "sha512": "8e2d1b8a9f6e6f630e6f648adc6ee31293872dd779b3f3165e6586406310582b",
-   "size": 2676
-  },
-  "data/users/1H4N4Z45KCw3AokeSNj46wRHVRNtMEEPum/data.json": {
-   "sha512": "181b3671ebefdc73992af8072f123511cc00c9e257ec65eb0402fbbc61373484",
-   "size": 538
-  },
-  "data/users/1H9R6W9QWUpYiJkLyAsFXmXhAV7HEqoHtN/data.json": {
-   "sha512": "9ba40dada4758589be6cf8dbc66dbe6e9420487e74a0f1303280279ee78a087b",
-   "size": 140
-  },
-  "data/users/1HiyP7AD74uGuGBZLqhcmfQgwu5VC8nnYY/data.json": {
-   "sha512": "8d6751bf7bf540cdb658dbec170cc09ba9f89985f5def3c684fbb4e453c0c924",
-   "size": 140
-  },
-  "data/users/1J1g7sviHmn5GhV82A2J3mZM4ykijU7Ce4/data.json": {
-   "sha512": "538622fa5bf81a29384f9a79d94b0be4ffa55332d69f3ff807b8257a334be0a7",
-   "size": 661
-  },
-  "data/users/1J3rJ8ecnwH2EPYa6MrgZttBNc61ACFiCj/data.json": {
-   "sha512": "37865bd4cd41ed003918fa16317ac2314c6eb7ffcb4c6fc795578cc2eab6682d",
-   "size": 140
-  },
-  "data/users/1JCkFnBnHvGy4ZPyHTyKFB5Nkynq2XE9H9/data.json": {
-   "sha512": "1ed0e7d20020346e13114f99e0a61c86926eaf0aac1f706897bea76c863cdf9b",
-   "size": 137
-  },
-  "data/users/1JtVjiuh8wNNNS63aMT7sxjZx5jLtqGw4N/data.json": {
-   "sha512": "79ad15e18ccd51bf79327942f9c5040f32cf8ddd3bb37ecac848fbc720e2eeba",
-   "size": 5854
-  },
-  "data/users/1JwiJbEJJkCkBhWR8mP8EZMzuwbHGQs87A/data.json": {
-   "sha512": "d6c0bfde4540208fc09a8c459a3cfb8f741c3c2211c121d62738972a0c6aeb68",
-   "size": 140
-  },
-  "data/users/1KFfvfaijSYfWZ67GE8D2rTkVs4X4u6s8H/data.json": {
-   "sha512": "b160c7e087c0bce53938e02d9d0a0cb2ff85974e2203ab0b2e68f29da0e8aac9",
-   "size": 695
-  },
-  "data/users/1L9dZRnNxfdNSyLNtThcANCm5JWZMMvocB/data.json": {
-   "sha512": "29a17a726ecaf4e2cdb9717c57ab6b3c9c5b3344b0e811c25fafd8dfccfb84e1",
-   "size": 142
-  },
-  "data/users/1LC6zsJKcMQus6ABcSMoW46qicJ1ZKmXga/data.json": {
-   "sha512": "399179fd21227fb5f94af0a90291b29d49a47ae3c1eb29089eef9b81faebeb4d",
-   "size": 1864
-  },
-  "data/users/1LL6XLrNeciQaqkeXJqkCcN4Ea4haccmVc/data.json": {
-   "sha512": "0f5e4fba7deb742975dbc1962fc309c24dfc1525d9d388158bc73be013beb9a6",
-   "size": 143
-  },
-  "data/users/1LWuc6JBhUGrKEAh1aPrPU85dEMcKmg3pS/data.json": {
-   "sha512": "39ae0138a42b76fb564f47a2c9a769bd115494df8c77f400a19c8c6ec87d7988",
-   "size": 877
-  },
-  "data/users/1MNTLa1NJsBKpiHQyer6A9yW9cBAga62Ge/data.json": {
-   "sha512": "b8292aabf5c78c0bc68d1367baa77f822b060e63dad69efc0370df9aa6a79169",
-   "size": 140
-  },
-  "data/users/1NTjdG4SyNifMEdndm2YAexEzgcXd4hm1S/data.json": {
-   "sha512": "92ca77ac6afdf6400619314f283722cd610cab2c69e130f8cf94f9dad4e57b6c",
-   "size": 766
-  },
-  "data/users/1PAnNhncRpwtUsy82YbLd7iBJHxTadBaUd/data.json": {
-   "sha512": "b83df2fa35adfdbac00b156bf4992f8a42d5088b440f6d3d93f3880d7c68cc97",
-   "size": 140
-  },
-  "data/users/1PK7r15RmMdmdnUCYeQEwuydfediNVDtt2/data.json": {
-   "sha512": "61bd03dd879722c9bf3df7f2a6d01a805f6dc082e0b673d84759f3ec851127c8",
-   "size": 140
-  },
-  "data/users/1PW4C7gyeEABoTFTqZFswWKLkqNR9hicFt/data.json": {
-   "sha512": "4ef5c8fef590da48b8eb0ebcc813b505d88737a09a92e00dc86d5138d101e84f",
-   "size": 144
-  },
-  "data/users/1Pd8oZNMabCtHcSZZpuytq3gdNAd1Lk2Uy/data.json": {
-   "sha512": "2c65db6624dc1bad5b7517a9bdcfba0ea1b7dc32e8eff2c3ee7e962de2965808",
-   "size": 636
-  },
-  "data/users/1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw/data.json": {
-   "sha512": "0c5a6dd62602e0dee0523f788c091c201469a097003394861180fc5db4f985c7",
-   "size": 7584
-  },
-  "data/users/1QDXegFdxWx81CyqrkWYxVdhjcNENwrnkW/data.json": {
-   "sha512": "89953eae96c7b2c6491609e029f7a25f56b8c8d68ea5c097b2c8bdeb0da37324",
-   "size": 1122
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/data.json": {
-   "sha512": "2a5da86b7791346973ed4206d407d0caf9d5f63ee48127bf2d08d07c14708f71",
-   "size": 5859
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/disappointed.mkv": {
-   "sha512": "02dda7ef623c2b011161dd63052497698c5e580c611563f7365d8abb22c7c6ae",
-   "size": 2120624
-  },
-  "data/users/1r1p4WKjaNpNjH23LvzEjHWcBrZgZWX5K/data.json": {
-   "sha512": "dd720c7d87e45b04811f6350842576968d588eac0d02b62a3f89e0e239f2d348",
-   "size": 403
-  },
   "dbschema.json": {
-   "sha512": "989b9b64fe959d19fbe1615b92264ebd21b9d6ad576f1cbf9d1f687b4a0f96a4",
-   "size": 6747
-  },
-  "edit.html": {
-   "sha512": "82c29cd00819cf1615955090979d0f315b72616d9e658dc21a1bdb98901c34e6",
-   "size": 6864
-  },
-  "index.html": {
-   "sha512": "1327190e99b70c16465b1a3dfe78b454931a6bcfcfb304c57857d36ce995d40c",
-   "size": 7937
-  },
-  "moderate.html": {
-   "sha512": "291f6ca4e1da5c246a807249c45dd60f164ad0b5e812d3a967d98199abacccdf",
-   "size": 12275
-  },
-  "new.html": {
-   "sha512": "724d746ca0f24684e53e3efaf192c41a445c746ae5d30afff97b7278ea25435c",
-   "size": 5349
-  },
-  "topic.html": {
-   "sha512": "1042953031ea0e4e1011ee659f36e3ec812378a67d023e2e7c9dd27a0465a350",
-   "size": 13015
-  },
-  "user-admin.html": {
-   "sha512": "29a5969159336f279f27bdff36382c64eca19e236422e8072008504d79d2c1e9",
-   "size": 6413
+   "sha512": "a359d7e1af7edf77b832d69a544eca5f9f13c1a42c7b0976953c08fabc2ad4ad",
+   "size": 7211
   }
  },
- "files_optional": {
-  "assets/img/banner-default.jpg": {
-   "sha512": "818428d803ad24657ede8b262535369827158702754a9f1d747c4dfc130db00b",
-   "size": 206755
-  },
-  "assets/img/logo.png": {
-   "sha512": "9ac16b906b6b8c884ee7ee7661712470af2b5311088c1e32cb382da5fdc6b230",
-   "size": 5165
-  },
-  "assets/img/sprite-sheet.png": {
-   "sha512": "cd703192160409995e145a12aae246e7680ac09d2ee74974df2e3c5927cc3339",
-   "size": 5493
-  },
-  "data/users/19sggoAZ4hcorrrfWoFWP9rwfpVsL29cnZ/ZNBRAZIL.png": {
-   "sha512": "7ed09071252ad2a4db5aec14d39d5a820f0a222883af0f6cbfe965069cb788c3",
-   "size": 31267
-  },
-  "data/users/19sggoAZ4hcorrrfWoFWP9rwfpVsL29cnZ/ZeroTV_-_LOGO2.jpg": {
-   "sha512": "3496eeede2239c46d83908f2662de9562a452659fcdc75a8dbf3c55f3c918105",
-   "size": 98587
-  },
-  "data/users/1AWwhg4EiWAVttfQboJZ4wJfX3WawfJT3h/Bildschirmfoto-2017-02-02-23-58-13-png.png": {
-   "sha512": "ec11bb9341c532e5fa3b39537670fb637afec92df8cd02cc0acab12d1b8871da",
-   "size": 113520
-  },
-  "data/users/1AWwhg4EiWAVttfQboJZ4wJfX3WawfJT3h/sprite-sheet-png.png": {
-   "sha512": "d99acfd10ee346e123488b4317c7455e25e7dc58cc18751b68b28e462b61925d",
-   "size": 6894
-  },
-  "data/users/1BLE24RB7y27orc6ygKM4upwGcESx7bxxz/Bt_RHVOPyRU.jpg": {
-   "sha512": "e281aee4cf2139d261002869da921cb5bc1af4119692d0427d5c98a0a1a406e3",
-   "size": 82441
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/Cat_Saloon.mp4": {
-   "sha512": "8e823c4380a76001b3b719ee08fe1a5ef7d0e0a9512d3c3b78a4506c7ff7e0a1",
-   "size": 4573210
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/FO02-NPC-Harold-N-png.png": {
-   "sha512": "9791c594156dbe4dfc15629d871f712bd0d5d80377c8f278e3cb18587eddf67c",
-   "size": 524874
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/FO02_Frank_Horrigan.jpg": {
-   "sha512": "49a047578908debbae5bc4168ee8d5a4627818a15ba0781f73ba9cc62082fb6b",
-   "size": 250001
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/f2-wallpaper-jpg.f2-wallpaper-jpg": {
-   "sha512": "d53c43718bf3235e9fb8f49f38c5edbe3872906afc22d65d2e31e1877349e4e2",
-   "size": 766101
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/f2-wallpaper-jpg.jpg": {
-   "sha512": "d53c43718bf3235e9fb8f49f38c5edbe3872906afc22d65d2e31e1877349e4e2",
-   "size": 766101
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/fallout-2-icon-by-kodiak-caine-d47botf-png.png": {
-   "sha512": "aa03aa19f8f3d27252f5be51db4b8463c8a80174443381ef56ab95b405a308aa",
-   "size": 322324
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/topic-chat.png": {
-   "sha512": "f41719987d5f5d797591857648c0d4cf33a11d7f1a42428a2456c28e0957c88e",
-   "size": 238
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/topic-group.png": {
-   "sha512": "1f9305544e3350d62f0c76caf5202e256848206d18485e0451dc050201f86a7b",
-   "size": 310
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/unnamed.png": {
-   "sha512": "ea2df1cdaa133a547090637a263b7292759f1c3e4feaf9e2ba241e5259493183",
-   "size": 60201
-  },
-  "data/users/1C1gnFcVv9J9kUjF4odDMRYcEWVPJbbqFp/wwlogo.png": {
-   "sha512": "ba513aec51ce55391dfd08ab7e5c8a3c77a2391b7fd0f46facdac73a990dbd68",
-   "size": 151512
-  },
-  "data/users/1DobcNU81BZrQViu9L6uUu7qcC4Afd9r96/c09.jpg": {
-   "sha512": "24b8925d18a3da185703907530ced8ccbfe4db2a83dde02affcafceb0b147c5b",
-   "size": 34209
-  },
-  "data/users/1DpPY5S6HpxsK6CQGWKZbKh9gVo1LnXze1/beau-lamb-sunset.jpg": {
-   "sha512": "3bc18361feca77247a770f15e5fcab5589d6486abedc15776640d7b53a957cda",
-   "size": 326436
-  },
-  "data/users/1DpPY5S6HpxsK6CQGWKZbKh9gVo1LnXze1/tom-garden-tg-aug-15-2016c.jpg": {
-   "sha512": "337094639fe75d0765c742bc386dd1b66700d28a9d2e14d5ac4fb8bd6fea81ce",
-   "size": 508910
-  },
-  "data/users/1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw/hdmUJrYo5-A.jpg": {
-   "sha512": "0ace2602540ba820574cec0ce79fd2552d58c8f446634d605dcdef314faa17a2",
-   "size": 70102
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/576378_4318710857852_443857367_n.jpg": {
-   "sha512": "0eff489afcd4375df41d031d459862986f1af464afa7c5867a1a1f2022c0f202",
-   "size": 69956
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/a2328094252_2.jpg": {
-   "sha512": "cba172d1d4ec6df24e6a3ebdcef34c3646a7a277fff34674ab440012b1fd87ed",
-   "size": 42754
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/apossibility.mp4": {
-   "sha512": "cf1fa9594b38c60d5f38b66be0425663b0aea3f0881e0a0b412bef4d02c4aef9",
-   "size": 298374
-  },
-  "data/users/1R67TfYzNkCnh89EFfGmXn5LMb4hXaMRQ/breitner-netzer.jpg": {
-   "sha512": "f1fbecf25de68117a490e385eba9c65d6a09d9af1f08de1665406587f92aed17",
-   "size": 144590
-  }
- },
- "ignore": "((js|css)/(?!all.(js|css))|data/users/.*db|data/archived|.*.py|.*.git)",
- "includes": {
-  "data/users/content.json": {
-   "signers": [],
-   "signers_required": 1
-  }
- },
+ "ignore": "((js|css)/(?!all.(js|css))|data/users|.*.md|merged-CDN|.*.db|data/archived|.*.py|.*.git)",
  "inner_path": "content.json",
- "modified": 1486587495,
- "optional": "(data/users/.*/.*.jpg|data/users/.*/.*.png|.*.jpg|.*.png|.*.avi|.*.ogg|.*.webm|.*.mp4)",
+ "merger_name": "CDN",
+ "modified": 1506553318,
+ "optional": ".*.(epub|jpg|jpeg|png|data/gif|avi|ogg|webm|mp4|mp3|mkv|eot|svg|woff|woff2|ttf|zip|nes|bin|sna|data/users)",
  "postmessage_nonce_security": true,
- "settings": {
-  "admin": "nofish",
-  "admin_href": "http://127.0.0.1:43110/Mail.ZeroNetwork.bit/?to=nofish",
-  "topic_sticky_uris": [
-   "2_1J3rJ8ecnwH2EPYa6MrgZttBNc61ACFiCj",
-   "8_1J3rJ8ecnwH2EPYa6MrgZttBNc61ACFiCj"
-  ]
- },
- "sign": [
-  62340096657830146534038970239120387573593301763328483196922141667849085428413,
-  70581324801232367250680958403920007831772123730146459585510548269420266706590
- ],
- "signers_sign": "G+i37SRfLQimaEVk580j9IscJZVUmZ80l4NTSRI7+luCu/KjXXoTvUZcvyB0AJIjMqzCyWTp8xOvARSoC3XFPRM=",
+ "signers_sign": "HOi37SRfLQimaEVk580j9IscJZVUmZ80l4NTSRI7+luCRA1cooXsQrmjQN+L/23czA3sE4HFVYyMvr22gVpxBC4=",
  "signs": {
-  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "HKufTcnLpeOLyvdzy31Mc2IA4e2MrV3MKc39qQ2gvHANVsixaVE9WGhWrTIL7qbTI6SkI1F5welDyV5/1xrKZMA="
+  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "HKd+FDomEgUwrDgJMqOZZog1wolRbP4afe3ncxHVriClN+vq5eSIYvQ/06dJbVSzJbD2oT0JIC2NpoVB6mfqG5U="
  },
  "signs_required": 1,
- "title": "ZeroNet Central",
- "translate": [
-  "index.html",
-  "js/all.js"
- ],
+ "title": "ZeroVoat",
+ "translate": ["index.html", "js/all.js"],
  "viewport": "width=device-width, initial-scale=1.0",
- "zeronet_version": "0.5.1"
+ "zeronet_version": "0.5.7"
 }

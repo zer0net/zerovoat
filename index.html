@@ -28,23 +28,25 @@
   <!-- main -->
   <main id="main-content" ng-if="page" ng-controller="ChannelsCtrl">
     <!-- main view -->
-    <section ng-if="section === 'main'" class="container">
+    <section ng-if="view === 'main'" class="container">
         <!-- topics -->
-        <section class="main-content col-xs-9" ng-hide="loading"> 
-          <!-- topic list -->
-          <topic-list></topic-list>
-          <!-- /topic list -->
+        <section class="col-sm-9 col-xs-12 main-content-container" ng-hide="loading">
+          <section class="main-content">
+            <!-- topic list -->
+            <topic-list></topic-list>
+            <!-- /topic list -->
+          </section>
         </section>
         <!-- /topics -->
         <!-- side bar -->
-        <section class="col-xs-3" ng-hide="loading">
+        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
           <sidebar></sidebar>
         </section>
         <!-- /sidebar -->
     </section>
     <!-- /main view -->
-    <!-- channels -->
-    <section ng-if="section === 'channels'" >
+    <!-- channels view -->
+    <section ng-if="view === 'channels'" >
       <section id="banner">
         <div class="container"></div>
       </section>
@@ -62,9 +64,9 @@
         </section>
       </section>
     </section>
-    <!-- /channels -->
+    <!-- /channels view -->
     <!-- channel view -->
-    <section ng-if="section === 'channel'" ng-init="getChannel()">
+    <section ng-if="view === 'channel'" ng-init="getChannel()">
       <!-- loader -->
       <span class="loader" ng-show="channel_loading"></span>
       <!-- /loader -->
@@ -72,28 +74,30 @@
       <channel-layout-css ng-if="channel.layout" ng-init="initChannelLayoutCss(channel.layout)"></channel-layout-css>
       <!-- /layout -->   
       <!-- subheader -->
-      <subheader ng-if="channel.layout" ng-init="initSubHeader(channel.layout)"></subheader>
+      <subheader ng-if="channel.layout.subheader_bg_image || channel.layout.subheader_bg_color" ng-init="initSubHeader(channel.layout)"></subheader>
       <!-- subheader -->
       <!-- channel -->
       <section class="container" ng-if="channel" ng-hide="channel_loading">
-        <!-- topics -->
-        <section class="main-content col-xs-9 fg-color" ng-if="channel"> 
-          <!-- topic list -->
-          <topic-list></topic-list>
-          <!-- /topic list -->
+        <section class="col-sm-9 col-xs-12 main-content-container" ng-hide="loading">
+          <!-- topics -->
+          <section class="main-content fg-color" ng-if="channel"> 
+            <!-- topic list -->
+            <topic-list></topic-list>
+            <!-- /topic list -->
+          </section>
+          <!-- /topics -->
         </section>
-        <!-- /topics -->
         <!-- side bar -->
-        <section class="col-xs-3">
+        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
           <sidebar></sidebar>
         </section>
         <!-- /sidebar -->
       </section>
       <!-- /channel -->
-      </section>
+    </section>
     <!-- /channel view -->
     <!-- sector view -->
-    <section ng-if="section === 'sector'" class="container">
+    <section ng-if="view === 'sector'" class="container">
       <section ng-init="getSector()">
         <span class="loader" ng-show="loading"></span>
         <!-- channels -->
@@ -111,6 +115,198 @@
       </section>
     </section>
     <!-- /sector view -->
+    <!-- topic view -->
+    <section ng-if="view === 'topic'" id="topics" ng-controller="TopicsCtrl" ng-init="getTopic()">
+      <span class="loader" ng-show="loading"></span>
+      <!-- layout -->
+      <channel-layout-css ng-if="channel.layout" ng-init="initChannelLayoutCss(channel.layout)"></channel-layout-css>
+      <!-- /layout -->
+      <!-- subheader -->
+      <subheader ng-if="channel.layout.subheader_bg_image || channel.layout.subheader_bg_color" ng-init="initSubHeader(channel.layout)"></subheader>
+      <!-- subheader -->
+      <section class="container">
+        <section class="col-sm-9 col-xs-12 main-content-container" ng-hide="loading">
+          <!-- topic view -->
+          <topic-view></topic-view>
+          <!-- /topic view -->
+        </section>
+        <!-- side bar -->
+        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
+          <sidebar></sidebar>
+        </section>
+        <!-- /sidebar --> 
+      </section>
+    </section>
+    <!-- /topic view -->
+    <!-- new item view -->
+    <section ng-if="view === 'new'" id="new-item" class="container">
+      <!-- channel form -->
+      <section ng-if="section === 'sector'">
+        <sector-form></sector-form>      
+      </section>
+      <!-- /channel form -->
+      <!-- channel form -->
+      <section ng-if="section === 'channel'">
+        <channel-form></channel-form>      
+      </section>
+      <!-- /channel form -->
+      <!-- topic form -->
+      <section  ng-if="section === 'topic'" ng-init="getChannel()">
+        <section ng-controller="TopicsCtrl" ng-if="channel">
+          <topic-form></topic-form>      
+        </section>      
+      </section>
+      <!-- /topic form -->
+    </section>
+    <!-- /new item view -->
+    <!-- edit item view -->
+    <section ng-if="view === 'edit'" id="edit-item" class="container">
+      <section ng-controller="UserAdminCtrl" ng-init="init()" ng-if="page">
+        <!-- channel -->
+        <section ng-if="section === 'channel'" ng-init="getChannel()">
+          <uib-tabset ng-if="channel_ready" active="active" class="channel-interface-tabs ui-tabs">
+            <!-- channel form -->
+            <uib-tab index="0" heading="Channel">
+              <channel-form></channel-form>
+            </uib-tab>
+            <!-- /channel form -->
+            <!-- moderators -->
+            <uib-tab index="1" heading="Moderators">
+              <section user-list ng-init="getChannelModerators(channel)">
+                <!-- moderator form -->
+                <moderator-form></moderator-form>
+                <!-- /moderator form -->
+              </section>
+            </uib-tab>
+            <!-- /moderators -->
+            <!-- layout -->
+            <uib-tab index="2" heading="Layout">
+              <channel-layout-interface></channel-layout-interface>
+            </uib-tab>
+            <!-- /layout -->
+            <!-- topics -->
+            <uib-tab index="3" heading="Topics">
+              <section class="section">
+                <topic-list></topic-list>
+              </section>
+            </uib-tab>
+            <!-- /topics -->
+          </uib-tabset>
+        </section>
+        <!-- /channel -->
+        <!-- topic -->
+        <section ng-controller="TopicsCtrl" ng-if="section === 'topic'" ng-init="getTopic()">
+          <uib-tabset active="0" class="channel-interface-tabs ui-tabs" ng-if="topic">
+            <!-- topic form -->
+            <uib-tab index="0" heading="Topic">
+              <topic-form ng-if="topic"></topic-form>      
+            </uib-tab>
+            <!-- /topic form -->
+            <!-- comments -->
+            <uib-tab index="2" heading="Comments">
+              <section class="section">
+                <div class="row">
+                  <topic-comments></topic-comments>
+                </div>
+              </section>
+            </uib-tab>
+            <!-- /comments -->
+          </uib-tabset>
+        </section>
+        <!-- /topic -->      
+      </section>
+    </section>
+    <!-- /edit item view -->
+    <!-- moderate item view -->
+    <section ng-if="view === 'moderate'" id="moderate-item" class="container">
+      <section  ng-controller="UserAdminCtrl" ng-init="init()" ng-if="page && user">
+        <!-- channel -->
+        <section ng-if="view === 'channel'" ng-init="getChannel()">
+          <uib-tabset ng-if="channel_ready" active="active" class="channel-interface-tabs ui-tabs">
+            <!-- topics -->
+            <uib-tab index="3" heading="Topics">
+              <section class="section">
+                <topic-list ng-if="moderator"></topic-list>
+              </section>
+            </uib-tab>
+            <!-- /topics -->
+          </uib-tabset>
+        </section>
+        <!-- /channel -->
+        <!-- topic -->
+        <section id="topics" ng-controller="TopicsCtrl" ng-if="section === 'topic'" ng-init="getTopic()">
+          <h2>Moderate Topic</h2>
+          <uib-tabset active="0" class="channel-interface-tabs ui-tabs" ng-if="topic">
+            <!-- topic form -->
+            <uib-tab index="0" heading="Topic">
+              <topic-form ng-if="topic"></topic-form>      
+            </uib-tab>
+            <!-- /topic form -->
+            <!-- comments -->
+            <uib-tab index="1" heading="Comments">
+              <section class="section">
+                <div class="row">
+                  <topic-comments></topic-comments>
+                </div>
+              </section>
+            </uib-tab>
+            <!-- /comments -->
+          </uib-tabset>
+        </section>
+        <!-- /topic -->
+      </section>
+    </section>
+    <!-- /moderate item view -->
+    <!-- user-admin view -->
+    <section ng-if="view === 'user-admin'" class="container user-admin" ng-controller="UserAdminCtrl" ng-init="init()">
+        <!-- main -->
+        <section class="col-xs-9" ng-if="user">
+          <section class="main-content" style="width:100%;float:left;"> 
+            <!-- header -->
+            <div class="section-header">
+              <h2>user admin <span ng-if="section"> - {{section.split('_').join(' ')}}</span></h2>
+              <hr/>
+            </div>
+            <!-- /header -->
+            <!-- my channels -->
+            <section ng-if="section === 'my_channels'" id="channels" channels ng-init="getChannels(user.user_name)">
+              <span ng-show="loading" class="loader"></span>
+              <admin-channel-list ng-hide="loading"></admin-channel-list>
+            </section>
+            <!-- /my channels -->
+            <!-- moderated channels -->
+            <section ng-if="section === 'moderated_channels'" id="channels" channels ng-init="getModeratedChannels(user.user_name)">
+              <span ng-show="loading" class="loader"></span>
+              <admin-channel-list ng-hide="loading"></admin-channel-list>
+            </section>
+            <!-- /channel list -->        
+            <!-- topic list -->
+            <section ng-if="section === 'topics'">
+              <topic-list></topic-list>
+            </section>
+            <!-- /topic list --> 
+            <!-- comment list -->
+            <section ng-if="section === 'comments'">
+              <topic-comments></topic-comments>
+            </section>
+            <!-- /comment list -->  
+          </section>
+        </section>
+        <!-- /main -->
+        <!-- sidebar -->
+        <section class="col-xs-3" ng-if="user">
+          <aside class="row">
+            <ul>
+              <li><a class="btn" href="/{{page.site_info.address}}/index.html?view:user-admin+section:my_channels">my channels</a></li>
+              <li><a class="btn" href="/{{page.site_info.address}}/index.html?view:user-admin+section:moderated_channels">moderated channels</a></li>
+              <li><a class="btn" href="/{{page.site_info.address}}/index.html?view:user-admin+section:topics">topics</a></li>
+              <li><a class="btn" href="/{{page.site_info.address}}/index.html?view:user-admin+section:comments">comments</a></li>
+            </ul>
+          </aside>
+        </section>
+        <!-- /sidebar -->
+    </section>
+    <!-- /user-admin view -->
   </main>
   <!-- /main -->
 
@@ -120,6 +316,9 @@
   <script type="text/javascript" src="assets/lib/zeronet/class.js"></script>
   <script type="text/javascript" src="assets/lib/zeronet/zeroframe.js"></script>
   <script type="text/javascript" src="assets/lib/zeronet/zerochat.js"></script>
+
+  <!-- bitcoinjs -->
+  <script type="text/javascript" src="assets/lib/bitcoinjs/bitcoinjs.min.js"></script>
 
   <!-- jquery -->
   <script type="text/javascript" src="assets/lib/jquery/jquery.min.js"></script>
@@ -135,6 +334,7 @@
   <script type="text/javascript" src="assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js"></script>
   <script type="text/javascript" src="assets/lib/moment/moment.js"></script>
   <script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
+  <script type="text/javascript" src="assets/lib/dropzone/dropzone.js"></script>
 
   <!-- videogular -->
   <script type="text/javascript" src="assets/lib/videos/videogular/videogular.js"></script>
@@ -154,21 +354,50 @@
   <script type="text/javascript" src="app/application.js"></script>
   <script type="text/javascript" src="app/controllers/main.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/channels.ctrl.js"></script>
+  <script type="text/javascript" src="app/controllers/topics.ctrl.js"></script>
+  <script type="text/javascript" src="app/controllers/user-admin.ctrl.js"></script>
+  <script type="text/javascript" src="app/directives/admin-channel-list.directive.js"></script>  
   <script type="text/javascript" src="app/directives/site-header.directive.js"></script>
   <script type="text/javascript" src="app/directives/subheader.directive.js"></script>
   <script type="text/javascript" src="app/directives/sidebar.directive.js"></script>
   <script type="text/javascript" src="app/directives/topic-list.directive.js"></script>
+  <script type="text/javascript" src="app/directives/topic-list-item.directive.js"></script>
+  <script type="text/javascript" src="app/directives/img-fallback-src.directive.js"></script>
+  <script type="text/javascript" src="app/directives/img-load.directive.js"></script>
   <script type="text/javascript" src="app/directives/channels.directive.js"></script>
   <script type="text/javascript" src="app/directives/channel-list.directive.js"></script>
+  <script type="text/javascript" src="app/directives/channel-layout-interface.directive.js"></script>
   <script type="text/javascript" src="app/directives/channel-layout-css.directive.js"></script>
   <script type="text/javascript" src="app/directives/votes.directive.js"></script>
   <script type="text/javascript" src="app/directives/comments.directive.js"></script>    
   <script type="text/javascript" src="app/directives/moderations.directive.js"></script>
+  <script type="text/javascript" src="app/directives/moderator-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/feed-follow.directive.js"></script>
+  <script type="text/javascript" src="app/directives/file-browser.directive.js"></script>
   <script type="text/javascript" src="app/directives/files.directive.js"></script>
   <script type="text/javascript" src="app/directives/video-player.directive.js"></script>
-
+  <script type="text/javascript" src="app/directives/video-player.directive.js"></script>
+  <script type="text/javascript" src="app/directives/item-embed.directive.js"></script>
+  <script type="text/javascript" src="app/directives/topic-view.directive.js"></script>
+  <script type="text/javascript" src="app/directives/topic-media-item.directive.js"></script>
+  <script type="text/javascript" src="app/directives/topic-comments.directive.js"></script>
+  <script type="text/javascript" src="app/directives/topic-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/channel-form.directive.js"></script>
+  <script type="text/javascript" src="app/directives/sector-form.directive.js"></script>  
+  <script type="text/javascript" src="app/directives/dropzone.directive.js"></script>  
+  <script type="text/javascript" src="app/directives/item-edit-toolbar.directive.js"></script>  
+  <script type="text/javascript" src="app/directives/user-list.directive.js"></script>
+  <script type="text/javascript" src="app/directives/user-menu.directive.js"></script>
+  <script type="text/javascript" src="app/directives/user-name.directive.js"></script>  
+  <script type="text/javascript" src="app/services/channel.service.js"></script>
+  <script type="text/javascript" src="app/services/comment.service.js"></script>
   <script type="text/javascript" src="app/services/file.service.js"></script>
+  <script type="text/javascript" src="app/services/follow.service.js"></script>
+  <script type="text/javascript" src="app/services/item.service.js"></script>
   <script type="text/javascript" src="app/services/moderation.service.js"></script>
+  <script type="text/javascript" src="app/services/notification.service.js"></script>
+  <script type="text/javascript" src="app/services/route.service.js"></script>
+  <script type="text/javascript" src="app/services/user.service.js"></script>
 
 </body>
 

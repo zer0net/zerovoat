@@ -1,5 +1,5 @@
-app.directive('votes', [
-	function() {
+app.directive('votes', ['Notification',
+	function(Notification) {
 
 		// votes controller
 		var controller = function($scope,$element) {
@@ -29,6 +29,19 @@ app.directive('votes', [
 				item.uvp = item.votes_up * vote_percentage;
 				item.dvp = item.votes_down * vote_percentage;
 			};
+
+			// user vote css
+			$scope.userVoteCss = function(vote_user){
+				cssClass = '';
+				if (vote_user){
+					if (vote_user.vote === 1){
+						cssClass = 'up-voted'
+					} else if (vote_user.vote === 0){
+						cssClass = 'down-voted';
+					}
+				}
+				return cssClass;
+			}
 
 			/** TOPIC **/
 
@@ -89,8 +102,8 @@ app.directive('votes', [
 
 				// up vote topic
 				$scope.upVoteTopic = function(topic){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						// render data
@@ -108,7 +121,7 @@ app.directive('votes', [
 						}
 						// new topic vote entry
 						var topic_vote = {
-							topic_vote_id:$scope.page.site_info.address + data.next_topic_vote_id.toString(),
+							topic_vote_id:$scope.page.site_info.address + "vt" + data.next_topic_vote_id.toString(),
 							topic_id:topic.topic_id,
 							vote:1,
 							added:+(new Date)
@@ -131,16 +144,18 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Topic Up Voted!", 10000]);
 									$scope.getTopicVotes(topic);
+									/*var notification = Notification.createTopicVoteNotification(topic_vote,topic);
+									$scope.createNotification(notification);*/
 								});
 							});
-						});		
+						});	
 					});
 				};
 
 				// down vote topic
 				$scope.downVoteTopic = function(topic){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						// render data
@@ -158,7 +173,7 @@ app.directive('votes', [
 						}
 						// new topic vote entry
 						var topic_vote = {
-							topic_vote_id:$scope.page.site_info.address + data.next_topic_vote_id.toString(),
+							topic_vote_id:$scope.page.site_info.address + "vt" + data.next_topic_vote_id.toString(),
 							topic_id:topic.topic_id,
 							vote:0,
 							added:+(new Date)
@@ -171,7 +186,7 @@ app.directive('votes', [
 						// update next topic vote id #
 						data.next_topic_vote_id += 1;
 						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -181,16 +196,18 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Topic Down Voted!", 10000]);
 									$scope.getTopicVotes(topic);
+									/*var notification = Notification.createTopicVoteNotification(topic_vote,topic);
+									$scope.createNotification(notification);*/
 								});
 							});
-						});		
+						});
 					});
 				};
 
 				// change topic vote
 				$scope.changeTopicVote = function(topic){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						data = JSON.parse(data);
@@ -209,8 +226,7 @@ app.directive('votes', [
 								}
 							}
 						});	
-						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -220,6 +236,8 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Topic Vote Changed!", 10000]);
 									$scope.getTopicVotes(topic);
+									/*var notification = Notification.createTopicVoteNotification(topic_vote,topic);
+									$scope.createNotification(notification);*/		
 								});
 							});
 						});
@@ -228,8 +246,8 @@ app.directive('votes', [
 
 				// delete topic vote
 				$scope.deleteTopicVote = function(topic){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						data = JSON.parse(data);
@@ -246,7 +264,7 @@ app.directive('votes', [
 						// remove topic vote from user's topic votes array
 						data.topic_vote.splice(topicVoteIndex,1);
 						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -258,8 +276,8 @@ app.directive('votes', [
 									$scope.getTopicVotes(topic);
 								});
 							});
-						});		
-					});
+						});
+					});	
 				};
 
 			/** /TOPIC **/
@@ -277,20 +295,20 @@ app.directive('votes', [
 				};
 
 				// on comment up vote
-				$scope.onUpVoteComment = function(comment){
+				$scope.onUpVoteComment = function(comment,topic){
 					if ($scope.page.site_info.cert_user_id){
 						// if comment is voted by user
 						if (comment.voted === true){
 							if (comment.vote_user.vote === 1){
 								// delete
-								$scope.deleteCommentVote(comment);
+								$scope.deleteCommentVote(comment,topic);
 							} else if (comment.vote_user.vote === 0) {
 								// change vote
-								$scope.changeCommentVote(comment);
+								$scope.changeCommentVote(comment,topic);
 							}
 						} else {
 							// up vote comment
-							$scope.upVoteComment(comment);
+							$scope.upVoteComment(comment,topic);
 						}
 					} else {
 						$scope.selectUser();
@@ -298,20 +316,20 @@ app.directive('votes', [
 				};
 
 				// on comment down vote
-				$scope.onDownVoteComment = function(comment){
+				$scope.onDownVoteComment = function(comment,topic){
 					if ($scope.page.site_info.cert_user_id){
 						// if comment is voted by user
 						if (comment.voted === true){
 							if (comment.vote_user.vote === 0){
 								// delete
-								$scope.deleteCommentVote(comment);
+								$scope.deleteCommentVote(comment,topic);
 							} else if (comment.vote_user.vote === 1) {
 								// change vote
-								$scope.changeCommentVote(comment);
+								$scope.changeCommentVote(comment,topic);
 							}
 						} else {
 							// up vote comment
-							$scope.downVoteComment(comment);
+							$scope.downVoteComment(comment,topic);
 						}
 					} else {
 						$scope.selectUser();
@@ -319,9 +337,9 @@ app.directive('votes', [
 				};
 
 				// up vote comment
-				$scope.upVoteComment = function(comment){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+				$scope.upVoteComment = function(comment,topic){
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						// render data
@@ -339,7 +357,7 @@ app.directive('votes', [
 						}
 						// new comment vote entry
 						var comment_vote = {
-							comment_vote_id:$scope.page.site_info.auth_address + data.next_comment_vote_id.toString(),
+							comment_vote_id:$scope.page.site_info.auth_address + "cvt" + data.next_comment_vote_id.toString(),
 							comment_id:comment.comment_id,
 							vote:1,
 							added:+(new Date)
@@ -362,16 +380,17 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Comment Up Voted!", 10000]);
 									$scope.getCommentVotes(comment);
+									/*var notification = Notification.createCommentVoteNotification(comment_vote,comment,topic);
+									$scope.createNotification(notification);*/
 								});
 							});
-						});		
+						});
 					});
 				};
 
 				// down vote comment
-				$scope.downVoteComment = function(comment){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+				$scope.downVoteComment = function(comment,topic){
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						// render data
@@ -389,7 +408,7 @@ app.directive('votes', [
 						}
 						// new comment vote entry
 						var comment_vote = {
-							comment_vote_id:$scope.page.site_info.auth_address + data.next_comment_vote_id.toString(),
+							comment_vote_id:$scope.page.site_info.auth_address + "cvt" + data.next_comment_vote_id.toString(),
 							comment_id:comment.comment_id,
 							vote:0,
 							added:+(new Date)
@@ -402,7 +421,7 @@ app.directive('votes', [
 						// update next comment vote id #
 						data.next_comment_vote_id += 1;
 						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -412,16 +431,17 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Comment Down Voted!", 10000]);
 									$scope.getCommentVotes(comment);
+									/*var notification = Notification.createCommentVoteNotification(comment_vote,comment,topic);
+									$scope.createNotification(notification);*/
 								});
 							});
-						});		
+						});
 					});
 				};
 
 				// change comment vote
-				$scope.changeCommentVote = function(comment){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
+				$scope.changeCommentVote = function(comment,topic){
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
 					// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						data = JSON.parse(data);
@@ -441,7 +461,7 @@ app.directive('votes', [
 							}
 						});	
 						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -451,6 +471,8 @@ app.directive('votes', [
 								$scope.$apply(function() {
 									Page.cmd("wrapperNotification", ["done", "Comment Vote Changed!", 10000]);
 									$scope.getCommentVotes(comment);
+									/*var notification = Notification.createCommentVoteNotification(comment_vote,comment,topic);
+									$scope.createNotification(notification);*/							
 								});
 							});
 						});
@@ -459,9 +481,9 @@ app.directive('votes', [
 
 				// delete comment vote
 				$scope.deleteCommentVote = function(comment){
-					// inner path to user's data.json file
-					var inner_path = 'data/users/' + $scope.page.site_info.auth_address + '/data.json';
-					// get data.json
+					// inner path to user's json files
+					var inner_path = 'merged-'+$scope.page.site_info.content.merger_name + '/' + $scope.config.cluster + '/data/users/' + $scope.page.site_info.auth_address + '/data.json';
+						// get data.json
 					Page.cmd("fileGet", { "inner_path": inner_path, "required": false },function(data) {
 						data = JSON.parse(data);
 						// get comment vote's index	
@@ -477,7 +499,7 @@ app.directive('votes', [
 						// remove comment vote from user's comment votes array
 						data.comment_vote.splice(commentVoteIndex,1);
 						// write to file
-						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));					
+						var json_raw = unescape(encodeURIComponent(JSON.stringify(data, void 0, '\t')));
 						Page.cmd("fileWrite", [inner_path, btoa(json_raw)], function(res) {
 							console.log(res);
 							// sign & publish site
@@ -489,7 +511,7 @@ app.directive('votes', [
 									$scope.getCommentVotes(comment);
 								});
 							});
-						});		
+						});
 					});
 				};
 
