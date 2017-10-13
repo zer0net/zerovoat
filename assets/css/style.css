@@ -291,7 +291,8 @@ header .meta-header .user-menu {
   margin-bottom: 5px;
 }
 header .meta-header .user-menu .loader {
-  margin-top: 8px;
+  margin-top: 2px;
+  margin-right: 6px;
 }
 header .meta-header .user-menu ul {
   padding: 0;
@@ -1446,22 +1447,12 @@ videogular.error > * {
 }
 /** /VIDEOGULAR **/
 /** MEDIA QUERIES **/
-@media (max-width: 768px) {
-  header span.channel-name {
-    padding-left: 0 !important;
-    clear: both;
+@media (max-width: 840px) {
+  header .meta-header {
+    padding-right: 80px;
   }
-  header nav.navbar-default ul {
-    width: 50%;
-  }
-  main .main-content-container {
-    padding-right: 0;
-  }
-  main .main-sidebar-container {
-    padding-right: 0;
-  }
-  .rss-feed {
-    margin-right: 60px;
+  header nav.navbar-default .navbar-container-top {
+    padding-right: 70px;
   }
 }
 /** /MEDIA QUERIES **/
