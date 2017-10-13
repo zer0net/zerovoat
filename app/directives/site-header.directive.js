@@ -92,7 +92,7 @@ app.directive('siteHeader', ['$rootScope',
 		var template =  '<header ng-if="page && view" id="top" ng-init="init()">' +
 							'<div class="meta-header">' +
 								'<a ng-repeat="link in links" href="{{link.link}}">{{link.title}}</a>' +
-								'<span style="margin-right: 115px;margin-top: 2px;" ng-if="page" feed-follow ng-init="initMainFollow()" class="rss-feed">' +
+								'<span ng-if="page" feed-follow ng-init="initMainFollow()" class="rss-feed">' +
 									'<a ng-if="!is_main_follow" ng-click="followNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Follow</a>' +
 									'<a ng-if="is_main_follow" class="active" ng-click="unfollowNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Unfollow</a>' +
 								'</span>' +

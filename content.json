@@ -43,16 +43,16 @@
    "size": 16523
   },
   "app/directives/channel-list.directive.js": {
-   "sha512": "4a9f400541d11313db0b940bf5d3b94f4d497f86385ee8a10335f47e2362a399",
-   "size": 3915
+   "sha512": "21000840eb8812ddf430ef641af52e4b96704694a308ecb41df042ae43c85147",
+   "size": 3935
   },
   "app/directives/channels.directive.js": {
    "sha512": "f27971b687d635d383b51cd5f7e2076ba3b703c56c42a33467d927ba71dd31b1",
    "size": 1333
   },
   "app/directives/comments.directive.js": {
-   "sha512": "4af5475ef64190334dc28b4ff4e27a12b83b780affeccba1e9db68222c482fa7",
-   "size": 7988
+   "sha512": "3c59b13c7571e52a14bd419589bae8ba3298823c184cc2d6dfbd4ad30ba83340",
+   "size": 8016
   },
   "app/directives/dropzone.directive.js": {
    "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
@@ -107,8 +107,8 @@
    "size": 2069
   },
   "app/directives/site-header.directive.js": {
-   "sha512": "9de71ab37f9135864401e088deb3c342d573a540dcc024c52c887e36279ccc08",
-   "size": 5778
+   "sha512": "a53321389acfc8795fc974ddfd0765037a09c968431b6516bd2c7b0fd2ffbed1",
+   "size": 5721
   },
   "app/directives/subheader.directive.js": {
    "sha512": "e62af86c9e693eedbb8a9fdf8418380ea2fd0bcb2f7a6d06875397e4d7382b0e",
@@ -143,8 +143,8 @@
    "size": 774
   },
   "app/directives/user-menu.directive.js": {
-   "sha512": "a3ba9f50d3e4a1f5c2b5429f42f64d5cfb7481b6d30b09b40c2cbe94e4c56c53",
-   "size": 8929
+   "sha512": "fb2f9132d402127fd00b2680e21f10e4de4976900d78f21400e5f573401f320a",
+   "size": 8937
   },
   "app/directives/user-name.directive.js": {
    "sha512": "72626c8d65bb760ee81b2f69beeef3ba1e0f0a332ff8521ab0d0f831854ba79c",
@@ -163,8 +163,8 @@
    "size": 546
   },
   "app/services/comment.service.js": {
-   "sha512": "446e660b888655978141e13a76452be31d475168e0619854a99ac0b74d343e65",
-   "size": 1923
+   "sha512": "b87686d87f160ba4bb2fbf8e8fbdaacacdb72151d32c53177f7373bf76012d55",
+   "size": 1871
   },
   "app/services/file.service.js": {
    "sha512": "93f79b6d535cbc4833485254355b1878520d48f80a32ed2ba4636ddd9ef0a4c0",
@@ -203,8 +203,8 @@
    "size": 20766
   },
   "assets/css/style.css": {
-   "sha512": "1065bfb33dff96ccd7adb9629c2d42b0080fd4367467134c6e9661f97a58ed2d",
-   "size": 33633
+   "sha512": "a73857550b448a55681fa0fe8f0dbfafaeea6d81de935da18bca8fb8c0f5c1b2",
+   "size": 34264
   },
   "assets/img/ajax-loader.gif": {
    "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
@@ -215,8 +215,8 @@
    "size": 6313
   },
   "assets/less/style.less": {
-   "sha512": "fc353c5eba57600635b825c0434c9d658fb3ff7690a13e65c31cc9ed3a673ace",
-   "size": 27726
+   "sha512": "ece78dbee2653611c88bea99ebf53bc03a468eab46e91c7c20712bce6925f5be",
+   "size": 28424
   },
   "assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js": {
    "sha512": "75b4a58ecd81c2379006753466cc17ba11ce51a38d613d4b3be780820fbec849",
@@ -443,8 +443,8 @@
    "size": 8503
   },
   "index.html": {
-   "sha512": "d2048919509e3281bb4707aaf32c342313735c8a3f6977559f22ee05b2890758",
-   "size": 18787
+   "sha512": "8bc9cb7bc80f37263e2271dc3436b93cce0479b63f8d62ad4d6eed88fb97d7cf",
+   "size": 19199
   }
  },
  "files_optional": {
@@ -952,16 +952,16 @@
  "ignore": "((js|css)/(?!all.(js|css))|data/users|.*.md|merged-CDN|.*.db|data/archived|.*.py|.*.git)",
  "inner_path": "content.json",
  "merger_name": "CDN",
- "modified": 1506553318,
+ "modified": 1507741170,
  "optional": ".*.(epub|jpg|jpeg|png|data/gif|avi|ogg|webm|mp4|mp3|mkv|eot|svg|woff|woff2|ttf|zip|nes|bin|sna|data/users)",
  "postmessage_nonce_security": true,
  "signers_sign": "HOi37SRfLQimaEVk580j9IscJZVUmZ80l4NTSRI7+luCRA1cooXsQrmjQN+L/23czA3sE4HFVYyMvr22gVpxBC4=",
  "signs": {
-  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "HKd+FDomEgUwrDgJMqOZZog1wolRbP4afe3ncxHVriClN+vq5eSIYvQ/06dJbVSzJbD2oT0JIC2NpoVB6mfqG5U="
+  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "G1pzbUlDslqvRLOxTuZDmUJB9YcNhXZ//6hEdD7GbEpxHPBP+BvnrkaAqNkpUpgA+m1oXzwfHh3oLeBQsFAeQCg="
  },
  "signs_required": 1,
  "title": "ZeroVoat",
  "translate": ["index.html", "js/all.js"],
  "viewport": "width=device-width, initial-scale=1.0",
- "zeronet_version": "0.5.7"
+ "zeronet_version": "0.6.0"
 }

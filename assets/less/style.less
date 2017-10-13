@@ -42,6 +42,8 @@
 	}
 
 	.rss-feed {
+		margin-right: 115px;
+		margin-top: 2px;
 		font-size: 12px;
 	    position: absolute;
 	    top: 0;
@@ -311,7 +313,6 @@
 
 				.header-left {
 					height: 67px;
-	    			overflow: hidden;
 	    			padding-left: 55px;
 					
 					img {
@@ -325,6 +326,7 @@
 					.logo-section {
 					    float: left;
 					    width: 100%;
+					    margin-bottom: 10px;
 
 					    .logo-section-top {
 						    padding: 15px 0 0 0;
@@ -353,7 +355,6 @@
 								    font-size: 10px;				    	
 							    }
 							}
-
 					    }
 					}
 				}
@@ -544,6 +545,7 @@
 		    border: 1px solid #d1d1d1;
 		    padding: 15px;
 		    margin: 0;
+		    margin-bottom: 10px;
 
 		    &.channels-main-content {
 			    background-color: transparent;
@@ -556,6 +558,8 @@
 		.main-sidebar-container {
 			padding-left: 0;
 			padding-right: 2px;
+			float: right;
+			margin-bottom: 10px;
 		}
 
 		aside {
@@ -1500,7 +1504,7 @@
 	.user-admin {
 
 		.main-content {
-			margin-left: -15px;		
+			margin-left: -15px;
 		}
 
 		.section-header {
@@ -1693,3 +1697,37 @@
 
 
 /** /VIDEOGULAR **/
+
+/** MEDIA QUERIES **/
+
+	@media (max-width: 768px) {
+		header {
+
+			span.channel-name {
+				padding-left: 0 !important;
+				clear: both;
+			}
+
+			nav.navbar-default {
+
+				ul {
+					width: 50%;
+				}
+			}
+		}
+
+		main {
+			.main-content-container {
+				padding-right: 0;
+			}
+			.main-sidebar-container {
+				padding-right: 0;
+			}
+		}
+
+		.rss-feed {
+		    margin-right: 60px;
+		}
+	}
+
+/** /MEDIA QUERIES **/

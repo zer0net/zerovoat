@@ -9,6 +9,7 @@
     <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/lib/angular-text/text-angular.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/mobile.css" rel="stylesheet" type="text/css"/>
   <!-- /CSS -->
 
   <!-- HTML5 Shim -->
@@ -78,6 +79,11 @@
       <!-- subheader -->
       <!-- channel -->
       <section class="container" ng-if="channel" ng-hide="channel_loading">
+        <!-- side bar -->
+        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
+          <sidebar></sidebar>
+        </section>
+        <!-- /sidebar -->        
         <section class="col-sm-9 col-xs-12 main-content-container" ng-hide="loading">
           <!-- topics -->
           <section class="main-content fg-color" ng-if="channel"> 
@@ -87,11 +93,6 @@
           </section>
           <!-- /topics -->
         </section>
-        <!-- side bar -->
-        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
-          <sidebar></sidebar>
-        </section>
-        <!-- /sidebar -->
       </section>
       <!-- /channel -->
     </section>

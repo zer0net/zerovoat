@@ -43,6 +43,8 @@ videogular vg-scrub-bar .container,
   max-width: 100%;
 }
 .rss-feed {
+  margin-right: 115px;
+  margin-top: 2px;
   font-size: 12px;
   position: absolute;
   top: 0;
@@ -274,7 +276,6 @@ header nav.navbar-default .navbar-container-top {
 }
 header nav.navbar-default .navbar-container-top .header-left {
   height: 67px;
-  overflow: hidden;
   padding-left: 55px;
 }
 header nav.navbar-default .navbar-container-top .header-left img {
@@ -287,6 +288,7 @@ header nav.navbar-default .navbar-container-top .header-left img {
 header nav.navbar-default .navbar-container-top .header-left .logo-section {
   float: left;
   width: 100%;
+  margin-bottom: 10px;
 }
 header nav.navbar-default .navbar-container-top .header-left .logo-section .logo-section-top {
   padding: 15px 0 0 0;
@@ -466,6 +468,7 @@ main .main-content {
   border: 1px solid #d1d1d1;
   padding: 15px;
   margin: 0;
+  margin-bottom: 10px;
 }
 main .main-content.channels-main-content {
   background-color: transparent;
@@ -476,6 +479,8 @@ main .main-content.channels-main-content {
 main .main-sidebar-container {
   padding-left: 0;
   padding-right: 2px;
+  float: right;
+  margin-bottom: 10px;
 }
 main aside {
   background-color: white;
@@ -1419,3 +1424,23 @@ videogular.error > * {
   display: none;
 }
 /** /VIDEOGULAR **/
+/** MEDIA QUERIES **/
+@media (max-width: 768px) {
+  header span.channel-name {
+    padding-left: 0 !important;
+    clear: both;
+  }
+  header nav.navbar-default ul {
+    width: 50%;
+  }
+  main .main-content-container {
+    padding-right: 0;
+  }
+  main .main-sidebar-container {
+    padding-right: 0;
+  }
+  .rss-feed {
+    margin-right: 60px;
+  }
+}
+/** /MEDIA QUERIES **/
