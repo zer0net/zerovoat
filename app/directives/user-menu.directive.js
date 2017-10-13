@@ -218,13 +218,13 @@ app.directive('userMenu', ['User','Notification','$rootScope','$location',
 			});
 		};
 
-		var template =	'<div id="user-menu-container" style="width: 200%;margin-left: -100%;">' +		
+		var template =	'<div id="user-menu-container">' +		
 							'<div class="user-menu fg-color-secondary" ng-init="getUserInfo()" ng-if="page.site_info.cert_user_id">' +
 						    	'<ul ng-if="!loading">' +
 						    		'<li><a style="padding:0;" ng-click="createZvCert()" class="user-name">Selected User ID: {{page.site_info.cert_user_id.split(\'@\')[0]}} (change)</a></li>' +
-						    		'<li><a uib-tooltip="My Channels ({{user.channels_total}})" href="/{{page.site_info.address}}/index.html?view:user-admin+section:my_channels"><i class="my-channels-icon" aria-hidden="true"></i></a></li>' +
-						    		'<li><a uib-tooltip="My Topics ({{user.topics_total}})" href="/{{page.site_info.address}}/index.html?view:user-admin+section:topics"><i class="fa fa-server" aria-hidden="true"></i></li>' +
-						    		'<li><a uib-tooltip="My Comments ({{user.comments_total}})" href="/{{page.site_info.address}}/index.html?view:user-admin+section:comments"><i class="fa fa-commenting" aria-hidden="true"></i></a></li>' +
+						    		'<li><a uib-tooltip="My Channels ({{user.channels_total}})" tooltip-placement="bottom" href="/{{page.site_info.address}}/index.html?view:user-admin+section:my_channels"><i class="my-channels-icon" aria-hidden="true"></i></a></li>' +
+						    		'<li><a uib-tooltip="My Topics ({{user.topics_total}})" tooltip-placement="bottom" href="/{{page.site_info.address}}/index.html?view:user-admin+section:topics"><i class="fa fa-server" aria-hidden="true"></i></li>' +
+						    		'<li><a uib-tooltip="My Comments ({{user.comments_total}})" tooltip-placement="bottom" href="/{{page.site_info.address}}/index.html?view:user-admin+section:comments"><i class="fa fa-commenting" aria-hidden="true"></i></a></li>' +
 						    	'</ul>' +
 						    	'<span class="loader" ng-if="loading"></span>' +
 					    	'</div>' +

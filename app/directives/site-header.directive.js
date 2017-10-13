@@ -91,11 +91,16 @@ app.directive('siteHeader', ['$rootScope',
 
 		var template =  '<header ng-if="page && view" id="top" ng-init="init()">' +
 							'<div class="meta-header">' +
-								'<a ng-repeat="link in links" href="{{link.link}}">{{link.title}}</a>' +
-								'<span ng-if="page" feed-follow ng-init="initMainFollow()" class="rss-feed">' +
+								'<div class="meta-links">' +
+									'<ul>' +
+										'<li ng-repeat="link in links"><a href="{{link.link}}">{{link.title}}</a></li>' +
+									'</ul>' +
+								'</div>' +
+								'<user-menu></user-menu>' +
+								/*'<span ng-if="page" feed-follow ng-init="initMainFollow()" class="rss-feed">' +
 									'<a ng-if="!is_main_follow" ng-click="followNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Follow</a>' +
 									'<a ng-if="is_main_follow" class="active" ng-click="unfollowNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Unfollow</a>' +
-								'</span>' +
+								'</span>' +*/
 							'</div>' + 
 						    '<nav class="navbar navbar-default navbar-fixed-top">' +
 							    '<section class="navbar-container-top">' +
@@ -115,24 +120,23 @@ app.directive('siteHeader', ['$rootScope',
 									    		'<span flex="100" style="clear:both;float: left;">{{page.site_info.content.description}}</span>' + 
 								    		'</div>' +
 								    	'</div>' +
-								    	'<ul class="col-xs-3" ng-if="view !== \'channels\'">' +
-								    		'<li ng-if="view === \'main\' ||view === \'channel\'" ng-repeat="option in sort.options">' + 
-									    		'<a ng-click="sortTopics(option)">' + 
-									    			'<button class="btn btn-primary">{{option.name}}</button>' +
-									    		'</a>' +
-								    		'</li>' +
-								    		'<li ng-if="view === \'channel\'" ng-show="page.site_info.cert_user_id">' + 
-									    		'<a href="index.html?view:new+section:topic+channel_id={{channel.channel_id}}">' + 
-									    			'<button class="btn btn-primary">New Topic</button>' +
-									    		'</a>' +
-								    		'</li>' +
-								    	'</ul>' +
+								    	'<div class="col-xs-6" ng-if="view !== \'channels\'">' +
+								    		'<ul class="header-main-menu">' +
+									    		'<li ng-if="view === \'main\' ||view === \'channel\'" ng-repeat="option in sort.options">' + 
+										    		'<a ng-click="sortTopics(option)">' + 
+										    			'<button class="btn btn-primary">{{option.name}}</button>' +
+										    		'</a>' +
+									    		'</li>' +
+									    		'<li ng-if="view === \'channel\'" ng-show="page.site_info.cert_user_id">' + 
+										    		'<a href="index.html?view:new+section:topic+channel_id={{channel.channel_id}}">' + 
+										    			'<button class="btn btn-primary">New Topic</button>' +
+										    		'</a>' +
+									    		'</li>' +
+								    		'</ul>' +
+								    	'</div>' +
 								    	'<div class="col-xs-6 sort-channels" ng-if="view === \'channels\' && !layoutPreview">' +
 								    	    '<label>SORT:</label>' + 
                             				'<select class="form-control" ng-model="sort.current" value="sort.current.name" ng-options="s_option.name for s_option in sort.options"></select>' +
-								    	'</div>' +
-								    	'<div class="col-xs-3" ng-if="!layoutPreview">' +
-								    		'<user-menu></user-menu>' +
 								    	'</div>' +
 							    	'</div>' +
 							    '</section>' +

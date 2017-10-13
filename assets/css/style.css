@@ -252,16 +252,136 @@ header .container {
 header .meta-header {
   background-color: white;
   float: left;
-  height: 25px;
   padding: 5px 10px 0 10px;
+  padding-right: 130px;
   width: 100%;
   border-bottom: 1px solid #dcdcdc;
 }
-header .meta-header a {
+header .meta-header ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+header .meta-header ul li {
+  float: left;
+}
+header .meta-header .meta-links {
+  float: left;
+  width: 50%;
+}
+header .meta-header .meta-links a {
   display: inline-block;
   margin-right: 10px;
   font-size: 12px;
   color: #818181 !important;
+  line-height: 22px;
+}
+header .meta-header #user-menu-container {
+  width: 50%;
+  float: left;
+}
+header .meta-header .user-menu {
+  width: auto;
+  float: right;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  line-height: 26px;
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+header .meta-header .user-menu .loader {
+  margin-top: 8px;
+}
+header .meta-header .user-menu ul {
+  padding: 0;
+}
+header .meta-header .user-menu ul li {
+  margin: 0;
+  height: 20px;
+  position: relative;
+}
+header .meta-header .user-menu ul li a {
+  padding: 2px;
+  border: 1px solid transparent;
+  border-top: 0;
+  border-bottom: 0;
+  float: left;
+  line-height: 20px;
+}
+header .meta-header .user-menu ul li i {
+  font-size: 14px;
+  float: left;
+}
+header .meta-header .user-menu ul li i.my-channels-icon {
+  background-image: url(../img/my-channels-icon.png);
+  width: 18px;
+  height: 18px;
+  display: block;
+  left: 6px;
+  top: 5px;
+  background-size: cover;
+}
+header .meta-header .user-menu ul li i.fa-server {
+  margin-top: 2px;
+}
+header .meta-header .user-menu ul li i.fa-commenting {
+  margin-top: 1px;
+}
+header .meta-header .user-menu ul li.open > a {
+  border-color: #ccc;
+  height: 26px;
+  display: block;
+  padding-top: 0;
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+header .meta-header .user-menu ul li:first-of-type {
+  padding-right: 6px;
+  border-right: 1px solid #ccc;
+  margin-right: 3px;
+}
+header .meta-header .user-menu ul.user-notifications-menu {
+  position: absolute;
+  right: 45px;
+  background: #f9f9f9;
+  padding: 0;
+  width: 250px;
+  top: 46px;
+  border: 1px solid #ccc;
+}
+header .meta-header .user-menu ul.user-notifications-menu li {
+  height: auto;
+  line-height: 16px;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  display: block;
+  background-color: #ffffff;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+header .meta-header .user-menu ul.user-notifications-menu li a {
+  padding: 0;
+}
+header .meta-header .user-menu ul.user-notifications-menu li i {
+  float: right;
+  font-size: 10px;
+}
+header .meta-header .user-menu ul.user-notifications-menu li:last-of-type {
+  border-bottom: 0;
+}
+header .meta-header .user-menu ul.user-notifications-menu li:hover,
+header .meta-header .user-menu ul.user-notifications-menu li.read {
+  background: #f9f9f9;
+}
+header .meta-header .user-menu ul.user-notifications-menu li + li {
+  margin: 0;
 }
 header nav.navbar-default {
   background-color: white;
@@ -272,7 +392,7 @@ header nav.navbar-default {
   border: 0;
 }
 header nav.navbar-default .navbar-container-top {
-  padding: 0 100px 0 25px;
+  padding: 0 120px 0 25px;
 }
 header nav.navbar-default .navbar-container-top .header-left {
   height: 67px;
@@ -332,6 +452,7 @@ header nav.navbar-default ul {
   list-style-type: none;
   padding: 20px 0;
   margin: 0;
+  float: right;
 }
 header nav.navbar-default ul li {
   float: left;
@@ -343,106 +464,6 @@ header nav.navbar-default ul li a .btn {
   border: solid #70b7e3;
   border-width: 1px 1px 2px;
   color: #2b4758;
-}
-header nav.navbar-default .user-menu {
-  margin-top: 20px;
-  width: auto;
-  float: right;
-  border: 1px solid #ccc;
-  height: 28px;
-  background-color: #f4f4f4;
-  line-height: 26px;
-  padding: 0 0 0 6px;
-  font-size: 12px;
-  margin-right: 30px;
-}
-header nav.navbar-default .user-menu .loader {
-  margin-top: 8px;
-}
-header nav.navbar-default .user-menu ul {
-  padding: 0;
-}
-header nav.navbar-default .user-menu ul li {
-  margin: 0;
-  min-width: 27px;
-  height: 30px;
-  position: relative;
-}
-header nav.navbar-default .user-menu ul li a {
-  padding: 5px;
-  border: 1px solid transparent;
-  border-top: 0;
-  border-bottom: 0;
-  float: left;
-}
-header nav.navbar-default .user-menu ul li i {
-  font-size: 14px;
-  float: left;
-}
-header nav.navbar-default .user-menu ul li i.my-channels-icon {
-  background-image: url(../img/my-channels-icon.png);
-  width: 18px;
-  height: 18px;
-  display: block;
-  left: 6px;
-  top: 5px;
-  background-size: cover;
-}
-header nav.navbar-default .user-menu ul li i.fa-server {
-  margin-top: 2px;
-}
-header nav.navbar-default .user-menu ul li i.fa-commenting {
-  margin-top: 1px;
-}
-header nav.navbar-default .user-menu ul li.open > a {
-  border-color: #ccc;
-  height: 26px;
-  display: block;
-  padding-top: 0;
-  background-color: #f9f9f9;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu {
-  position: absolute;
-  right: 45px;
-  background: #f9f9f9;
-  padding: 0;
-  width: 250px;
-  top: 46px;
-  border: 1px solid #ccc;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li {
-  height: auto;
-  line-height: 16px;
-  padding: 5px;
-  margin: 0;
-  border-bottom: 1px solid #ccc;
-  display: block;
-  background-color: #ffffff;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li a {
-  padding: 0;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li i {
-  float: right;
-  font-size: 10px;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li:last-of-type {
-  border-bottom: 0;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li:hover,
-header nav.navbar-default .user-menu ul.user-notifications-menu li.read {
-  background: #f9f9f9;
-}
-header nav.navbar-default .user-menu ul.user-notifications-menu li + li {
-  margin: 0;
 }
 .subheader {
   width: 100%;
