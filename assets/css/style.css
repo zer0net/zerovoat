@@ -267,7 +267,7 @@ header .meta-header ul li {
 }
 header .meta-header .meta-links {
   float: left;
-  width: 50%;
+  padding: 0;
 }
 header .meta-header .meta-links a {
   display: inline-block;
@@ -277,8 +277,8 @@ header .meta-header .meta-links a {
   line-height: 22px;
 }
 header .meta-header #user-menu-container {
-  width: 50%;
   float: left;
+  padding: 0;
 }
 header .meta-header .user-menu {
   width: auto;
@@ -397,14 +397,7 @@ header nav.navbar-default .navbar-container-top {
 }
 header nav.navbar-default .navbar-container-top .header-left {
   height: 67px;
-  padding-left: 55px;
-}
-header nav.navbar-default .navbar-container-top .header-left img {
-  width: 100px;
-  margin-left: -25px;
-  position: absolute;
-  left: 0;
-  top: 4px;
+  padding: 0;
 }
 header nav.navbar-default .navbar-container-top .header-left .logo-section {
   float: left;
@@ -421,15 +414,14 @@ header nav.navbar-default .navbar-container-top .header-left .logo-section .logo
   padding: 0;
   float: left;
 }
-header nav.navbar-default .navbar-container-top .header-left .logo-section .logo-section-top span.channel-name {
+header nav.navbar-default .navbar-container-top span.channel-name {
   display: block;
   float: left;
-  padding-top: 9px;
-  padding-left: 100px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
+  margin: 24px 0;
 }
-header nav.navbar-default .navbar-container-top .header-left .logo-section .logo-section-top span.channel-name span.rss-feed {
+header nav.navbar-default .navbar-container-top span.channel-name span.rss-feed {
   position: relative;
   right: 0;
   margin-left: 5px;
@@ -457,7 +449,6 @@ header nav.navbar-default ul {
 }
 header nav.navbar-default ul li {
   float: left;
-  margin-right: 10px;
 }
 header nav.navbar-default ul li a .btn {
   font-size: 14px;
@@ -465,6 +456,9 @@ header nav.navbar-default ul li a .btn {
   border: solid #70b7e3;
   border-width: 1px 1px 2px;
   color: #2b4758;
+}
+header nav.navbar-default ul li + li {
+  margin-left: 10px;
 }
 .subheader {
   width: 100%;
@@ -491,6 +485,8 @@ main .main-content {
   padding: 15px;
   margin: 0;
   margin-bottom: 10px;
+  float: left;
+  width: 100%;
 }
 main .main-content.channels-main-content {
   background-color: transparent;
@@ -520,8 +516,10 @@ main aside.main-sidebar .well {
 }
 main aside.main-sidebar h2 {
   margin-top: 0;
+  font-size: 18px;
 }
 main aside.main-sidebar ul {
+  padding: 0;
   list-style-type: none;
   margin: 0;
 }
@@ -807,11 +805,17 @@ ul.topic-list-navigation li + li {
 .topic-item .topic-item-left.down-voted .votes-sum-total {
   color: #f57e7e;
 }
+.topic-item .topic-item-main {
+  position: relative;
+  width: 100%;
+  padding-left: 56px;
+}
 .topic-item .topic-item-main .topic-item-image {
-  width: 10%;
-  float: left;
-  padding-right: 10px;
-  height: 52px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 46px;
+  width: 46px;
 }
 .topic-item .topic-item-main .topic-item-image.w-media figure {
   background-image: url(../img/file-loading-icon.jpg);
@@ -858,7 +862,7 @@ ul.topic-list-navigation li + li {
   border-radius: 3px;
 }
 .topic-item .topic-item-main .topic-item-body h3 {
-  margin: 0 0 5px 0;
+  margin: 0 0 3px 0;
   font-size: 16px;
 }
 .topic-item .topic-item-main .topic-item-body h3 a {
@@ -1117,6 +1121,7 @@ ul.topic-list-navigation li + li {
 #comment-list .comment .comment-body {
   font-size: 12px;
   margin: 5px 0;
+  word-wrap: break-word;
 }
 #comment-list .comment .comment-body p {
   margin: 0;
@@ -1447,12 +1452,16 @@ videogular.error > * {
 }
 /** /VIDEOGULAR **/
 /** MEDIA QUERIES **/
-@media (max-width: 840px) {
-  header .meta-header {
-    padding-right: 80px;
+@media (max-width: 767px) {
+  main .main-content-container {
+    padding-right: 0;
   }
-  header nav.navbar-default .navbar-container-top {
-    padding-right: 70px;
+  main aside.main-sidebar .sidebar-channels-menu ul {
+    column-count: 3;
+    column-gap: 0;
+  }
+  main aside.main-sidebar .sidebar-channels-menu ul li hr {
+    display: none;
   }
 }
 /** /MEDIA QUERIES **/

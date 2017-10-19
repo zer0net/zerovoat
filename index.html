@@ -29,7 +29,12 @@
   <!-- main -->
   <main id="main-content" ng-if="page" ng-controller="ChannelsCtrl">
     <!-- main view -->
-    <section ng-if="view === 'main'" class="container">
+    <section ng-if="view === 'main'" class="container" id="main-container">
+        <!-- side bar -->
+        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
+          <sidebar></sidebar>
+        </section>
+        <!-- /sidebar -->      
         <!-- topics -->
         <section class="col-sm-9 col-xs-12 main-content-container" ng-hide="loading">
           <section class="main-content">
@@ -39,11 +44,6 @@
           </section>
         </section>
         <!-- /topics -->
-        <!-- side bar -->
-        <section class="col-sm-3 col-xs-12 main-sidebar-container" ng-hide="loading">
-          <sidebar></sidebar>
-        </section>
-        <!-- /sidebar -->
     </section>
     <!-- /main view -->
     <!-- channels view -->

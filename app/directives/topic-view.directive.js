@@ -50,7 +50,7 @@ app.directive('topicView', ['$rootScope','$location',
 								        '<div class="topic-info">' +
 								          'submitted <span am-time-ago="topic.added"></span> ' +
 								          'by <span class="user-name blue">{{topic.user_id.split(\'@\')[0]}}</span> ' +
-								          'to <b><a href="index.html?channel_id={{topic.channel_id}}" ng-bind="topic.name"></a></b> ' +
+								          'to <b><a href="index.html?view:channel+channel_id={{topic.channel_id}}" ng-bind="topic.name"></a></b> ' +
 								          '(<span class="votes-up">+{{topic.votes_up}}</span><b>|</b><span class="votes-down">-{{topic.votes_down}}</span>)' +
 								        '</div>' +
 								    '</div>' +

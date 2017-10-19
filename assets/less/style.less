@@ -304,7 +304,7 @@
 
 		    .meta-links {
 		    	float: left;
-		    	width: 50%;
+		    	padding: 0;
 			    a {
 				    display: inline-block;
 				    margin-right: 10px;
@@ -315,8 +315,8 @@
 		    }
 
 		    #user-menu-container {
-		    	width: 50%;
 		    	float: left;
+		    	padding: 0;
 		    }
 
 			.user-menu {
@@ -455,15 +455,7 @@
 
 				.header-left {
 					height: 67px;
-	    			padding-left: 55px;
-					
-					img {
-						width: 100px;
-					    margin-left: -25px;
-					    position: absolute;
-					    left: 0;
-					    top: 4px;
-					}
+					padding: 0;
 
 					.logo-section {
 					    float: left;
@@ -480,26 +472,25 @@
 								padding: 0;
 								float: left;
 							}
-
-							span.channel-name {
-							    display: block;
-							    float: left;
-							    padding-top: 9px;
-							    padding-left: 100px;
-							    font-size: 16px;
-							    font-weight: bold;	
-
-							    span.rss-feed {
-								    position: relative;
-								    right: 0;
-								    margin-left: 5px;
-								    top: -2px;
-								    font-size: 10px;				    	
-							    }
-							}
 					    }
 					}
 				}
+
+					span.channel-name {
+						display: block;
+						float: left;
+						font-size: 17px;
+						font-weight: bold;
+						margin: 24px 0;
+
+					    span.rss-feed {
+						    position: relative;
+						    right: 0;
+						    margin-left: 5px;
+						    top: -2px;
+						    font-size: 10px;
+					    }
+					}
 
 				.sort-channels {
 				    padding-top: 17px;
@@ -527,7 +518,6 @@
 
 				li {
 					float: left;
-					margin-right: 10px;
 
 					a {
 
@@ -539,6 +529,10 @@
 						    color: #2b4758;
 						}
 					}
+				}
+
+				li + li {
+					margin-left: 10px;
 				}
 			}
 		}
@@ -573,6 +567,8 @@
 		    padding: 15px;
 		    margin: 0;
 		    margin-bottom: 10px;
+		    float: left;
+		    width: 100%;
 
 		    &.channels-main-content {
 			    background-color: transparent;
@@ -609,9 +605,11 @@
 				
 				h2 {
 					margin-top: 0;
+					font-size: 18px;
 				}
 
 				ul {
+					padding: 0;
 					list-style-type: none;
 					margin: 0;
 
@@ -644,6 +642,10 @@
 							margin: 10px 0;
 						}
 					}
+				}
+
+				.sidebar-channels-menu {
+
 				}
 			}
 		}
@@ -987,12 +989,16 @@
 		}
 
 		.topic-item-main {
+			position: relative;
+			width: 100%;
+			padding-left: 56px;
 
 			.topic-item-image {
-				width: 10%;
-				float: left;
-				padding-right: 10px;
-				height: 52px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 46px;
+				width: 46px;
 
 				&.w-media {
 					figure {
@@ -1056,7 +1062,7 @@
 				}
 
 				h3 {
-					margin: 0 0 5px 0;
+					margin: 0 0 3px 0;
 					font-size: 16px;
 
 					a {
@@ -1396,6 +1402,7 @@
 			.comment-body {
 			    font-size: 12px;
 			    margin: 5px 0;
+			    word-wrap:break-word;
 				
 				p {
 					margin: 0;
@@ -1727,19 +1734,34 @@
 
 /** MEDIA QUERIES **/
 
-	@media (max-width: 840px) {
+	@media (max-width: 767px) {
 
 		header {
-			.meta-header {
-				padding-right: 80px;
+
+		}
+
+		main {
+			
+			.main-content-container {
+				padding-right: 0;
 			}
 
-			nav.navbar-default {
-				.navbar-container-top {
-					padding-right: 70px;
+			aside.main-sidebar {
+				.sidebar-channels-menu {
+					ul {
+						column-count:3;
+						column-gap: 0;						
+						
+						li {
+							hr {
+								display: none;
+							}
+						}
+					}
 				}
 			}
 		}
+
 	}
 
 /** /MEDIA QUERIES **/

@@ -1,5 +1,5 @@
-app.directive('siteHeader', ['$rootScope',
-	function($rootScope) {
+app.directive('siteHeader', ['$rootScope','$window',
+	function($rootScope,$window) {
 
 		// site header controller
 		var controller = function($scope,$element) {
@@ -8,18 +8,20 @@ app.directive('siteHeader', ['$rootScope',
 			$scope.initLayoutPreviewView = function(){
 				$scope.layoutPreview = true;
 				$scope.topicSortMenu();
+				$scope.getHeaderPadding();
 			};
 
 			// init site header
 			$scope.init = function () {
 				// meta links menu
-				$scope.metaLinksMenu();
+				$scope.metaLinksMenu();				
 				// sort menus
 				if ($scope.view === 'main' || $scope.view === 'channel'){
 					$scope.topicSortMenu();
 				} else if ($scope.view === 'channels'){
 					$scope.channelSortMenu();
 				}
+				$scope.getHeaderPadding();				
 			};
 
 			// meta links menu
@@ -87,40 +89,53 @@ app.directive('siteHeader', ['$rootScope',
 				$scope.sort.current = $scope.sort.options[0];
 		    };
 
+		    $scope.getHeaderPadding = function(resize){
+	        	var c_width = ($window.innerWidth / 10) * 8;
+	        	$scope.header_right_padding = ($window.innerWidth - c_width) / 2;
+	        	if (resize) $scope.$apply();
+		    };
+
+	        angular.element($window).bind('resize', function(){
+	        	var resize = true;
+	        	$scope.getHeaderPadding(resize);
+	        });
+
 		};
 
 		var template =  '<header ng-if="page && view" id="top" ng-init="init()">' +
-							'<div class="meta-header">' +
-								'<div class="meta-links">' +
+							'<div class="meta-header" style="padding-right:{{header_right_padding}}px">' +
+								'<div class="meta-links col-xs-7">' +
 									'<ul>' +
 										'<li ng-repeat="link in links"><a href="{{link.link}}">{{link.title}}</a></li>' +
 									'</ul>' +
 								'</div>' +
-								'<user-menu></user-menu>' +
+								'<user-menu class="col-xs-5"></user-menu>' +
 								/*'<span ng-if="page" feed-follow ng-init="initMainFollow()" class="rss-feed">' +
 									'<a ng-if="!is_main_follow" ng-click="followNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Follow</a>' +
 									'<a ng-if="is_main_follow" class="active" ng-click="unfollowNewTopics()"><i class="fa fa-rss" aria-hidden="true"></i>Unfollow</a>' +
 								'</span>' +*/
 							'</div>' + 
 						    '<nav class="navbar navbar-default navbar-fixed-top">' +
-							    '<section class="navbar-container-top">' +
+							    '<section class="navbar-container-top" style="padding-right:{{header_right_padding}}px">' +
 							    	'<div class="row">' +
-								    	'<div class="header-left" style="padding:0;" ng-class="[{\'col-sm-9 col-xs-9\': layoutPreview},{\'col-sm-6 col-xs-6\': !layoutPreview}]" layout="row">' +
+								    	'<div class="header-left" ng-class="[{\'col-sm-4 col-xs-4\': layoutPreview},{\'col-sm-4 col-xs-4\': !layoutPreview}]" layout="row">' +
 								    		'<div class="logo-section" layout="row">' + 
 								    			'<div flex="100" class="logo-section-top">' + 
 									    			'<h2 style="margin-bottom:0;padding-bottom:0;"><a href="/{{page.site_info.address}}/">{{page.site_info.content.title}}</a></h2>' +
-									    			'<span class="channel-name" ng-if="channel">' +
-									    				'<a href="index.html?view:channel+channel_id={{channel.channel_id}}">/{{channel.name}}</a>' +
-														'<span ng-if="page" feed-follow ng-init="initChannelFollow(channel)" class="rss-feed">' +
-															'<a ng-if="!is_channel_follow" ng-click="followChannel(channel)"><i class="fa fa-rss" aria-hidden="true"></i>Follow channel</a>' +
-															'<a ng-if="is_channel_follow" class="active" ng-click="unfollowChannel(channel)"><i class="fa fa-rss" aria-hidden="true"></i>Unfollow channel</a>' +
-														'</span>' +									    				
-									    			'</span>' +
 									    		'</div>' +
 									    		'<span flex="100" style="clear:both;float: left;">{{page.site_info.content.description}}</span>' + 
 								    		'</div>' +
 								    	'</div>' +
-								    	'<div class="col-xs-6" ng-if="view !== \'channels\'">' +
+								    	'<div class="channel-name-container col-xs-4">' +
+							    			'<span class="channel-name" ng-if="channel">' +
+							    				'<a href="index.html?view:channel+channel_id={{channel.channel_id}}">/{{channel.name}}</a>' +
+												'<span ng-if="page" feed-follow ng-init="initChannelFollow(channel)" class="rss-feed">' +
+													'<a ng-if="!is_channel_follow" ng-click="followChannel(channel)"><i class="fa fa-rss" aria-hidden="true"></i>Follow channel</a>' +
+													'<a ng-if="is_channel_follow" class="active" ng-click="unfollowChannel(channel)"><i class="fa fa-rss" aria-hidden="true"></i>Unfollow channel</a>' +
+												'</span>' +									    				
+							    			'</span>' +								    	
+								    	'</div>' +
+								    	'<div class="col-xs-4" ng-if="view !== \'channels\'">' +
 								    		'<ul class="header-main-menu">' +
 									    		'<li ng-if="view === \'main\' ||view === \'channel\'" ng-repeat="option in sort.options">' + 
 										    		'<a ng-click="sortTopics(option)">' + 
