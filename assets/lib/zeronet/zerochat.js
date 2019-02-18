@@ -37,6 +37,6 @@
 
   })(ZeroFrame);
 
-  window.Page = new ZeroChat();
+  window.Page = new ZeroChat();  
 
 }).call(this);

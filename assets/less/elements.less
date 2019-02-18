@@ -128,6 +128,15 @@
     -ms-user-select: @argument;
     user-select: @argument;
   }
+
+  .grayscale(@argument: 100%) {
+    -webkit-filter: grayscale(@argument);
+    -moz-filter: grayscale(@argument);
+    -ms-filter: grayscale(@argument);
+    -o-filter: grayscale(@argument);
+    filter: grayscale(@argument);    
+  }
+
   .columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
     -moz-column-width: @colwidth;
     -moz-column-count: @colcount;

@@ -2,8 +2,9 @@
 	"db_name": "zeroverse",
 	"db_file": "merged-CDN/zeroverse.db",
 	"version": 2,
-	"maps": {
-        ".+/data/users/.+/data.json":{
+	"maps":
+	{
+    ".+/data/users/.+/data.json":{
 			"to_table": [
 				{"node": "channel", "table": "channel"},
 				{"node": "channel_layout", "table": "channel_layout"},
@@ -11,7 +12,7 @@
 				{"node": "comment_vote", "table": "comment_vote"},
 				{"node": "file", "table": "file"},
 				{"node": "file_to_item", "table": "file_to_item"},
-  				{"node": "moderator", "table": "moderator"},
+  			{"node": "moderator", "table": "moderator"},
 				{"node": "moderation", "table": "moderation"},
 				{"node": "notification", "table": "notification"},
 				{"node": "notification_read", "table": "notification_read"},
@@ -35,14 +36,14 @@
 				["body", "TEXT"],
 				["added", "DATETIME"],
 				["edited", "DATETIME"],
-                ["channel_address", "TEXT"],
-                ["channel_name", "TEXT"],
-                ["channel_description", "TEXT"],
-                ["logo_file", "TEXT"],
-                ["cluster_id", "TEXT"],
-                ["date_added", "INTEGER"],
-                ["hide", "INTEGER"],
-                ["user", "TEXT"],
+        ["channel_address", "TEXT"],
+        ["channel_name", "TEXT"],
+        ["channel_description", "TEXT"],
+        ["logo_file", "TEXT"],
+        ["cluster_id", "TEXT"],
+        ["date_added", "INTEGER"],
+        ["hide", "INTEGER"],
+        ["user", "TEXT"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX channel_key ON channel(channel_id, json_id)"],
@@ -76,7 +77,7 @@
 				["subheader_title_margin_top","TEXT"],
 				["subheader_title_text","TEXT"],
 				["text_color", "TEXT"],
-				["subtext_color", "TEXT"],				
+				["subtext_color", "TEXT"],
 				["link_color", "TEXT"],
 				["heading_color", "TEXT"],
 				["added", "DATETIME"],
@@ -178,12 +179,12 @@
 				["notification_id","TEXT"],
 				["user_id","TEXT"],
 				["item_type","TEXT"],
-				["item_id","TEXT"],				
+				["item_id","TEXT"],
 				["t_user_id","TEXT"],
 				["t_item_type","TEXT"],
 				["t_item_id","TEXT"],
 				["topic_id","TEXT"],
-				["topic_title","TEXT"],				
+				["topic_title","TEXT"],
 				["added", "DATETIME"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
@@ -235,11 +236,13 @@
 				["user_id","TEXT"],
 				["user_name","TEXT"],
 				["added", "DATETIME"],
+				["screen_name", "TEXT"],
+				["about", "TEXT"],
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX user_key ON user(user_id, json_id)"],
 			"schema_changed": 1
-		}				
+		}
 	},
 	"feeds": {
 		"Topics": "SELECT title AS title, body AS body, added AS date_added, 'topic' AS type, '?Topic:' || topic.topic_id || '_' || topic_creator_json.directory AS url FROM topic LEFT JOIN json AS topic_creator_json ON (topic_creator_json.json_id = topic.json_id)",

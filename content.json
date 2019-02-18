@@ -1,971 +1,213 @@
 {
  "address": "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb",
- "address_index": 38675494,
- "background-color": "#F5F5F5",
- "cloneable": true,
- "cloned_from": "16JdWTFUUSQyqH6Ks72ASzG8CCpd4ZMzZb",
+ "address_index": 79759532,
+ "background-color": "#FFF",
  "description": "",
  "files": {
-  "app/application.js": {
-   "sha512": "03f8aa27979e31a84fadbf8d1e4b2525fe4eb716ccb968e8888c816115f8fcd2",
-   "size": 368
-  },
-  "app/controllers/channels.ctrl.js": {
-   "sha512": "3ba076f01c59287997fa3909a4c276fa7631d706ffd5e75fe22d1a4754b5a1f8",
-   "size": 17234
-  },
-  "app/controllers/main.ctrl.js": {
-   "sha512": "40f67a4d95009a3c7cd92bb1b4652180f85e83d5a1ffddc0246789d53f55b188",
-   "size": 9921
-  },
-  "app/controllers/topics.ctrl.js": {
-   "sha512": "ffb823f7ae5d208150ac2318a0452e9007479cb4ecc02329dda6d09509a88258",
-   "size": 4516
-  },
-  "app/controllers/user-admin.ctrl.js": {
-   "sha512": "2e902245027919c38e516a9a3b964f1eb3d36a2b1c9e46db47cc9751a983acb8",
-   "size": 644
-  },
-  "app/directives/admin-channel-list.directive.js": {
-   "sha512": "7f71bb1e50003351ecabff8bcb7b6d5032758001235d52c5d2a8e5168b06ab43",
-   "size": 1979
-  },
-  "app/directives/channel-form.directive.js": {
-   "sha512": "d9602449b4b6d0de40ace5ed5167329495cdfc50ea21e593a00859f22cfb27e1",
-   "size": 2994
-  },
-  "app/directives/channel-layout-css.directive.js": {
-   "sha512": "ffb67f8cdbfd7d3704c7290119d7d21c22148f556d584f42d8ad17a7049ea773",
-   "size": 3206
-  },
-  "app/directives/channel-layout-interface.directive.js": {
-   "sha512": "d9163b84b344468115ae475ae09ba9c4104eac478d226adaa738aac6b1d4c68c",
-   "size": 16523
-  },
-  "app/directives/channel-list.directive.js": {
-   "sha512": "21000840eb8812ddf430ef641af52e4b96704694a308ecb41df042ae43c85147",
-   "size": 3935
-  },
-  "app/directives/channels.directive.js": {
-   "sha512": "f27971b687d635d383b51cd5f7e2076ba3b703c56c42a33467d927ba71dd31b1",
-   "size": 1333
-  },
-  "app/directives/comments.directive.js": {
-   "sha512": "3c59b13c7571e52a14bd419589bae8ba3298823c184cc2d6dfbd4ad30ba83340",
-   "size": 8016
-  },
-  "app/directives/dropzone.directive.js": {
-   "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
-   "size": 428
-  },
-  "app/directives/feed-follow.directive.js": {
-   "sha512": "05cf455fe34b1604b1e3e125577aa5a9c784042813635be1f6aec4f58ee4089f",
-   "size": 3718
-  },
-  "app/directives/file-browser.directive.js": {
-   "sha512": "a87a92f7e71c4b86000e059def7c13901fdfee411449e93ba53e67270e474f95",
-   "size": 6784
-  },
-  "app/directives/filereader.directive.js": {
-   "sha512": "585bc7aa0f2428b9a2c21701d2050edda26ec0bbc63bdb3301718f8ad79fec41",
-   "size": 1510
-  },
-  "app/directives/files.directive.js": {
-   "sha512": "4996b97880b1a3ca313f489d22f76a7b350b5aa4e1efa3f686683f89591a43d6",
-   "size": 14484
-  },
-  "app/directives/img-fallback-src.directive.js": {
-   "sha512": "29b67d504153d98e12cda892c2f2332f8be96c434be6d1409990deb73d170365",
-   "size": 272
-  },
-  "app/directives/img-load.directive.js": {
-   "sha512": "e9b5266c80f1e05bb33a0087d91c71e2d3398a5a81121e540538a5de7cbe3b8a",
-   "size": 318
-  },
-  "app/directives/item-edit-toolbar.directive.js": {
-   "sha512": "eeb7d26409089c421be8248514a5c59cd814c58ac2f1b9e4466578504e27b60b",
-   "size": 4173
-  },
-  "app/directives/item-embed.directive.js": {
-   "sha512": "905fff695545354b15b143df1844add4b1f7cb4a52cf0e3a90cac6f57bb7c35c",
-   "size": 1660
-  },
-  "app/directives/moderations.directive.js": {
-   "sha512": "9179303b7409616f24ce9dcd4fa70661eb7096ecef4b02db7a33dfb7160c8db0",
-   "size": 5223
-  },
-  "app/directives/moderator-form.directive.js": {
-   "sha512": "3520ffc4d0542110cf7b2820f67f4e07603f1afed51e3f53c9c1ff8f2bdac166",
-   "size": 2296
-  },
-  "app/directives/sector-form.directive.js": {
-   "sha512": "93e1b6f3d9d10217f274d9eff40a5a5f4116ea0e7e0599a9c8fe0913481e50c1",
-   "size": 2031
-  },
-  "app/directives/sidebar.directive.js": {
-   "sha512": "27a0af00c63c166157538dc0e60fea75a09f443a2e072107da8b792354c52ea6",
-   "size": 2117
-  },
-  "app/directives/site-header.directive.js": {
-   "sha512": "208c7b796e515b6aa9e1e9db6cc8f917695bda44e83cab2731e5ac69cc392a64",
-   "size": 6476
-  },
-  "app/directives/subheader.directive.js": {
-   "sha512": "e62af86c9e693eedbb8a9fdf8418380ea2fd0bcb2f7a6d06875397e4d7382b0e",
-   "size": 735
-  },
-  "app/directives/topic-comments.directive.js": {
-   "sha512": "9ad32bc334316b8b725864f067296c1e89bcb29b5b2ab49c222bf8014ce44d69",
-   "size": 12160
-  },
-  "app/directives/topic-form.directive.js": {
-   "sha512": "21c36019767d148c811475fc6e468c5a4feed71468ef65580ad5428c13d5bd26",
-   "size": 4614
-  },
-  "app/directives/topic-list-item.directive.js": {
-   "sha512": "c2a6bfdd77979947c47577d72c0375599ef5e70431b7ad67b22387a7ecc05d8e",
-   "size": 4492
-  },
-  "app/directives/topic-list.directive.js": {
-   "sha512": "e8a230fdd709fbf24324884b988ea26035f7b9ba03da8447be6357b56dfb08d3",
-   "size": 3738
-  },
-  "app/directives/topic-media-item.directive.js": {
-   "sha512": "c4ac1b511279c23f2f85a293c651a3b658fd226af589f72d7ade31b677bd4044",
-   "size": 1126
-  },
-  "app/directives/topic-view.directive.js": {
-   "sha512": "9674bbe5d671cb58aa5bc27ca6d11ff42f565b808ea3a47e6567a0afd9fc693a",
-   "size": 3724
-  },
-  "app/directives/user-list.directive.js": {
-   "sha512": "52cdb4e7226402404b300c8795af2e6442f736a0f13c06333547609bd4ccdd12",
-   "size": 774
-  },
-  "app/directives/user-menu.directive.js": {
-   "sha512": "e73920fc19accef0dbec61b7886b0763c67d3ed668c3a23f01be34fca93e77b3",
-   "size": 8966
-  },
-  "app/directives/user-name.directive.js": {
-   "sha512": "72626c8d65bb760ee81b2f69beeef3ba1e0f0a332ff8521ab0d0f831854ba79c",
-   "size": 580
-  },
-  "app/directives/video-player.directive.js": {
-   "sha512": "9d56902faf4b92ba7e1ed6bdd5d2ae5a97f4b758bb8cb0f23c484a347fc61cd2",
-   "size": 2402
-  },
-  "app/directives/votes.directive.js": {
-   "sha512": "63627c3b4170ecf51dcd272d5b37f2f0a7f7e426e540128fbb9e9a988d7b5a42",
-   "size": 18827
-  },
-  "app/services/channel.service.js": {
-   "sha512": "bc868da7d04f030f1c6433ef8b1e283012bd9cdc952f24383178d2cfcf034fa9",
-   "size": 546
-  },
-  "app/services/comment.service.js": {
-   "sha512": "b87686d87f160ba4bb2fbf8e8fbdaacacdb72151d32c53177f7373bf76012d55",
-   "size": 1871
-  },
-  "app/services/file.service.js": {
-   "sha512": "93f79b6d535cbc4833485254355b1878520d48f80a32ed2ba4636ddd9ef0a4c0",
-   "size": 10351
-  },
-  "app/services/follow.service.js": {
-   "sha512": "034492b52d9807f438072447b5ea274fc35f07c0b06f3828f1bc281315c18c4f",
-   "size": 1224
-  },
-  "app/services/item.service.js": {
-   "sha512": "fc3b695f4043a7f11f66b15665035b0d6e984cdc53dedec01e190776eec30844",
-   "size": 5002
-  },
-  "app/services/moderation.service.js": {
-   "sha512": "d30e3e71a2e4dd7c963739c797204510c13897f00aaf598da9d1f8dc44b4a25d",
-   "size": 1434
-  },
-  "app/services/notification.service.js": {
-   "sha512": "ee001b03fd637d5e4f870eeee3923ec79203d86e8e905ba5f904487d51f767f1",
-   "size": 2924
-  },
-  "app/services/route.service.js": {
-   "sha512": "67b1d3b903cf72cf259127c000b253f7ff37b9bf8ca1b170067e66bc978665b1",
-   "size": 753
-  },
-  "app/services/user.service.js": {
-   "sha512": "5d8545a040db74310a97858e06ac3524cd0eaf6eae11022b760c6b02c5ef2925",
-   "size": 1453
-  },
-  "assets/css/elements.css": {
-   "sha512": "a4cdf78a6b7696149581e6d07d0164d81e919f4becab37e49980a7c22ed3b918",
-   "size": 314
-  },
-  "assets/css/font-awesome.min.css": {
-   "sha512": "efb922772183246596989d0c54ed02469fba9d181944aebb7eb515051be72f5c",
-   "size": 20766
-  },
-  "assets/css/mobile.css": {
-   "sha512": "e9ce475221b60245e7636bc5fea50cfd17c03c71ed4c9655debcf0f845e90552",
-   "size": 133691
-  },
   "assets/css/style.css": {
-   "sha512": "42824e5a73ccb6326962cb946b9caff845acc496a9aa3757bd92fe213f0902d9",
-   "size": 34489
+   "sha512": "68ac0fcbb59198769159a04e0eff75a36cc10c346108d66668ecf86c22da9353",
+   "size": 34486
   },
-  "assets/img/ajax-loader.gif": {
-   "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
-   "size": 723
-  },
-  "assets/less/elements.less": {
-   "sha512": "1955f4df6b8bcea73e97a062037d91a1bfa5168c5061e26aa54d3fd5ad835318",
-   "size": 6313
-  },
-  "assets/less/style.less": {
-   "sha512": "6efc52768ebde71bcbfeb58d084503d0fd1e3cbd1c1a8cdebb80945863e76ac8",
-   "size": 28831
-  },
-  "assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js": {
-   "sha512": "75b4a58ecd81c2379006753466cc17ba11ce51a38d613d4b3be780820fbec849",
-   "size": 20375
-  },
-  "assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css": {
-   "sha512": "fb04820e630d1b55ca4317fb1dbcb346108c88c0f056cc4cd5f203fc8dd8d060",
-   "size": 16582
-  },
-  "assets/lib/angular-bootstrap/angular-bootstrap.min.js": {
-   "sha512": "904457577ca18a45eb90077a90a59a283768fc520244d59afeb3dff0ca610653",
-   "size": 124078
-  },
-  "assets/lib/angular-moment/angular-moment.min.js": {
-   "sha512": "780b24f2c31451bd3cbb47f725cbee27ff3452aaaf0d54930d19679270046b56",
-   "size": 4934
-  },
-  "assets/lib/angular-moment/angular-moment.min.js.map": {
-   "sha512": "423b34586545cf595f12dd6e1d40965dc77b0e4f04ba7c9a7cf1437c74ab443c",
-   "size": 6722
-  },
-  "assets/lib/angular-moment/bower.json": {
-   "sha512": "e65dc6458c431065a8d4df631fbd81b6ceb9c9ab42d5549fb84093bdd5f210d7",
-   "size": 522
-  },
-  "assets/lib/angular-moment/karma.conf.js": {
-   "sha512": "5a530f186995601ed7f95cde0111f4587edcb88e503207ae0a89891f9714acb1",
-   "size": 877
-  },
-  "assets/lib/angular-moment/package.json": {
-   "sha512": "af29c2495b6765b04c0c1318cc8e9abbd2528f02844535d568a59f2948828405",
-   "size": 897
-  },
-  "assets/lib/angular-moment/tests.js": {
-   "sha512": "3da5f70734eda36b9726ebd41f285706a49d31f81ee42a3d0fc7000de137c0d6",
-   "size": 33887
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect-templates.js": {
-   "sha512": "962dead5e46191674e800373e5218a1cc59f325d6416cc9547184467b069c388",
-   "size": 3228
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.js": {
-   "sha512": "49c56a64b4a94f688a86f447f79b3d6e3bf01eb50a9c225ca7cda3d0df06efeb",
-   "size": 13067
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js": {
-   "sha512": "08bf6357575894d49972ded8ef0f99109a8a4c8051b7ec3ee273c207a635cf57",
-   "size": 6113
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.js": {
-   "sha512": "877ed70e08e6fa8e5e3be35492cc3f71628e54f46f8e49d1209e320b6921313f",
-   "size": 26833
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.min.js": {
-   "sha512": "24f4da1b52cb36fd0ff96c65d38be6b30d7728620b19f6b39307d983fdd35509",
-   "size": 5861
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.min.js.map": {
-   "sha512": "49bd2b153c58635160bad1bba67f085d8d650636401c93d862c0d082a7024b2c",
-   "size": 10301
-  },
-  "assets/lib/angular-sanitize/bower.json": {
-   "sha512": "1dab18606047e845c1f9a79faefb877d2c545eecf73ea5a2bd7c9790b4046ee2",
-   "size": 174
-  },
-  "assets/lib/angular-sanitize/index.js": {
-   "sha512": "7ce6e41231b923681e3ea023eddc0eb98b0a66ad87673cd2018b3b06bc73f138",
-   "size": 62
-  },
-  "assets/lib/angular-sanitize/package.json": {
-   "sha512": "1d914dfa8ee2f07fd0d5973d95d710fc9fe95d2fc6166991f4923a7d632005dc",
-   "size": 704
-  },
-  "assets/lib/angular-text/text-angular-rangy.min.js": {
-   "sha512": "e84bca89c0802c741f5b1750e3d747f4227a1619d39c0473d91e00c8099cdd2d",
-   "size": 73826
-  },
-  "assets/lib/angular-text/text-angular-sanitize.js": {
-   "sha512": "3dd5697694d7790a4c72a6e89fed080cd48b4f7a762717ed8d8d04f394077f96",
-   "size": 28772
-  },
-  "assets/lib/angular-text/text-angular-sanitize.min.js": {
-   "sha512": "0fa6544a6b5a47525107655fc76ba9e0faced0ce534b950700ba4eec6f6f3c90",
-   "size": 19970
-  },
-  "assets/lib/angular-text/text-angular-setup.js": {
-   "sha512": "c216e10b8e9801b25b2dca3d4f6a91b344c812c617ddd089c40ef682b9537cd6",
-   "size": 47306
-  },
-  "assets/lib/angular-text/text-angular.css": {
-   "sha512": "546b901fda9d82f7320de1ca11b4d379835c9986664e7a4d9e845b6eb04ec9a4",
-   "size": 4257
-  },
-  "assets/lib/angular-text/text-angular.js": {
-   "sha512": "25325cc1d3307dd6bff22e10c422c9abd42398a07bec02407bb2eea2736566ed",
-   "size": 234592
-  },
-  "assets/lib/angular-text/text-angular.min.js": {
-   "sha512": "e9ae87e285dd310a6045f5094c825edf0ea54df4cf8fc97da3efe5743a336dbd",
-   "size": 141714
-  },
-  "assets/lib/angular/angular-animate.min.js": {
-   "sha512": "dff68236699f7bc995143e4f54d9122c13ee7b654086b32d70fd316b57306656",
-   "size": 25599
-  },
-  "assets/lib/angular/angular-aria.min.js": {
-   "sha512": "e2c51e87bfb2c64459dcc3194ad65ae9aa62102fda2c2b5d5c83c9d05157caa3",
-   "size": 3773
-  },
-  "assets/lib/angular/angular-route.min.js": {
-   "sha512": "aa68f619dcde2d2f356fb0ac4eef3853bc004afef41c9042d525ce151704ee3a",
-   "size": 4389
-  },
-  "assets/lib/angular/angular.min.js": {
-   "sha512": "7c60d0ded2382947ccdf961b8427717d4f30d2593f88c9fdd0a3211595bd9f42",
-   "size": 148199
+  "assets/css/style.css.map": {
+   "sha512": "47489b51df84dcaa6428fa8f4177a7dab5efd5a7b5eb689439ffbc79ab5db8c1",
+   "size": 15629
   },
   "assets/lib/bitcoinjs/bitcoinjs.min.js": {
    "sha512": "b895059b73c6ec8a7b9acce37a463d8b0be2b4e28f1868f2e74c16427e13d9ee",
    "size": 215992
   },
-  "assets/lib/bootstrap/bootstrap.min.css": {
-   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
-   "size": 121200
+  "assets/lib/easyeditor/easyeditor-modal.css": {
+   "sha512": "5972cbe20e7b8bcb63c1e00cc1d90d8c01f5bb3e22dfb8d43cb6fed1c754e9ba",
+   "size": 1019
   },
-  "assets/lib/bootstrap/css/bootstrap-theme.css": {
-   "sha512": "72d6d433d5564a6108482d39216bcf68ee1b08f8fbcf3af30ca7d787400c1e52",
-   "size": 26132
+  "assets/lib/easyeditor/easyeditor.css": {
+   "sha512": "d92c3ea300ddc2d8a25580e2465ea6736ea1c25c3c726967a3521dfba574d53c",
+   "size": 2385
   },
-  "assets/lib/bootstrap/css/bootstrap-theme.min.css": {
-   "sha512": "b6aba9e6de57c895e5bd7f1bfc4f69234b30180e00ba0b3316abdd58049adbfe",
-   "size": 23409
+  "assets/lib/easyeditor/jquery.easyeditor.js": {
+   "sha512": "f69cea4e5e5f2963f482457479da61ce2d06e771e4703c75a26a90efa2c9e17c",
+   "size": 29420
   },
-  "assets/lib/bootstrap/css/bootstrap.css": {
-   "sha512": "a658bd68aabbe7c3cc76caa3340f80bb8089ed96ad2c20978a79e549fbf4db7c",
-   "size": 146010
+  "assets/lib/easyeditor/themes/ee-theme-disqus.css": {
+   "sha512": "694306e0caf8ad8923adedec974d8782811b75a90c3fd0413701cc5e8c0d409c",
+   "size": 1224
   },
-  "assets/lib/bootstrap/css/bootstrap.min.css": {
-   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
-   "size": 121200
+  "assets/lib/easyeditor/themes/ee-theme-mac-alt.css": {
+   "sha512": "018150720c6d5e66b782afbc4d2fe0c76326dd2010a9864808e1720567766a22",
+   "size": 2916
   },
-  "assets/lib/bootstrap/css/bootstrap.min.css.map": {
-   "sha512": "abb1a70ad42986762144fb8700d0adea6130e7a611cf9e978e51248a4e00b775",
-   "size": 542194
-  },
-  "assets/lib/bootstrap/js/bootstrap.js": {
-   "sha512": "850780aed292053275b1e8118f24680e1e34f6d77bd0ba32eb6bac041dfe3b1e",
-   "size": 69707
-  },
-  "assets/lib/bootstrap/js/npm.js": {
-   "sha512": "81bc329ad688d411fcf3decb28454238ec478c192b6ac19a3ee07e9939556cf1",
-   "size": 484
-  },
-  "assets/lib/dropzone/dropzone.js": {
-   "sha512": "5e16c509713762cd14365e2affe6c9d376ea0e6f1268553631dc41dca5fd6111",
-   "size": 64399
-  },
-  "assets/lib/font-awesome/css/font-awesome.css": {
-   "sha512": "e40f27c1d30e5ab4b3db47c3b2373381489d50147c9623d853e5b299364fd659",
-   "size": 37414
-  },
-  "assets/lib/font-awesome/css/font-awesome.min.css": {
-   "sha512": "49f4e24e55fa924faa8ad7debe5ffb2e26d439e25696df6b6f20e7f766b50ea5",
-   "size": 31000
-  },
-  "assets/lib/font-awesome/fonts/FontAwesome.otf": {
-   "sha512": "a3acaaac3a9861ac7a4ba23e52b9115d39b674cb685b45454fb4b80329a4f737",
-   "size": 134808
+  "assets/lib/easyeditor/themes/ee-theme-mac.css": {
+   "sha512": "489af272228fdfe288d2e8a04f630cf07d7bf90da1da6cd8e90814a7c178bd4d",
+   "size": 2505
   },
   "assets/lib/jquery/jquery.min.js": {
-   "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
-   "size": 86351
+   "sha512": "8865e0afe1af87ef753921c1e1db747ee5acf35ddad7475f32e438cb2350d830",
+   "size": 263767
   },
-  "assets/lib/moment/moment.js": {
-   "sha512": "651e54d33e16ab0ca2fafcfb9c06ef8de815921286358f588e4652c92258e6a7",
-   "size": 104409
+  "assets/lib/react-dom/react-dom.js": {
+   "sha512": "ad0a1c0f15b69d2abee80d6698e8f38dbaaaeb494654ca094f1c3ac7be400545",
+   "size": 632633
   },
-  "assets/lib/videos/videogular-buffering/vg-buffering.js": {
-   "sha512": "d887384ddd9225b3a19896751e487d8f5b1e4fd1e1718cbe47b06080ed434b25",
-   "size": 3800
+  "assets/lib/react/react.js": {
+   "sha512": "067d752b2217d21edbc64fc55afb3ba76d24d8d88be077148ee7c3c7c66384e6",
+   "size": 133556
   },
-  "assets/lib/videos/videogular-controls/vg-controls.js": {
-   "sha512": "9ecbca93a0ceab8130fa79878d4e6e1d90bc9167fa46cb97e0f9cc83021ae835",
-   "size": 53147
+  "assets/lib/redux/react-redux.min.js": {
+   "sha512": "af55aa4badf871811aa14a543991d9b4651f59ebbb46f786534c60236c59f983",
+   "size": 12813
   },
-  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.js": {
-   "sha512": "9367947d62a853dac2e88a328a6f7e48764913194147520eb38bf9c1176d7675",
-   "size": 2568
+  "assets/lib/redux/redux.min.js": {
+   "sha512": "a80f528c74f996fc6e4e88d3176c5834c2f069dbf71e20e62c3f15623f4c3718",
+   "size": 5761
   },
-  "assets/lib/videos/videogular-poster/vg-poster.js": {
-   "sha512": "cba2a9155bfae750bfbf4887fb1e2827c573c708be5b35e6ab16b29add145495",
-   "size": 1798
+  "assets/lib/semantic-ui/semantic-react.min.js": {
+   "sha512": "69011341d1ed91359266ae57f6270eb458a49588cde08ec9d667ebefb58f77fd",
+   "size": 30805
   },
-  "assets/lib/videos/videogular-themes-default/videogular.css": {
-   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
-   "size": 14913
+  "assets/lib/semantic-ui/semantic-ui-react.min.js": {
+   "sha512": "c783ba1696fafc7b55ad5b67e30f182e2a90cd6f8f1bca536dc449d293042b00",
+   "size": 27744
   },
-  "assets/lib/videos/videogular/videogular.js": {
-   "sha512": "bd26f26a02dddec74e9c4ef77add6b0a20aa471fcf100df182cba70213136ee0",
-   "size": 63473
+  "assets/lib/semantic-ui/semantic.min.css": {
+   "sha512": "5d4442441fd66d98721530b6da7ff6c59420c8ed2a9f408944560a2642311762",
+   "size": 541236
+  },
+  "assets/lib/semantic-ui/semantic.min.js": {
+   "sha512": "a81bba32cde4c18f87faf3d967f2e18d17aae11148495fdda8c62e042331775f",
+   "size": 276122
+  },
+  "assets/lib/timeago/timeago.min.js": {
+   "sha512": "f87c01f0c6a0be983ed0b67800f3acb3db379a8a42f4a50cab5fe041b084699f",
+   "size": 2164
+  },
+  "assets/lib/video-js/video-js.css": {
+   "sha512": "b75dcd646903070223a76f7ca34ce1276886fa670b012f5a84304c525402e5d1",
+   "size": 54774
+  },
+  "assets/lib/video-js/video.js": {
+   "sha512": "24a9904630e9a68e769448b59638fbbcd1d87dd672f8d2c827fa2df6cf855b27",
+   "size": 689242
   },
   "assets/lib/zeronet/class.js": {
    "sha512": "affe3568586a4883a5cbe628743ee317dbcbfef58af4b15e4933828d09e581b9",
    "size": 1341
   },
   "assets/lib/zeronet/zerochat.js": {
-   "sha512": "7abe78c81ae7cb6bb401b962d167c04f969d69ab1f197f0d29acc7edb6347bc0",
-   "size": 1382
-  },
-  "assets/lib/zeronet/zeroframe.js": {
-   "sha512": "d0066c5b409ef484cd48fe9d7fd74625370d0c5076047248863fd9e965b78493",
-   "size": 4566
-  },
-  "content/config.json": {
-   "sha512": "1038bb62027bdbf4710890e81da3739923f9e99ed6e86098a71f486caac03679",
-   "size": 539
-  },
-  "data-default/users/content-default.json": {
-   "sha512": "a7c93be394b52b8474b8cbd2b789a702e147bac04bc6fa5cd34f16059472114d",
-   "size": 734
-  },
-  "dbschema.json": {
-   "sha512": "c08d215515e0847e02828f95f0400f0b667c557c5ab7f5fcf60ef2e75cfd9478",
-   "size": 8503
-  },
-  "index.html": {
-   "sha512": "8c911844b33bb2091d933c0f9b6ab137e321b28895e8b4e3c591f92fc29e93ff",
-   "size": 19299
-  }
- },
- "files_optional": {
-  "README.md": {
-   "sha512": "3eecab3e42c364d670165f5df2a28648d1bd28429a7a4c2a785261ede77a20b1",
-   "size": 10
-  },
-  "app/application.js": {
-   "sha512": "03f8aa27979e31a84fadbf8d1e4b2525fe4eb716ccb968e8888c816115f8fcd2",
-   "size": 368
-  },
-  "app/controllers/channels.ctrl.js": {
-   "sha512": "b23f56c31535c50913a9957877685b9d338a4768437420f7445adf78b174c68a",
-   "size": 12421
-  },
-  "app/controllers/main.ctrl.js": {
-   "sha512": "576fb5a98c7588e2733cfdaacbef58e2dc9ebe1dba8cb60e48b57ba640de6f44",
-   "size": 3824
-  },
-  "app/controllers/topics.ctrl.js": {
-   "sha512": "fff6a1ec2d6c825b589f063ebdc744f0a271d585b77d5c4d1ff69adfc16d067e",
-   "size": 4342
-  },
-  "app/controllers/user-admin.ctrl.js": {
-   "sha512": "4b8befa8f0a58481ebcfbabe55740b5b278eda67f16c4d6f5c3a09840ea396b3",
-   "size": 955
-  },
-  "app/directives/admin-channel-list.directive.js": {
-   "sha512": "2e3fcc84f813034396a3fecae7b15f997421468ae3e878dd6d6457b4084527ad",
-   "size": 1911
-  },
-  "app/directives/channel-form.directive.js": {
-   "sha512": "6e22f89dfa38ec9f848cd75bff2a78fa6aa7f8074b30856f7b59ba1d6046ff71",
-   "size": 2606
-  },
-  "app/directives/channel-layout-css.directive.js": {
-   "sha512": "10d9d386022fd35fb97ae1bb060d3d75248fdeaff60ac94a424cf5b5acf6cb41",
-   "size": 3233
-  },
-  "app/directives/channel-layout-interface.directive.js": {
-   "sha512": "d9163b84b344468115ae475ae09ba9c4104eac478d226adaa738aac6b1d4c68c",
-   "size": 16523
-  },
-  "app/directives/channel-list.directive.js": {
-   "sha512": "a412a3736767ad423b35dd2afb9d439959186a0a20db5ca3246d8ecd4881fa61",
-   "size": 3869
-  },
-  "app/directives/channels.directive.js": {
-   "sha512": "59e04e721d79c5301cbc4079f2ac20cb2afb777539deba7eb16b49db79caeb45",
-   "size": 1247
-  },
-  "app/directives/comments.directive.js": {
-   "sha512": "d457742604dc132834413fce7eaca1ebaf9ba92850708828333fc73447a7afc4",
-   "size": 6933
-  },
-  "app/directives/dropzone.directive.js": {
-   "sha512": "626290079050c1f03761c43ad7255dfc62c528c719fbc606b327f606bb1d78e9",
-   "size": 428
-  },
-  "app/directives/filereader.directive.js": {
-   "sha512": "585bc7aa0f2428b9a2c21701d2050edda26ec0bbc63bdb3301718f8ad79fec41",
-   "size": 1510
-  },
-  "app/directives/files.directive.js": {
-   "sha512": "a50b77eb7d2b7937b81dd2aebfb5a4fd6307f9dc31326404cd0efc92162d5f20",
-   "size": 6933
-  },
-  "app/directives/item-edit-toolbar.directive.js": {
-   "sha512": "df37ab303f4bd157c274697264336838a041620c53378c7d352d96e4f6f9c549",
-   "size": 3717
-  },
-  "app/directives/moderations.directive.js": {
-   "sha512": "665f370e521d5337fa9088a435bb8924d4e7bb6d7584f42c342b4eb6bcbf5535",
-   "size": 4489
-  },
-  "app/directives/moderator-form.directive.js": {
-   "sha512": "3520ffc4d0542110cf7b2820f67f4e07603f1afed51e3f53c9c1ff8f2bdac166",
-   "size": 2296
-  },
-  "app/directives/sector-form.directive.js": {
-   "sha512": "93e1b6f3d9d10217f274d9eff40a5a5f4116ea0e7e0599a9c8fe0913481e50c1",
-   "size": 2031
-  },
-  "app/directives/sidebar.directive.js": {
-   "sha512": "ecc9f05c0fbf60006908d7c29c2105836940dd5d9833afd591e907051e135c4d",
-   "size": 2043
-  },
-  "app/directives/site-header.directive.js": {
-   "sha512": "b2438f41283c999b8405bec7ad67eda96da6e24a4f7afd8fccab8914e827b559",
-   "size": 8534
-  },
-  "app/directives/subheader.directive.js": {
-   "sha512": "e62af86c9e693eedbb8a9fdf8418380ea2fd0bcb2f7a6d06875397e4d7382b0e",
-   "size": 735
-  },
-  "app/directives/topic-comments.directive.js": {
-   "sha512": "e3648089240fa13d42ad081352cfa06e26798991da49a456a48e59893fd7f422",
-   "size": 5563
-  },
-  "app/directives/topic-form.directive.js": {
-   "sha512": "35906cf8fbdca9da179e583a8e3c633da7ef576231203628829a13e53af34f73",
-   "size": 3505
-  },
-  "app/directives/topic-list-item.directive.js": {
-   "sha512": "a5558f8607359bc5cbdf1596c305ebc023146d7a0fa23efd14029b2febe45705",
-   "size": 4010
-  },
-  "app/directives/topic-list.directive.js": {
-   "sha512": "233935d4110729ca403736dea362f764c5384263e69c2c047445a84943bee665",
-   "size": 5422
-  },
-  "app/directives/topic-view.directive.js": {
-   "sha512": "6e8c3d3fd40775fcabfaf46c4fe027bf84b203c5bf3c4589bbc9b6d95f9b205e",
-   "size": 2668
-  },
-  "app/directives/user-list.directive.js": {
-   "sha512": "b66d606d4d642aebc94931eb00047daf5b55a95af6e46654c7643da942243a30",
-   "size": 749
-  },
-  "app/directives/user-name.directive.js": {
-   "sha512": "d91a0091e359878aeb392a5d2b01c014e991e4f4a8075431288ccf4736de2fa9",
-   "size": 552
-  },
-  "app/directives/video-player.directive.js": {
-   "sha512": "81d7af4c22b87cd9830724693cc0cdadf584b17069f343d79dc2e44b2f15f7dc",
-   "size": 1890
-  },
-  "app/directives/votes.directive.js": {
-   "sha512": "ff946572a96c962161f1f1c2db3d830ff84e85c698eebed324d831e25a48d6e6",
-   "size": 18158
-  },
-  "app/services/file.service.js": {
-   "sha512": "9883c3fb384f57fd800b202fe6f5a8431f214886ee37f8faef9a4683eb852fc6",
-   "size": 2531
-  },
-  "app/services/item.service.js": {
-   "sha512": "8bea187384f5c006a6b4daae211164fd1236c001a3119d5e4b69470bfb81e2f7",
-   "size": 668
-  },
-  "app/services/moderation.service.js": {
-   "sha512": "d30e3e71a2e4dd7c963739c797204510c13897f00aaf598da9d1f8dc44b4a25d",
-   "size": 1434
-  },
-  "app/services/notification.service.js": {
-   "sha512": "4e05ea561127bc289c0f52f6ba775c402be50096dd659705f9dc871598e5ca5e",
-   "size": 389
-  },
-  "assets/css/elements.css": {
-   "sha512": "a4cdf78a6b7696149581e6d07d0164d81e919f4becab37e49980a7c22ed3b918",
-   "size": 314
-  },
-  "assets/css/font-awesome.min.css": {
-   "sha512": "efb922772183246596989d0c54ed02469fba9d181944aebb7eb515051be72f5c",
-   "size": 20766
-  },
-  "assets/css/style.css": {
-   "sha512": "8c332ab1833a4d54920e9c947d3c55a9f528c6866cbd1eed17d2376af7e3a6b3",
-   "size": 21943
-  },
-  "assets/img/404-not-found.png": {
-   "sha512": "cf8eddd9757836bcfa9de78ecc043e9a5333bcf0f728bd993bfdf8ba04339d01",
-   "size": 17760
-  },
-  "assets/img/ajax-loader.gif": {
-   "sha512": "c5ec0e27278036d679fc3df603069a559356afd8d3d6e668ef5e15d28b450fcc",
-   "size": 723
-  },
-  "assets/img/banner-default.jpg": {
-   "sha512": "818428d803ad24657ede8b262535369827158702754a9f1d747c4dfc130db00b",
-   "size": 206755
-  },
-  "assets/img/file-loading-icon.jpg": {
-   "sha512": "f254ec23a0e7c2180d6c593170102965f1ac42e7f40ee8c69ad6471f3f5384f6",
-   "size": 13434
-  },
-  "assets/img/file-loading-icon.png": {
-   "sha512": "f1f690ea58a3103ee0acbba66dbdd8dbfe3213ba3effe4b7b397a73d0a770f75",
-   "size": 20000
-  },
-  "assets/img/file-not-found.icon.png": {
-   "sha512": "c564c66ee6bccc1466ee02cade0af054de245dd1eeeb822a29e6cd613a1ac17e",
-   "size": 173236
-  },
-  "assets/img/file-not-found.png": {
-   "sha512": "c564c66ee6bccc1466ee02cade0af054de245dd1eeeb822a29e6cd613a1ac17e",
-   "size": 173236
-  },
-  "assets/img/logo.png": {
-   "sha512": "9ac16b906b6b8c884ee7ee7661712470af2b5311088c1e32cb382da5fdc6b230",
-   "size": 5165
-  },
-  "assets/img/music-icon.jpg": {
-   "sha512": "11faf1fbfcd3202a3ff1fedbcb34349ca38e675398ae3378410a06efdf1101b0",
-   "size": 32544
-  },
-  "assets/img/my-channels-icon.png": {
-   "sha512": "fb4f6ebaa87d0100ca814b682a53ab7c1c7e38ec6f236724178e0173ccb5b1be",
-   "size": 4624
-  },
-  "assets/img/my-channels.png": {
-   "sha512": "713836f9271494b55d93bd1fb032b2b8f2d699e6ffbc6896474fa7a4beba4263",
-   "size": 12193
-  },
-  "assets/img/sprite-sheet.png": {
-   "sha512": "cd703192160409995e145a12aae246e7680ac09d2ee74974df2e3c5927cc3339",
-   "size": 5493
-  },
-  "assets/img/video-play-icon.jpg": {
-   "sha512": "564decec74b021d053be68f609e615044b92245325a1f1161e06050f0eb9a573",
-   "size": 28398
-  },
-  "assets/less/elements.less": {
-   "sha512": "1955f4df6b8bcea73e97a062037d91a1bfa5168c5061e26aa54d3fd5ad835318",
-   "size": 6313
-  },
-  "assets/less/style.less": {
-   "sha512": "a08d52ec12da293abf26c9d6da5d2d5e655206909660c3b6257ce19ce8bcc14c",
-   "size": 17552
-  },
-  "assets/lib/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js": {
-   "sha512": "75b4a58ecd81c2379006753466cc17ba11ce51a38d613d4b3be780820fbec849",
-   "size": 20375
-  },
-  "assets/lib/angular-bootstrap-colorpicker/colorpicker.min.css": {
-   "sha512": "fb04820e630d1b55ca4317fb1dbcb346108c88c0f056cc4cd5f203fc8dd8d060",
-   "size": 16582
-  },
-  "assets/lib/angular-bootstrap/angular-bootstrap.min.js": {
-   "sha512": "904457577ca18a45eb90077a90a59a283768fc520244d59afeb3dff0ca610653",
-   "size": 124078
-  },
-  "assets/lib/angular-moment/angular-moment.min.js": {
-   "sha512": "780b24f2c31451bd3cbb47f725cbee27ff3452aaaf0d54930d19679270046b56",
-   "size": 4934
-  },
-  "assets/lib/angular-moment/angular-moment.min.js.map": {
-   "sha512": "423b34586545cf595f12dd6e1d40965dc77b0e4f04ba7c9a7cf1437c74ab443c",
-   "size": 6722
-  },
-  "assets/lib/angular-moment/bower.json": {
-   "sha512": "e65dc6458c431065a8d4df631fbd81b6ceb9c9ab42d5549fb84093bdd5f210d7",
-   "size": 522
-  },
-  "assets/lib/angular-moment/karma.conf.js": {
-   "sha512": "5a530f186995601ed7f95cde0111f4587edcb88e503207ae0a89891f9714acb1",
-   "size": 877
-  },
-  "assets/lib/angular-moment/package.json": {
-   "sha512": "af29c2495b6765b04c0c1318cc8e9abbd2528f02844535d568a59f2948828405",
-   "size": 897
-  },
-  "assets/lib/angular-moment/tests.js": {
-   "sha512": "3da5f70734eda36b9726ebd41f285706a49d31f81ee42a3d0fc7000de137c0d6",
-   "size": 33887
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect-templates.js": {
-   "sha512": "962dead5e46191674e800373e5218a1cc59f325d6416cc9547184467b069c388",
-   "size": 3228
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.js": {
-   "sha512": "49c56a64b4a94f688a86f447f79b3d6e3bf01eb50a9c225ca7cda3d0df06efeb",
-   "size": 13067
-  },
-  "assets/lib/angular-multiselect/angular-bootstrap-multiselect.min.js": {
-   "sha512": "08bf6357575894d49972ded8ef0f99109a8a4c8051b7ec3ee273c207a635cf57",
-   "size": 6113
-  },
-  "assets/lib/angular-sanitize/LICENSE.md": {
-   "sha512": "88795f3408d70f5a78e04c399351731ff161a49f0727f0cf3d048964a8aa14cb",
-   "size": 1074
-  },
-  "assets/lib/angular-sanitize/README.md": {
-   "sha512": "fcb21f8dfd4818893f89f1cc6b97c35472809e7f86c8a1c1c65dc0d158b2b156",
-   "size": 2051
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.js": {
-   "sha512": "877ed70e08e6fa8e5e3be35492cc3f71628e54f46f8e49d1209e320b6921313f",
-   "size": 26833
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.min.js": {
-   "sha512": "24f4da1b52cb36fd0ff96c65d38be6b30d7728620b19f6b39307d983fdd35509",
-   "size": 5861
-  },
-  "assets/lib/angular-sanitize/angular-sanitize.min.js.map": {
-   "sha512": "49bd2b153c58635160bad1bba67f085d8d650636401c93d862c0d082a7024b2c",
-   "size": 10301
-  },
-  "assets/lib/angular-sanitize/bower.json": {
-   "sha512": "1dab18606047e845c1f9a79faefb877d2c545eecf73ea5a2bd7c9790b4046ee2",
-   "size": 174
-  },
-  "assets/lib/angular-sanitize/index.js": {
-   "sha512": "7ce6e41231b923681e3ea023eddc0eb98b0a66ad87673cd2018b3b06bc73f138",
-   "size": 62
-  },
-  "assets/lib/angular-sanitize/package.json": {
-   "sha512": "1d914dfa8ee2f07fd0d5973d95d710fc9fe95d2fc6166991f4923a7d632005dc",
-   "size": 704
-  },
-  "assets/lib/angular-text/text-angular-rangy.min.js": {
-   "sha512": "e84bca89c0802c741f5b1750e3d747f4227a1619d39c0473d91e00c8099cdd2d",
-   "size": 73826
-  },
-  "assets/lib/angular-text/text-angular-sanitize.js": {
-   "sha512": "3dd5697694d7790a4c72a6e89fed080cd48b4f7a762717ed8d8d04f394077f96",
-   "size": 28772
-  },
-  "assets/lib/angular-text/text-angular-sanitize.min.js": {
-   "sha512": "0fa6544a6b5a47525107655fc76ba9e0faced0ce534b950700ba4eec6f6f3c90",
-   "size": 19970
-  },
-  "assets/lib/angular-text/text-angular-setup.js": {
-   "sha512": "c216e10b8e9801b25b2dca3d4f6a91b344c812c617ddd089c40ef682b9537cd6",
-   "size": 47306
-  },
-  "assets/lib/angular-text/text-angular.css": {
-   "sha512": "546b901fda9d82f7320de1ca11b4d379835c9986664e7a4d9e845b6eb04ec9a4",
-   "size": 4257
-  },
-  "assets/lib/angular-text/text-angular.js": {
-   "sha512": "25325cc1d3307dd6bff22e10c422c9abd42398a07bec02407bb2eea2736566ed",
-   "size": 234592
-  },
-  "assets/lib/angular-text/text-angular.min.js": {
-   "sha512": "e9ae87e285dd310a6045f5094c825edf0ea54df4cf8fc97da3efe5743a336dbd",
-   "size": 141714
-  },
-  "assets/lib/angular-text/text-angular.umd.js": {
-   "sha512": "ed1b5c3deae60ca088641f1fde0f1edaf73df455c7b865ed0879b8a71f6b7ced",
-   "size": 282606
-  },
-  "assets/lib/angular/angular-animate.min.js": {
-   "sha512": "dff68236699f7bc995143e4f54d9122c13ee7b654086b32d70fd316b57306656",
-   "size": 25599
-  },
-  "assets/lib/angular/angular-aria.min.js": {
-   "sha512": "e2c51e87bfb2c64459dcc3194ad65ae9aa62102fda2c2b5d5c83c9d05157caa3",
-   "size": 3773
-  },
-  "assets/lib/angular/angular-route.min.js": {
-   "sha512": "aa68f619dcde2d2f356fb0ac4eef3853bc004afef41c9042d525ce151704ee3a",
-   "size": 4389
-  },
-  "assets/lib/angular/angular.min.js": {
-   "sha512": "7c60d0ded2382947ccdf961b8427717d4f30d2593f88c9fdd0a3211595bd9f42",
-   "size": 148199
-  },
-  "assets/lib/bootstrap/bootstrap.min.css": {
-   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
-   "size": 121200
-  },
-  "assets/lib/bootstrap/css/bootstrap-theme.css": {
-   "sha512": "72d6d433d5564a6108482d39216bcf68ee1b08f8fbcf3af30ca7d787400c1e52",
-   "size": 26132
-  },
-  "assets/lib/bootstrap/css/bootstrap-theme.min.css": {
-   "sha512": "b6aba9e6de57c895e5bd7f1bfc4f69234b30180e00ba0b3316abdd58049adbfe",
-   "size": 23409
-  },
-  "assets/lib/bootstrap/css/bootstrap.css": {
-   "sha512": "a658bd68aabbe7c3cc76caa3340f80bb8089ed96ad2c20978a79e549fbf4db7c",
-   "size": 146010
-  },
-  "assets/lib/bootstrap/css/bootstrap.min.css": {
-   "sha512": "e8c5daf01eae68ed7c1e277a6e544c7ad108a0fa877fb531d6d9f2210769b7da",
-   "size": 121200
-  },
-  "assets/lib/bootstrap/css/bootstrap.min.css.map": {
-   "sha512": "abb1a70ad42986762144fb8700d0adea6130e7a611cf9e978e51248a4e00b775",
-   "size": 542194
-  },
-  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.eot": {
-   "sha512": "efc910c96b9f5c58ea11a84577cf60ae995503b1ee670bb7e7d4a413b7403769",
-   "size": 20127
-  },
-  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.svg": {
-   "sha512": "c2e77eab327af1469097c31bc0daf820c066b0222059d8ff0ecebca974b62b75",
-   "size": 108738
-  },
-  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf": {
-   "sha512": "2b066e06506ef20d69698d37cdec552176ef3f64a1151a99a1d02d72d39ce12c",
-   "size": 45404
-  },
-  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.woff": {
-   "sha512": "f5366ab255afefe3fe06150e8509e776b5618ff50fe3e0fa8e4d715d645b1e44",
-   "size": 23424
-  },
-  "assets/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2": {
-   "sha512": "3811804f56ec3c82f0bef35de0a9250e546a1e357fb59e2784f610d638fec355",
-   "size": 18028
-  },
-  "assets/lib/bootstrap/js/bootstrap.js": {
-   "sha512": "850780aed292053275b1e8118f24680e1e34f6d77bd0ba32eb6bac041dfe3b1e",
-   "size": 69707
-  },
-  "assets/lib/bootstrap/js/npm.js": {
-   "sha512": "81bc329ad688d411fcf3decb28454238ec478c192b6ac19a3ee07e9939556cf1",
-   "size": 484
-  },
-  "assets/lib/dropzone/dropzone.js": {
-   "sha512": "5e16c509713762cd14365e2affe6c9d376ea0e6f1268553631dc41dca5fd6111",
-   "size": 64399
-  },
-  "assets/lib/font-awesome/css/font-awesome.css": {
-   "sha512": "e40f27c1d30e5ab4b3db47c3b2373381489d50147c9623d853e5b299364fd659",
-   "size": 37414
-  },
-  "assets/lib/font-awesome/css/font-awesome.min.css": {
-   "sha512": "49f4e24e55fa924faa8ad7debe5ffb2e26d439e25696df6b6f20e7f766b50ea5",
-   "size": 31000
-  },
-  "assets/lib/font-awesome/fonts/FontAwesome.otf": {
-   "sha512": "a3acaaac3a9861ac7a4ba23e52b9115d39b674cb685b45454fb4b80329a4f737",
-   "size": 134808
-  },
-  "assets/lib/font-awesome/fonts/fontawesome-webfont.eot": {
-   "sha512": "c160d3d77e67eff986043461693b2a831e1175f579490d7f0b411005ea81bd4f",
-   "size": 165742
-  },
-  "assets/lib/font-awesome/fonts/fontawesome-webfont.svg": {
-   "sha512": "4f575d52331de91a2e32cc3408dd0eaf0cf25b7244d34b226314e3647e85ce28",
-   "size": 444379
-  },
-  "assets/lib/font-awesome/fonts/fontawesome-webfont.ttf": {
-   "sha512": "9ffb91e68c975172848b4bba25284678cc2c6eb4fb2d42000aa871c36656c4ce",
-   "size": 165548
-  },
-  "assets/lib/font-awesome/fonts/fontawesome-webfont.woff": {
-   "sha512": "9c776dea55a01fd854ea23b3463d9ac716077d406ecbe8ed0c9b6120ff7e6035",
-   "size": 98024
-  },
-  "assets/lib/font-awesome/fonts/fontawesome-webfont.woff2": {
-   "sha512": "838fefdbc14901f41edf995a78fdac55764cd4912ccb734b8bea490919458290",
-   "size": 77160
-  },
-  "assets/lib/jquery/jquery.min.js": {
-   "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
-   "size": 86351
-  },
-  "assets/lib/moment/moment.js": {
-   "sha512": "651e54d33e16ab0ca2fafcfb9c06ef8de815921286358f588e4652c92258e6a7",
-   "size": 104409
-  },
-  "assets/lib/videos/videogular-buffering/vg-buffering.js": {
-   "sha512": "d887384ddd9225b3a19896751e487d8f5b1e4fd1e1718cbe47b06080ed434b25",
-   "size": 3800
-  },
-  "assets/lib/videos/videogular-controls/vg-controls.js": {
-   "sha512": "9ecbca93a0ceab8130fa79878d4e6e1d90bc9167fa46cb97e0f9cc83021ae835",
-   "size": 53147
-  },
-  "assets/lib/videos/videogular-overlay-play/vg-overlay-play.js": {
-   "sha512": "9367947d62a853dac2e88a328a6f7e48764913194147520eb38bf9c1176d7675",
-   "size": 2568
-  },
-  "assets/lib/videos/videogular-poster/vg-poster.js": {
-   "sha512": "cba2a9155bfae750bfbf4887fb1e2827c573c708be5b35e6ab16b29add145495",
-   "size": 1798
-  },
-  "assets/lib/videos/videogular-themes-default/fonts/videogular.dev.svg": {
-   "sha512": "fdd6592253a996beee0cde7ec796ffbd21740448fc08d16b11426ab9f1498ec6",
-   "size": 5639
-  },
-  "assets/lib/videos/videogular-themes-default/fonts/videogular.eot": {
-   "sha512": "c75112b0d88a2b14c6e30cc99865d1394d4e4f608513e474329c39f5c2df97cd",
-   "size": 2544
-  },
-  "assets/lib/videos/videogular-themes-default/fonts/videogular.svg": {
-   "sha512": "7e98167c67730bde8f041e9e4ffea3797732fec50bc46561806838952ef6044d",
-   "size": 5127
-  },
-  "assets/lib/videos/videogular-themes-default/fonts/videogular.ttf": {
-   "sha512": "f7b136395bae1cd8069dc65cda033e756a7fc30158d41a30e859167edc835893",
-   "size": 2380
-  },
-  "assets/lib/videos/videogular-themes-default/fonts/videogular.woff": {
-   "sha512": "73ef31a2844e8df48ef52416073f60c295f3d0698f121ce10fdc30ba03f73849",
-   "size": 1948
-  },
-  "assets/lib/videos/videogular-themes-default/videogular.css": {
-   "sha512": "92b4542588932616cf19ad59da2c58122bd0b0ec13d9d8a15793f9dca1548e75",
-   "size": 14913
-  },
-  "assets/lib/videos/videogular/videogular.js": {
-   "sha512": "bd26f26a02dddec74e9c4ef77add6b0a20aa471fcf100df182cba70213136ee0",
-   "size": 63473
-  },
-  "assets/lib/zeronet/class.js": {
-   "sha512": "affe3568586a4883a5cbe628743ee317dbcbfef58af4b15e4933828d09e581b9",
-   "size": 1341
-  },
-  "assets/lib/zeronet/zerochat.js": {
-   "sha512": "1bb1b9020eccacace9735baebc8579f3e75fd6ba12af2801816676d3b89c7259",
+   "sha512": "c5d330cb4be7c0ce92720e06cfd5f558df68daf702c48ea0b67afec7efdb55f5",
    "size": 1384
   },
   "assets/lib/zeronet/zeroframe.js": {
    "sha512": "d0066c5b409ef484cd48fe9d7fd74625370d0c5076047248863fd9e965b78493",
    "size": 4566
   },
+  "data/config.json": {
+   "sha512": "34b324ca4351d7cbca75bb8537814e55a6914435f21b798c0ccc32094779ed60",
+   "size": 577
+  },
   "dbschema.json": {
-   "sha512": "a359d7e1af7edf77b832d69a544eca5f9f13c1a42c7b0976953c08fabc2ad4ad",
-   "size": 7211
+   "sha512": "762ee39d643c4ef2158dc7b2c245d38446191d5938b7870f1a7d0d18b3dff550",
+   "size": 8472
+  },
+  "deployment-config.json": {
+   "sha512": "2bb7c3cb15b529270a62f1e656831bbbb10b9fed32beeb6d09671471981dadc5",
+   "size": 143
+  },
+  "index.html": {
+   "sha512": "505c901aaf3585c5ca0bc8e340743a2d0dfdda89d55e8ae2293cedd64230c477",
+   "size": 2232
+  },
+  "js/all.js": {
+   "sha512": "e32383eec514ebbc62f8170831f442fc0ca555e0ebc8508b9685f03976c77fd8",
+   "size": 309080
   }
  },
- "ignore": "((js|css)/(?!all.(js|css))|data/users|.*.md|merged-CDN|.*.db|data/archived|.*.py|.*.git)",
+ "files_optional": {
+  "assets/img/404-not-found.png": {
+   "sha512": "cf8eddd9757836bcfa9de78ecc043e9a5333bcf0f728bd993bfdf8ba04339d01",
+   "size": 17760
+  },
+  "assets/img/file-loading-icon.jpg": {
+   "sha512": "f254ec23a0e7c2180d6c593170102965f1ac42e7f40ee8c69ad6471f3f5384f6",
+   "size": 13434
+  },
+  "assets/img/logo.png": {
+   "sha512": "9ac16b906b6b8c884ee7ee7661712470af2b5311088c1e32cb382da5fdc6b230",
+   "size": 5165
+  },
+  "assets/img/sprite-sheet.png": {
+   "sha512": "cd703192160409995e145a12aae246e7680ac09d2ee74974df2e3c5927cc3339",
+   "size": 5493
+  },
+  "assets/lib/semantic-ui/themes/basic/assets/fonts/icons.eot": {
+   "sha512": "adfb286c0103c40251be5a77aad7174e68ce336c1d724bbaba92620f6526cb5f",
+   "size": 40166
+  },
+  "assets/lib/semantic-ui/themes/basic/assets/fonts/icons.svg": {
+   "sha512": "fc9c79b381d07067203d3750bd996e6d5b3a9861080e5c4e62bb5a5c0a617bb3",
+   "size": 64121
+  },
+  "assets/lib/semantic-ui/themes/basic/assets/fonts/icons.ttf": {
+   "sha512": "5e16ccf98e2d059b8aea8d42a8f0b75932cf0f830ced333ba9ef319c54a862c4",
+   "size": 39924
+  },
+  "assets/lib/semantic-ui/themes/basic/assets/fonts/icons.woff": {
+   "sha512": "914b3650177865f8c7add975468a7883e88ea1a286b6a597f6a1f259f86ec6b0",
+   "size": 24676
+  },
+  "assets/lib/semantic-ui/themes/default/assets/fonts/icons.eot": {
+   "sha512": "b580a871780eceabe0418627ebf9557c682264947816783befd4a2b1f405ad5f",
+   "size": 76518
+  },
+  "assets/lib/semantic-ui/themes/default/assets/fonts/icons.svg": {
+   "sha512": "cd4c1d6756aa4d8e98ef4f7549ef2d73cc407bbba17a22ba31ddefbf74cd51de",
+   "size": 391622
+  },
+  "assets/lib/semantic-ui/themes/default/assets/fonts/icons.ttf": {
+   "sha512": "70e5aa1fc883d453e3dd3386e6c5f5839af852d8b67123d43a5ea89e8c6c94c5",
+   "size": 152796
+  },
+  "assets/lib/semantic-ui/themes/default/assets/fonts/icons.woff": {
+   "sha512": "6d465acf39b4cdb365bfdc32ea06637a9f14ed1c1508353a7e0627b6b88efe8a",
+   "size": 90412
+  },
+  "assets/lib/semantic-ui/themes/default/assets/fonts/icons.woff2": {
+   "sha512": "dd945face918edf20b7283b7416ae7b3735269945e3f3e379e770425024c1de1",
+   "size": 71896
+  },
+  "assets/lib/semantic-ui/themes/default/assets/images/flags.png": {
+   "sha512": "5470424a23d61248974ae1886e6e38e78685b7957b05445b1c12b9ca355faa81",
+   "size": 28123
+  },
+  "assets/lib/semantic-ui/themes/material/assets/fonts/icons.eot": {
+   "sha512": "5022976817b89349a71e0438b573f53dc5b743acc865163102d6d657cc3fbeff",
+   "size": 143258
+  },
+  "assets/lib/semantic-ui/themes/material/assets/fonts/icons.svg": {
+   "sha512": "73424aa64ec56ecbbca9218c7d2347b45b953d13b0404a285eb21957b2608832",
+   "size": 281658
+  },
+  "assets/lib/semantic-ui/themes/material/assets/fonts/icons.ttf": {
+   "sha512": "cd8784a162ed428ca5a76e5e877349d50620773e3a3d202d5199fefb5d69a9b8",
+   "size": 128180
+  },
+  "assets/lib/semantic-ui/themes/material/assets/fonts/icons.woff": {
+   "sha512": "0ab5e18ee3972fcd599ead183d81cd38d8c559a5e87ca86eebcb6a2cfae2078a",
+   "size": 57620
+  }
+ },
+ "ignore": "((js|css)/(?!all.(js|css))|data/users|app|assets/less|.*.md|merged-CDN|.*.db|data/archived|.*.py|.*.git|node_modules|assets/json)",
+ "include": "(data/config.json)",
  "inner_path": "content.json",
  "merger_name": "CDN",
- "modified": 1508406951,
+ "modified": 1546451730,
  "optional": ".*.(epub|jpg|jpeg|png|data/gif|avi|ogg|webm|mp4|mp3|mkv|eot|svg|woff|woff2|ttf|zip|nes|bin|sna|data/users)",
  "postmessage_nonce_security": true,
  "signers_sign": "HOi37SRfLQimaEVk580j9IscJZVUmZ80l4NTSRI7+luCRA1cooXsQrmjQN+L/23czA3sE4HFVYyMvr22gVpxBC4=",
  "signs": {
-  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "HJAuI76igK5DlPhewoP8HejzTXw4bHCJ+PvVlQhZH+6bHqlkx5x40VDKjCAtEcUjt3o0kaP6L2/V/NFVTqYwL1s="
+  "1J1c7eML6uMwDU4uiKbKRxoqxGP6WMFMvb": "G7DypJdOapmmGMWrWJQhCb9WKcYtXc7wgqssSK5z80FBAKAFHSGdwcUOgh4JyPcLH5irk+tEX0CACMhhH2bteI8="
  },
  "signs_required": 1,
  "title": "ZeroVoat",
- "translate": ["index.html", "js/all.js"],
- "viewport": "width=device-width, initial-scale=1.0",
- "zeronet_version": "0.6.0"
+ "translate": ["js/all.js"],
+ "zeronet_version": "0.6.4"
 }
